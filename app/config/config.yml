@@ -1,6 +1,9 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: sonata/news.yml }
+    - { resource: sonata/media.yml }
+    - { resource: sonata/formater.yml }
 
 framework:
     #esi:             ~
@@ -89,3 +92,20 @@ sonata_intl:
 sonata_user:
     security_acl: true
     manager_type: orm
+
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts:   [admin]
+
+        #sonata.admin_doctrine_orm.block.audit:
+        #    contexts:   [admin]
+
+        sonata.block.service.text:
+        sonata.block.service.rss:
+
+        # Some specific block from the SonataMediaBundle
+        sonata.media.block.media:
+        #sonata.media.block.gallery:
+        #sonata.media.block.feature_media:
