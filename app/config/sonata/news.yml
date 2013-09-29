@@ -1,14 +1,14 @@
 sonata_news:
-    title:        Sonata Project
-    link:         http://sonata-project.org
+    title:        CMS
+    link:         http://cms.org
     description:  Cool bundles on top of Symfony2
-    salt:         'secureToken'
+    salt:         'A7d*6sa:sadi&*5ss5dsa7'
     permalink_generator: sonata.news.permalink.date # sonata.news.permalink.category
 
     comment:
         notification:
             emails:   [email@example.org, email2@example.org]
-            from:     no-reply@sonata-project.org
+            from:     no-reply@cms.kg
             template: 'SonataNewsBundle:Mail:comment_notification.txt.twig'
 
 doctrine:

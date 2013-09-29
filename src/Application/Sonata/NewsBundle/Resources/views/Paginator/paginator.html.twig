@@ -1,0 +1,28 @@
+{% if pager.haveToPaginate() %}
+    <ul class="paginator">
+        {% if pager.page != 1  %}
+            <li><a href="{{ path('sonata_news_archive') }}" title="{{ 'link_first_pager'|trans({}, 'SonataAdminBundle') }}">&laquo;</a></li>
+        {% endif %}
+
+        {% if pager.page != pager.previouspage %}
+            <li><a href="{{ path('sonata_news_archive', { 'page' : pager.previouspage }) }}" title="{{ 'link_previous_pager'|trans({}, 'SonataAdminBundle') }}">&lsaquo;</a></li>
+        {% endif %}
+
+        {# Set the number of pages to display in the pager #}
+        {% for page in pager.getLinks() %}
+            {% if page == pager.page %}
+                <li><span class="p-active">{{ page }}</span></li>
+            {% else %}
+                <li><a href="{{ path('sonata_news_archive', { 'page' : page }) }}">{{ page }}</a></li>
+            {% endif %}
+        {% endfor %}
+
+        {% if pager.page != pager.nextpage %}
+            <li><a href="{{ path('sonata_news_archive', { 'page' : pager.nextpage }) }}" title="{{ 'link_next_pager'|trans({}, 'SonataAdminBundle') }}">&rsaquo;</a></li>
+        {% endif %}
+
+        {% if pager.page != pager.lastpage  %}
+            <li><a href="{{ path('sonata_news_archive', { 'page' : pager.lastpage }) }}" title="{{ 'link_last_pager'|trans({}, 'SonataAdminBundle') }}">&raquo;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
