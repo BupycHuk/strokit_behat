@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "75312e3e28c7b2aa9069333b60e83722",
+    "hash": "49721dc93d19ddb530bf2b8860145251",
     "packages": [
         {
             "name": "dflydev/markdown",
@@ -660,17 +660,17 @@
         },
         {
             "name": "egeloen/ckeditor-bundle",
-            "version": "2.1.6",
+            "version": "2.1.7",
             "target-dir": "Ivory/CKEditorBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egeloen/IvoryCKEditorBundle.git",
-                "reference": "22e6292579c9ffb7193c4d20616ab6b74b6ad414"
+                "reference": "f8cb2dc814d3f2cacaba153ba5da940e5964d839"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egeloen/IvoryCKEditorBundle/zipball/22e6292579c9ffb7193c4d20616ab6b74b6ad414",
-                "reference": "22e6292579c9ffb7193c4d20616ab6b74b6ad414",
+                "url": "https://api.github.com/repos/egeloen/IvoryCKEditorBundle/zipball/f8cb2dc814d3f2cacaba153ba5da940e5964d839",
+                "reference": "f8cb2dc814d3f2cacaba153ba5da940e5964d839",
                 "shasum": ""
             },
             "require": {
@@ -711,7 +711,7 @@
             "keywords": [
                 "CKEditor"
             ],
-            "time": "2013-08-22 14:26:05"
+            "time": "2013-10-09 16:54:18"
         },
         {
             "name": "friendsofsymfony/jsrouting-bundle",
@@ -2893,6 +2893,62 @@
             "time": "2013-08-27 08:58:24"
         },
         {
+            "name": "tilleuls/ckeditor-sonata-media-bundle",
+            "version": "dev-master",
+            "target-dir": "CoopTilleuls/Bundle/CKEditorSonataMediaBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/coopTilleuls/CoopTilleulsCKEditorSonataMediaBundle.git",
+                "reference": "6819532c03602e3eb81464d15437aafb861322aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/coopTilleuls/CoopTilleulsCKEditorSonataMediaBundle/zipball/6819532c03602e3eb81464d15437aafb861322aa",
+                "reference": "6819532c03602e3eb81464d15437aafb861322aa",
+                "shasum": ""
+            },
+            "require": {
+                "sonata-project/media-bundle": "2.2.*@dev",
+                "symfony/symfony": ">=2.2,<2.4-dev"
+            },
+            "suggest": {
+                "egeloen/ckeditor-bundle": "for easy Symfony integration"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "CoopTilleuls\\Bundle\\CKEditorSonataMediaBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kévin Dunglas",
+                    "email": "kevin@les-tilleuls.coop",
+                    "homepage": "http://dunglas.fr"
+                }
+            ],
+            "description": "Integrates SonataMediaBundle with CKEditor",
+            "homepage": "http://les-tilleuls.coop",
+            "keywords": [
+                "CKEditor",
+                "file",
+                "image",
+                "media",
+                "sonata",
+                "upload"
+            ],
+            "time": "2013-10-30 14:32:50"
+        },
+        {
             "name": "twig/extensions",
             "version": "v1.0.0",
             "source": {
@@ -3000,7 +3056,8 @@
         "sonata-project/doctrine-orm-admin-bundle": 20,
         "sonata-project/intl-bundle": 20,
         "sonata-project/user-bundle": 20,
-        "sonata-project/news-bundle": 20
+        "sonata-project/news-bundle": 20,
+        "tilleuls/ckeditor-sonata-media-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

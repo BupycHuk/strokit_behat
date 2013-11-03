@@ -109,3 +109,22 @@ sonata_block:
         sonata.media.block.media:
         #sonata.media.block.gallery:
         #sonata.media.block.feature_media:
+
+ivory_ck_editor:
+ivory_ck_editor:
+    default_config: cke_config
+    configs:
+        cke_config:
+            filebrowserBrowseRoute: admin_sonata_media_media_browser
+            filebrowserImageBrowseRoute: admin_sonata_media_media_browser
+            # Display images by default when clicking the image dialog browse button
+            filebrowserImageBrowseRouteParameters:
+                provider: sonata.media.provider.image
+            filebrowserUploadRoute: admin_sonata_media_media_upload
+            filebrowserUploadRouteParameters:
+                provider: sonata.media.provider.file
+            # Upload file as image when sending a file from the image dialog
+            filebrowserImageUploadRoute: admin_sonata_media_media_upload
+            filebrowserImageUploadRouteParameters:
+                provider: sonata.media.provider.image
+                context: my-context # Optional, to upload in a custom context

@@ -11,6 +11,10 @@ sonata_news:
             from:     no-reply@cms.kg
             template: 'SonataNewsBundle:Mail:comment_notification.txt.twig'
 
+    admin:
+        post:
+            class : 'Application\Sonata\NewsBundle\Admin\PostAdmin'
+
 doctrine:
     orm:
       mappings:
