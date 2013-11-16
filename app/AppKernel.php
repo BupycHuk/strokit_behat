@@ -37,6 +37,9 @@ class AppKernel extends Kernel
             new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             new CoopTilleuls\Bundle\CKEditorSonataMediaBundle\CoopTilleulsCKEditorSonataMediaBundle(),
+            new Sonata\ClassificationBundle\SonataClassificationBundle(),
+            new SunCat\MobileDetectBundle\MobileDetectBundle(),
+            new Strokit\CoreBundle\StrokitCoreBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
