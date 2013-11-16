@@ -1,3 +1,7 @@
+strokit_core:
+    resource: "@StrokitCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
 
