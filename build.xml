@@ -1,0 +1,97 @@
+<project name="Nurix" basedir=".">
+    <description>
+        simple example build file
+    </description>
+    <!-- set global properties for this build -->
+    <property name="config" location="app/config"/>
+    <property name="property" location="app/config/parameters.yml"/>
+    <property name="appdir" location="app"/>
+    <property name="appcachedir" location="app/cache"/>
+    <property name="makedir" location="${dest_dir}/web/uploads"/>
+    <property name="bundledir" location="web/bundles"/>
+
+    <target name="replace">
+        <replace file="${config}/sonata/media.yml" value="/uploads/media">
+            <replacetoken>/nurix/web/uploads/media</replacetoken>
+        </replace>
+    </target>
+
+    <target name="parameters">
+        <copy file="${config}/parameters.yml.dist" tofile="${config}/parameters.yml"/>
+    </target>
+
+    <target name="mail" depends="parameters">
+        <replace file="${property}" value="mailer_transport:  gmail">
+            <replacetoken>mailer_transport: smtp</replacetoken>
+        </replace>
+        <replace file="${property}" value="mailer_host: null">
+            <replacetoken>mailer_host: localhost</replacetoken>
+        </replace>
+        <replace file="${property}" value="mailer_user: ${mail_login}">
+            <replacetoken>mailer_user: null</replacetoken>
+        </replace>
+        <replace file="${property}" value="mailer_password: ${mail_password}">
+            <replacetoken>mailer_password: null</replacetoken>
+        </replace>
+    </target>
+
+    <target name="clean" description="clean up" >
+        <!-- Delete the ${cache} directory trees -->
+        <delete dir="${dest_dir}/${appcachedir}/prod"/>
+        <delete dir="${dest_dir}/${bundledir}"/>
+        <delete dir="${dest_dir}/${appdir}"/>
+        <delete dir="${dest_dir}/vendor"/>
+        <delete dir="${dest_dir}/src"/>
+    </target>
+
+    <target name="-check-dir-exists">
+        <condition property="makedir.exists">
+            <not>
+                <available file="${makedir}" type="dir"/>
+            </not>
+        </condition>
+        <condition property="destdir.exists">
+            <not>
+                <available file="${dest_dir}" type="dir"/>
+            </not>
+        </condition>
+    </target>
+    <target name="makedir"  depends="-check-dir-exists" if="makedir.exists" description="make upload dir" >
+        <!-- Delete the ${cache} directory trees -->
+        <mkdir dir="${makedir}"/>
+    </target>
+    <target name="makedestdir"  depends="-check-dir-exists" if="destdir.exists" description="make upload dir" >
+        <!-- Delete the ${cache} directory trees -->
+        <mkdir dir="${dest_dir}"/>
+        <copy todir="${dest_dir}">
+            <fileset dir=""/>
+        </copy>
+    </target>
+    <target name="db">
+        <replace file="${property}" value="database_name: ${db_name}">
+            <replacetoken>database_name: db_name</replacetoken>
+        </replace>
+        <replace file="${property}" value="database_user: ${db_user}">
+            <replacetoken>database_user: root</replacetoken>
+        </replace>
+        <replace file="${property}" value="database_password: ${db_password}">
+            <replacetoken>database_password: null</replacetoken>
+        </replace>
+    </target>
+
+    <target name="deploy" depends="clean">
+        <copy todir="${dest_dir}/web/bundles">
+            <fileset dir="web/bundles"/>
+        </copy>
+        <copy todir="${dest_dir}/app">
+            <fileset dir="app"/>
+        </copy>
+        <copy todir="${dest_dir}/vendor">
+            <fileset dir="vendor"/>
+        </copy>
+        <copy todir="${dest_dir}/src">
+            <fileset dir="src"/>
+        </copy>
+
+    </target>
+</project>
