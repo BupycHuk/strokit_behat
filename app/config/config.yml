@@ -144,3 +144,7 @@ mobile_detect:
         mobile: ~
         tablet: ~
     switch_device_view: ~
+
+gregwar_captcha:
+    quality: 20
+    distortion: false
