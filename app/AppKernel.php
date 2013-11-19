@@ -57,6 +57,8 @@ class AppKernel extends Kernel
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             //Strokit Core
             new Strokit\CoreBundle\StrokitCoreBundle(),
+            //Info
+            new Info\FeedbackBundle\InfoFeedbackBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

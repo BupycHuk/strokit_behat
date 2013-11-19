@@ -1,0 +1,11 @@
+Info\FeedbackBundle\Entity\Feedback:
+    properties:
+        message:
+            - NotBlank:
+                message: default.not_blank
+        email:
+            - NotBlank:
+                message: default.not_blank
+            - Email:
+                message: default.email
+                checkMX: true
