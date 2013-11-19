@@ -8,6 +8,7 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         $bundles = array(
+            //framework bundles
             new Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
             new Symfony\Bundle\SecurityBundle\SecurityBundle(),
             new Symfony\Bundle\TwigBundle\TwigBundle(),
@@ -16,29 +17,45 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            //js Routing
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            //users
             new FOS\UserBundle\FOSUserBundle(),
-            new Sonata\IntlBundle\SonataIntlBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            //sonata bundles
+            new Sonata\IntlBundle\SonataIntlBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
-            new Sonata\AdminBundle\SonataAdminBundle(),
-            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
-            new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
-            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
-            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
-            new Sonata\NewsBundle\SonataNewsBundle(),
-            new Sonata\MediaBundle\SonataMediaBundle(),
             new Sonata\FormatterBundle\SonataFormatterBundle(),
-            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+            new Sonata\ClassificationBundle\SonataClassificationBundle(),
+            //sonata blog
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            //news
+            new Sonata\NewsBundle\SonataNewsBundle(),
+            //media
+            new Sonata\MediaBundle\SonataMediaBundle(),
+            //sonata admin
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            //menu
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            //ckeditor
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
+            new CoopTilleuls\Bundle\CKEditorSonataMediaBundle\CoopTilleulsCKEditorSonataMediaBundle(),
+            //paginator
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            //mobile
+            new SunCat\MobileDetectBundle\MobileDetectBundle(),
+            //captcha
+            new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
+
+            new Knp\Bundle\MarkdownBundle\KnpMarkdownBundle(),
+            //application
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
             new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
-            new CoopTilleuls\Bundle\CKEditorSonataMediaBundle\CoopTilleulsCKEditorSonataMediaBundle(),
-            new Sonata\ClassificationBundle\SonataClassificationBundle(),
-            new SunCat\MobileDetectBundle\MobileDetectBundle(),
+            //Strokit Core
             new Strokit\CoreBundle\StrokitCoreBundle(),
         );
 
