@@ -1,0 +1,3 @@
+default:
+    not_blank: Please enter an author name.
+    not_blank: The email "{{ value }}" is not a valid email.
