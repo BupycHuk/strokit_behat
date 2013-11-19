@@ -1,0 +1,18 @@
+parameters:
+#    info_map.example.class: Info\MapBundle\Example
+
+services:
+#    info_map.example:
+#        class: %info_map.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+services:
+    info_map.admin.terminal:
+        class: Info\MapBundle\Admin\TerminalAdmin
+        arguments: [~, Info\MapBundle\Entity\Terminal, InfoMapBundle:TerminalAdmin,@sonata.media.pool]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: Terminal}
+
+    info_map.type.mapfield:
+        class: Info\MapBundle\Type\MapType
+        tags:
+            - { name: form.type, alias: mapfield }
