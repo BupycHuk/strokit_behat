@@ -1,0 +1,26 @@
+Info\MapBundle\Entity\Terminal:
+    type: entity
+    table: null
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        location:
+            type: string
+            length: 100
+        address:
+            type: string
+            length: 160
+        description:
+            type: string
+            length: 160
+    oneToOne:
+        image:
+            targetEntity: Application\Sonata\MediaBundle\Entity\Media
+            joinColumns:
+                image_id:
+                    referencedColumnName: id
+            orphanRemoval: true
+    lifecycleCallbacks: {  }
