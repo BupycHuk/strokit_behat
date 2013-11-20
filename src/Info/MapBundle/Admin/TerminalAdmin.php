@@ -52,7 +52,7 @@ class TerminalAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('location','mapfield')
+            ->add('location','map')
             ->add('address')
             ->add('description')
             ->add('image', 'sonata_type_model_list', array('required' => false), array(

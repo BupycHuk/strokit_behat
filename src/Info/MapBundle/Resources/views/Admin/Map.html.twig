@@ -1,5 +1,19 @@
-{% block sdf_widget %}
+{% block map_widget %}
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzZmU7d-k1MOBBKGHrer-y4ssG4Dgvb7E&sensor=true">
+    </script>
+    <script type="text/javascript">
+        function initialize() {
+            var mapOptions = {
+                center: new google.maps.LatLng(-34.397, 150.644),
+                zoom: 8
+            };//TODO: править тут
+            var map = new google.maps.Map(document.getElementById("map-canvas-{{ form.vars['guid'] }}"),
+                    mapOptions);
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
     {% spaceless %}
-        {{ block('textarea_widget') }}
+        <div id="map-canvas-{{ form.vars['guid'] }}" class="span5" style="min-height: 100px;height: 200px"></div>
     {% endspaceless %}
 {% endblock %}
