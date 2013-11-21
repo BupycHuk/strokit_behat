@@ -148,3 +148,6 @@ mobile_detect:
 gregwar_captcha:
     quality: 20
     distortion: false
+
+sonata_admin:
+    title: Elsom
