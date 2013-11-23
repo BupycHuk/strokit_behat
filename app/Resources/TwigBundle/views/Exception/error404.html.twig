@@ -1,0 +1,7 @@
+{% extends "TwigBundle::layout.html.twig" %}
+
+{% block title %}{{ 'error_page.an_error_occurred'|trans({}, 'StrokitCoreBundle') }}: {{ status_text }}{% endblock %}
+{% block body %}
+    <h1>{{ 'error_page.an_error_occurred_title'|trans({}, 'StrokitCoreBundle') }}</h1>
+    <h2>{{ 'error_page.error404'|trans({}, 'StrokitCoreBundle') }}</h2>
+{% endblock %}
