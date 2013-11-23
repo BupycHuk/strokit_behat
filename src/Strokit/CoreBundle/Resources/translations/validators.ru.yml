@@ -1,0 +1,3 @@
+default:
+    not_blank: Пожалуйста, заполните это поле
+    email: Не верный email
