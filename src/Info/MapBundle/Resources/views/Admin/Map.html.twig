@@ -1,50 +1,18 @@
 {% block map_widget %}
     <script type="text/javascript"
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBzZmU7d-k1MOBBKGHrer-y4ssG4Dgvb7E&sensor=true">
-    </script>
+            src="https://maps.googleapis.com/maps/api/js?key={{ form.vars['googleMapKey'] }}&sensor=true"></script>
+    <script type="text/javascript" src="{{ asset("/bundles/infomap/js/googleMapAdmin.js") }}"></script>
     <script type="text/javascript">
-        function initialize() {
-            var loc;
-            var lat;
-            var lng;
-            {% if form.vars['value'] %}
-                var input = "{{ form.vars['value'] }}";
-                input = input.replace('(','');
-                var latlngStr = input.split(",",2);
-                lat = parseFloat(latlngStr[0]);
-                lng = parseFloat(latlngStr[1]);
+        google.maps.event.addDomListener(window, 'load', function () {
+            initialize("{{ form.vars['id'] }}",
+                    {% if form.vars['value'] %} "{{ form.vars['value'] }}"
             {% else %}
-                lat = 42.87797684287408;
-                lng = 74.607253074646;
-            {% endif %}
-            loc = new google.maps.LatLng(lat, lng);
-            $("#{{ form.vars['id'] }}").val(loc);
-
-            var mapOptions = {
-                center: loc,
-                zoom: 10,
-                draggableCursor:'crosshair'
-            };
-
-            var map = new google.maps.Map(document.getElementById("map-canvas-{{ form.vars['id'] }}"),mapOptions);
-
-
-            var marker = new google.maps.Marker({
-                position: loc,
-                map: map
-            });
-
-            google.maps.event.addListener(map, 'click', function(event) {
-                marker.setPosition(event.latLng);
-                map.setCenter(event.latLng);
-                $("#{{ form.vars['id'] }}").val(event.latLng);
-            });
-        }
-        google.maps.event.addDomListener(window, 'load', initialize);
-
+            null
+            {% endif %} )
+            ;
+        });
     </script>
-    {% spaceless %}
-        <div id="map-canvas-{{ form.vars['id'] }}" class="span5" style="min-height: 100px;height: 200px"></div>
-        <input type="hidden" {{ block('widget_attributes') }}/>
-    {% endspaceless %}
+    <link href="{{ asset("/bundles/infomap/css/admin.css") }}" rel="stylesheet"/>
+    <div id="map-canvas-{{ form.vars['id'] }}" class="span5 height250"></div>
+    <input type="hidden" {{ block('widget_attributes') }}/>
 {% endblock %}

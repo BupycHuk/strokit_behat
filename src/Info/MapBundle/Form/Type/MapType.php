@@ -27,8 +27,20 @@ class MapType extends AbstractType
             // Pass errors to the parent
             'error_bubbling' => true,
             'compound'       => false,
+            'googleMapKey'   => 'someGoogleMapApiKey'
         ));
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function buildView(FormView $view, FormInterface $form, array $options)
+    {
+        if ($options['googleMapKey']) {
+            $view->vars['googleMapKey'] = $options['googleMapKey'];
+        }
+    }
+
     public function parent()
     {
         return 'hidden';

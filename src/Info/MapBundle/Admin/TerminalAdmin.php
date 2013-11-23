@@ -18,18 +18,21 @@ class TerminalAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('id')
-            ->add('location')
+            ->addIdentifier('id')
+            ->addIdentifier('address')
+            ->add('description');
+    }
+
+
+    /**
+     * @param DatagridMapper $filter
+     */
+    protected function configureDatagridFilters(DatagridMapper $filter)
+    {
+        $filter
             ->add('address')
             ->add('description')
-            ->add('_action', 'actions', array(
-                'actions' => array(
-                    'show' => array(),
-                    'edit' => array(),
-                    'delete' => array(),
-                )
-            ))
-        ;
+            ->add('id');
     }
 
     /**
@@ -38,7 +41,7 @@ class TerminalAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('location','map', array('required' => false))
+            ->add('location','map', array('googleMapKey' => "AIzaSyBzZmU7d-k1MOBBKGHrer-y4ssG4Dgvb7E"))
             ->add('address')
             ->add('description')
             ->add('image', 'sonata_type_model_list', array('required' => false), array(
@@ -54,11 +57,13 @@ class TerminalAdmin extends Admin
     {
         $showMapper
             ->add('id')
-            ->add('location')
+            ->add('location','map')
             ->add('address')
             ->add('description')
         ;
     }
+
+
     public function getFormTheme() {
         return array_merge(parent::getFormTheme(),array('InfoMapBundle:Admin:Map.html.twig'));
     }
