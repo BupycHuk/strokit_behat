@@ -1,6 +1,6 @@
 terminal:
     admin:
-        label: Терминалы
+        label: РТ/ЦОП
 
 list:
     label_id: Id
@@ -14,7 +14,7 @@ filter:
     label_description:  Описание
 
 breadcrumb:
-    link_terminal_list: Список терминалов
+    link_terminal_list: Список РТ/ЦОП
 
 form:
     label_location: Местоположение на карте
