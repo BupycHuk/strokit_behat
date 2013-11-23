@@ -11,20 +11,6 @@ use Sonata\MediaBundle\Provider\Pool;
 
 class TerminalAdmin extends Admin
 {
-    protected $pool;
-
-    /**
-     * @param string                            $code
-     * @param string                            $class
-     * @param string                            $baseControllerName
-     * @param \Sonata\MediaBundle\Provider\Pool $pool
-     */
-    public function __construct($code, $class, $baseControllerName, Pool $pool)
-    {
-        parent::__construct($code, $class, $baseControllerName);
-
-        $this->pool = $pool;
-    }
 
     /**
      * @param ListMapper $listMapper
@@ -52,7 +38,7 @@ class TerminalAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
-            ->add('location','map')
+            ->add('location','map', array('required' => false))
             ->add('address')
             ->add('description')
             ->add('image', 'sonata_type_model_list', array('required' => false), array(

@@ -4,16 +4,47 @@
     </script>
     <script type="text/javascript">
         function initialize() {
+            var loc;
+            var lat;
+            var lng;
+            {% if form.vars['value'] %}
+                var input = "{{ form.vars['value'] }}";
+                input = input.replace('(','');
+                var latlngStr = input.split(",",2);
+                lat = parseFloat(latlngStr[0]);
+                lng = parseFloat(latlngStr[1]);
+            {% else %}
+                lat = 42.87797684287408;
+                lng = 74.607253074646;
+            {% endif %}
+            loc = new google.maps.LatLng(lat, lng);
+            $("#{{ form.vars['id'] }}").val(loc);
+
             var mapOptions = {
-                center: new google.maps.LatLng(-34.397, 150.644),
-                zoom: 8
-            };//TODO: править тут
-            var map = new google.maps.Map(document.getElementById("map-canvas-{{ form.vars['guid'] }}"),
-                    mapOptions);
+                center: loc,
+                zoom: 10,
+                draggableCursor:'crosshair'
+            };
+
+            var map = new google.maps.Map(document.getElementById("map-canvas-{{ form.vars['id'] }}"),mapOptions);
+
+
+            var marker = new google.maps.Marker({
+                position: loc,
+                map: map
+            });
+
+            google.maps.event.addListener(map, 'click', function(event) {
+                marker.setPosition(event.latLng);
+                map.setCenter(event.latLng);
+                $("#{{ form.vars['id'] }}").val(event.latLng);
+            });
         }
         google.maps.event.addDomListener(window, 'load', initialize);
+
     </script>
     {% spaceless %}
-        <div id="map-canvas-{{ form.vars['guid'] }}" class="span5" style="min-height: 100px;height: 200px"></div>
+        <div id="map-canvas-{{ form.vars['id'] }}" class="span5" style="min-height: 100px;height: 200px"></div>
+        <input type="hidden" {{ block('widget_attributes') }}/>
     {% endspaceless %}
 {% endblock %}
