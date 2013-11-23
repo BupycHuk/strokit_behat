@@ -23,7 +23,7 @@ class MapType extends AbstractType
     {
         $resolver->setDefaults(array(
             // hidden fields cannot have a required attribute
-            'required'       => false,
+            'required'       => true,
             // Pass errors to the parent
             'error_bubbling' => true,
             'compound'       => false,
