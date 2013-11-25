@@ -58,6 +58,7 @@ class AppKernel extends Kernel
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
             //Strokit Core
             new Strokit\CoreBundle\StrokitCoreBundle(),
+            new Info\MapBundle\InfoMapBundle(),
             //Info
             new Info\FeedbackBundle\InfoFeedbackBundle()
         );

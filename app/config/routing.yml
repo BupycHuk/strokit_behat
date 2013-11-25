@@ -1,3 +1,7 @@
+info_map:
+    resource: "@InfoMapBundle/Resources/config/routing.yml"
+    prefix:   /
+
 info_feedback:
     resource: "@InfoFeedbackBundle/Resources/config/routing.yml"
     prefix:   /

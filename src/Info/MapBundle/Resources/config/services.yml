@@ -1,0 +1,19 @@
+parameters:
+#    info_map.example.class: Info\MapBundle\Example
+
+services:
+    info_map.admin.terminal:
+        class: Info\MapBundle\Admin\TerminalAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "map.admin.content", label: "terminal.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Info\MapBundle\Entity\Terminal
+            - InfoMapBundle:TerminalAdmin
+        calls:
+            - [ setTranslationDomain, [InfoMapBundle]]
+
+    info_map.type.map:
+        class: Info\MapBundle\Form\Type\MapType
+        tags:
+            - { name: form.type, alias: map }

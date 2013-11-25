@@ -370,6 +370,10 @@
               <source>short_object_description_placeholder</source>
               <target>No selection</target>
             </trans-unit>
+            <trans-unit id="map.admin.content">
+              <source>map.admin.content</source>
+              <target>Maps</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

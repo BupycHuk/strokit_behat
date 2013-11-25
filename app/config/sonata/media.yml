@@ -19,6 +19,14 @@ sonata_media:
             formats:
                 small: { width: 190 , quality: 95}
                 big:   { width: 500 , quality: 90}
+
+        map:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 190 , quality: 95}
+                big:   { width: 500 , quality: 90}
     cdn:
         server:
             path: /uploads/media # http://media.sonata-project.org/

@@ -1,0 +1,20 @@
+terminal:
+    admin:
+        label: Terminals
+
+list:
+    label_id: Id
+    label_address:  Address
+    label_description:  Description
+    label__action: Action
+
+breadcrumb:
+    link_terminal_list: Terminal list
+
+form:
+    label_location: Location
+    label_id: Id
+    label_address:  Address
+    label_description:  Description
+    label__action: Action
+    label_image: Image

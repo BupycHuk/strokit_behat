@@ -1,0 +1,24 @@
+terminal:
+    admin:
+        label: РТ/ЦОП
+
+list:
+    label_id: Id
+    label_address:  Адрес
+    label_description:  Описание
+    label__action: Действия
+
+filter:
+    label_id: Id
+    label_address:  Адрес
+    label_description:  Описание
+
+breadcrumb:
+    link_terminal_list: Список РТ/ЦОП
+
+form:
+    label_location: Местоположение на карте
+    label_id: Id
+    label_address:  Адрес
+    label_description:  Описание
+    label_image: Изображение
