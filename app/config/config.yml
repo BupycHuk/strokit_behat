@@ -64,6 +64,7 @@ doctrine:
         mappings:
             ApplicationSonataUserBundle: ~
             SonataUserBundle: ~
+            SonataMediaBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -151,3 +152,5 @@ gregwar_captcha:
 
 sonata_admin:
     title: Elsom
+    templates:
+        layout:  StrokitCoreBundle::admin_layout.html.twig
