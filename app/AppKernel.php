@@ -59,7 +59,8 @@ class AppKernel extends Kernel
             //Strokit Core
             new Strokit\CoreBundle\StrokitCoreBundle(),
             //Info
-            new Info\FeedbackBundle\InfoFeedbackBundle()
+            new Info\FeedbackBundle\InfoFeedbackBundle(),
+            new Info\FAQBundle\InfoFAQBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
