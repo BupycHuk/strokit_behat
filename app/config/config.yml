@@ -151,6 +151,8 @@ gregwar_captcha:
     distortion: false
 
 sonata_admin:
+    security:
+        handler: sonata.admin.security.handler.acl
     title: Elsom
     templates:
         layout:  StrokitCoreBundle::admin_layout.html.twig
