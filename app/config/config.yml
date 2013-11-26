@@ -150,6 +150,8 @@ gregwar_captcha:
     distortion: false
 
 sonata_admin:
+    security:
+        handler: sonata.admin.security.handler.acl
     title: StrOkIT
     templates:
         layout:  StrokitCoreBundle::admin_layout.html.twig
