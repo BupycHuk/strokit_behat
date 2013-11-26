@@ -2,6 +2,10 @@ terminal:
     admin:
         label: РТ/ЦОП
 
+merchant:
+    admin:
+        label: Мерчанты
+
 list:
     label_id: Id
     label_address:  Адрес
@@ -15,6 +19,7 @@ filter:
 
 breadcrumb:
     link_terminal_list: Список РТ/ЦОП
+    link_merchant_list: Список мерчантов
 
 form:
     label_location: Местоположение на карте

@@ -43,7 +43,7 @@ class TerminalAdmin extends Admin
         $formMapper
             ->add('location','map', array('googleMapKey' => "AIzaSyBzZmU7d-k1MOBBKGHrer-y4ssG4Dgvb7E"))
             ->add('address')
-            ->add('description')
+            ->add('description','textarea')
             ->add('image', 'sonata_type_model_list', array('required' => false), array(
                 'link_parameters' => array('context'=>'map')
             ))

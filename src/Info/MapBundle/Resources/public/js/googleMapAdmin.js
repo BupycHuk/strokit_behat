@@ -22,7 +22,6 @@ function getLocation(value) {
 
 function initialize(id,value) {
     var loc = getLocation(value);
-    $("#" + id).val(loc);
 
     var mapOptions = {
         center: loc,
@@ -31,7 +30,6 @@ function initialize(id,value) {
     };
 
     var map = new google.maps.Map(document.getElementById("map-canvas-"+id), mapOptions);
-
 
     var marker = new google.maps.Marker({
         position: loc,
