@@ -1,3 +1,8 @@
 feedback:
     admin:
         label: Обратная связь
+breadcrumb.link_feedback_list: Список вопросов
+filter:
+    label_email: email
+    label_phone: Номер
+    label_created_at: Дата создания
