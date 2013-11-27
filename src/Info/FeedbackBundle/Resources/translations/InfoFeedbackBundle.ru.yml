@@ -6,3 +6,7 @@ filter:
     label_email: email
     label_phone: Номер
     label_created_at: Дата создания
+list:
+    label__action:  Действия
+
+action_answer:  Ответить

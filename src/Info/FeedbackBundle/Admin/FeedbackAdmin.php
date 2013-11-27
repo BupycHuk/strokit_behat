@@ -55,6 +55,11 @@ class FeedbackAdmin extends Admin {
             ))
             ->add('answered', null, array('label'=>"Ответили"))
             ->add('createdAt', null, array('label'=>"Дата создания"))
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'answer' => array('template' => 'InfoFeedbackBundle:FeedbackAdmin:list__action_answer.html.twig'),
+                )
+            ))
         ;
     }
 
