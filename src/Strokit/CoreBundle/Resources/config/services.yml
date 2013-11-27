@@ -8,3 +8,7 @@ services:
     templating.engine.twig:
         class: Strokit\CoreBundle\Twig\TwigEngine
         arguments: ["@twig","@templating.name_parser","@templating.locator","@mobile_detect.mobile_detector"]
+
+    strokit_mailer:
+        class: Strokit\CoreBundle\Mailer\Mailer
+        arguments: [@mailer, @twig]
