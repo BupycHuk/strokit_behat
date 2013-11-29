@@ -153,6 +153,8 @@ gregwar_captcha:
 sonata_admin:
     security:
         handler: sonata.admin.security.handler.acl
+        information:
+            ADMIN:    [MASTER]
     title: Elsom
     templates:
         layout:  StrokitCoreBundle::admin_layout.html.twig
