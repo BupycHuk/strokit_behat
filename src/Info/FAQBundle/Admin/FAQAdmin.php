@@ -16,19 +16,21 @@ use Sonata\AdminBundle\Route\RouteCollection;
 
 class FAQAdmin extends Admin{
 
-    protected $translationDomain = 'InfoFAQ1Bundle';
+
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+
             ->add('name')
-        ;
+            ;
     }
     // Fields to be shown on lists
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
             ->addIdentifier('id')
-            ->add('name', null, array('label'=>"Название раздела"))
+            ->addIdentifier('name', null, array('label'=>"Название раздела"))
+
         ;
     }
 

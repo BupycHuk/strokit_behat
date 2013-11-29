@@ -14,7 +14,7 @@ use Sonata\AdminBundle\Controller\CRUDController;
 
 class FAQAdminController extends CRUDController{
 
-    public function sectionAction(Request $request)
+    public function answerAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository("InfoFAQBundle:FaqSections")->find($request->query->get('id',0));

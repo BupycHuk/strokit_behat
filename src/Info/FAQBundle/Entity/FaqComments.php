@@ -22,11 +22,18 @@ class FaqComments
     private $id;
 
     /**
+     * @var boolean $active
+     *
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    private $active;
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="com_contents", type="text", nullable=true)
+     * @ORM\Column(name="content", type="text", nullable=true)
      */
-    private $comContents;
+    private $content;
 
     /**
      * @var \DateTime
@@ -58,14 +65,14 @@ class FaqComments
     }
 
     /**
-     * Set comContents
+     * Set content
      *
-     * @param string $comContents
+     * @param string $content
      * @return FaqComments
      */
-    public function setComContents($comContents)
+    public function setContent($content)
     {
-        $this->comContents = $comContents;
+        $this->content= $content;
     
         return $this;
     }
@@ -75,9 +82,9 @@ class FaqComments
      *
      * @return string 
      */
-    public function getComContents()
+    public function getContents()
     {
-        return $this->comContents;
+        return $this->content;
     }
 
     /**

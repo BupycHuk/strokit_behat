@@ -47,10 +47,10 @@ class FaqQuestionsAnswers
      *
      * @ORM\ManyToOne(targetEntity="FaqSections")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="razdel_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="section_id", referencedColumnName="id")
      * })
      */
-    private $razdel;
+    private $section;
 
 
 
