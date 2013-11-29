@@ -6,12 +6,22 @@ services:
 #        class: %info_faq.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
     sonata.admin.faq:
-        class: Info\FAQBundle\Admin\FAQAdmin
+        class: Info\FAQBundle\Admin\FAQSectionsAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "faq.admin.content", label: "faqsections.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+            - { name: sonata.admin, manager_type: orm, group: "faq.admin.content", label: "faq_sections.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - Info\FAQBundle\Entity\FaqSections
-            - InfoFAQBundle:FAQAdmin
+            - InfoFAQBundle:FAQSectionsAdmin
         calls:
             - [ setTranslationDomain, [InfoFAQBundle]]
+    sonata.questions_answers.faq:
+            class: Info\FAQBundle\Admin\FAQQuestionsAnswersAdmin
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: "faq.admin.content", label: "faq_answers_questions.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+            arguments:
+                - ~
+                - Info\FAQBundle\Entity\FaqQuestionsAnswers
+                - InfoFAQBundle:FAQQuestionsAnswersAdmin
+            calls:
+                - [ setTranslationDomain, [InfoFAQBundle]]

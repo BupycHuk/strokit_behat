@@ -22,6 +22,13 @@ class FaqQuestionsAnswers
     private $id;
 
     /**
+     * @var boolean $active
+     *
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    private $active;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="question", type="text", nullable=true)
@@ -134,25 +141,55 @@ class FaqQuestionsAnswers
     }
 
     /**
-     * Set razdel
+     * Set section
      *
-     * @param \Info\FAQBundle\Entity\FaqSections $razdel
+     * @param \Info\FAQBundle\Entity\FaqSections $section
      * @return FaqQuestionsAnswers
      */
-    public function setRazdel(\Info\FAQBundle\Entity\FaqSections $razdel = null)
+    public function setSection(\Info\FAQBundle\Entity\FaqSections $section = null)
     {
-        $this->razdel = $razdel;
+        $this->section = $section;
     
         return $this;
     }
 
     /**
-     * Get razdel
+     * Get section
      *
      * @return \Info\FAQBundle\Entity\FaqSections 
      */
-    public function getRazdel()
+    public function getSection()
     {
-        return $this->razdel;
+        return $this->section;
+    }
+
+//    public function __toString()
+//    {
+//        return $this->getSection()?$this->getSection():"";
+//    }
+
+
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return FaqQuestionsAnswers
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+    
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
     }
 }

@@ -14,7 +14,7 @@ use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Route\RouteCollection;
 
-class FAQAdmin extends Admin{
+class FAQSectionsAdmin extends Admin{
 
 
     protected function configureFormFields(FormMapper $formMapper)
@@ -33,6 +33,4 @@ class FAQAdmin extends Admin{
 
         ;
     }
-
-
 }

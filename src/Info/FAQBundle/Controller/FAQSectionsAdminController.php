@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Request;
 use Sonata\AdminBundle\Controller\CRUDController;
 
-class FAQAdminController extends CRUDController{
+class FAQSectionsAdminController extends CRUDController{
 
     public function answerAction(Request $request)
     {
