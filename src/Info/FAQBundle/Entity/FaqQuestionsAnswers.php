@@ -163,13 +163,6 @@ class FaqQuestionsAnswers
         return $this->section;
     }
 
-//    public function __toString()
-//    {
-//        return $this->getSection()?$this->getSection():"";
-//    }
-
-
-
     /**
      * Set active
      *
