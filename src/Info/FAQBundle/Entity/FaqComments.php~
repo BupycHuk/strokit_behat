@@ -22,11 +22,25 @@ class FaqComments
     private $id;
 
     /**
+     * @var boolean $active
+     *
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    private $active;
+
+    /**
      * @var string
      *
-     * @ORM\Column(name="com_contents", type="text", nullable=true)
+     * @ORM\Column(name="email", type="string", length=250, nullable=false)
      */
-    private $comContents;
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="content", type="text", nullable=true)
+     */
+    private $content;
 
     /**
      * @var \DateTime
@@ -46,4 +60,83 @@ class FaqComments
     private $questions;
 
 
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     * @return FaqComments
+     */
+    public function setContent($content)
+    {
+        $this->content= $content;
+    
+        return $this;
+    }
+
+    /**
+     * Get comContents
+     *
+     * @return string 
+     */
+    public function getContents()
+    {
+        return $this->content;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return FaqComments
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set questions
+     *
+     * @param \Info\FAQBundle\Entity\FaqQuestionsAnswers $questions
+     * @return FaqComments
+     */
+    public function setQuestions(\Info\FAQBundle\Entity\FaqQuestionsAnswers $questions = null)
+    {
+        $this->questions = $questions;
+    
+        return $this;
+    }
+
+    /**
+     * Get questions
+     *
+     * @return \Info\FAQBundle\Entity\FaqQuestionsAnswers 
+     */
+    public function getQuestions()
+    {
+        return $this->questions;
+    }
 }

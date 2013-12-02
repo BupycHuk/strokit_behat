@@ -1,4 +1,34 @@
-faq:
+faq_sections:
     admin:
-        content: Разделы
         label: Разделы
+
+faq_answers_questions:
+      admin:
+        label: Вопросы-Ответы
+
+faq_comments:
+        admin:
+          label: Комментарии
+
+list:
+    label_id: Id
+
+list:
+  label_email: email
+
+form:
+  label_name: Название раздела
+
+breadcrumb:
+    link_faq_sections_list: Список разделов
+
+breadcrumb:
+    link_faq_questions_answers_list: Список вопросов и ответов
+
+list:
+  label_email: email
+
+list:
+   label__action: Действия
+
+action_answer: Ответить

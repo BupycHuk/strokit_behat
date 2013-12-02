@@ -94,6 +94,11 @@ class FaqQuestionsAnswers
         return $this->question;
     }
 
+    public function __toString()
+    {
+        return $this->getQuestion()?$this->getQuestion():"";
+    }
+
     /**
      * Set answer
      *

@@ -31,6 +31,13 @@ class FaqComments
     /**
      * @var string
      *
+     * @ORM\Column(name="email", type="string", length=250, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="content", type="text", nullable=true)
      */
     private $content;
@@ -42,15 +49,19 @@ class FaqComments
      */
     private $date;
 
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
     /**
      * @var \FaqQuestionsAnswers
      *
      * @ORM\ManyToOne(targetEntity="FaqQuestionsAnswers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="questions_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="question_id", referencedColumnName="id")
      * })
      */
-    private $questions;
+    private $question;
 
 
 
@@ -111,25 +122,82 @@ class FaqComments
     }
 
     /**
-     * Set questions
+     * Set question
      *
-     * @param \Info\FAQBundle\Entity\FaqQuestionsAnswers $questions
+     * @param \Info\FAQBundle\Entity\FaqQuestionsAnswers $question
      * @return FaqComments
      */
-    public function setQuestions(\Info\FAQBundle\Entity\FaqQuestionsAnswers $questions = null)
+    public function setQuestions(\Info\FAQBundle\Entity\FaqQuestionsAnswers $question = null)
     {
-        $this->questions = $questions;
+        $this->question = $question;
     
         return $this;
     }
 
     /**
-     * Get questions
+     * Get question
      *
      * @return \Info\FAQBundle\Entity\FaqQuestionsAnswers 
      */
-    public function getQuestions()
+    public function getQuestion()
     {
-        return $this->questions;
+        return $this->question;
+    }
+
+
+    /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return FaqComments
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+    
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * Set email
+     *
+     * @param string $email
+     * @return FaqComments
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    
+        return $this;
+    }
+
+    /**
+     * Get email
+     *
+     * @return string 
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Get content
+     *
+     * @return string 
+     */
+    public function getContent()
+    {
+        return $this->content;
     }
 }

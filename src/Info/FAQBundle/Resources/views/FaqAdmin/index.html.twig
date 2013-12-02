@@ -1,0 +1,61 @@
+{% extends 'SonataAdminBundle::standard_layout.html.twig' %}
+
+{% block breadcrumb %}
+    <li>
+        <a href="{{ url('sonata_admin_dashboard') }}">{% trans %}Dashboard{% endtrans %}</a>
+        <span class="divider">/</span>
+    </li>
+    <li>
+        <a href="{{ admin.generateUrl('list') }}">{% trans %}Feedback List{% endtrans %}</a>
+        <span class="divider">/</span>
+    </li>
+    <li class="active">Форма комментария</li>
+{% endblock %}
+
+{% block title %}Комментарий{% endblock %}
+
+{% block content %}
+    {% for flash in app.session.flashbag.get('success') %}
+        <div class="alert {{ 'alert-success' }}">
+            {{ flash }}
+        </div>
+    {% endfor %}
+
+    <ul class="nav nav-tabs">
+        <li class="active">
+            <a href="javascript:void(0)" data-toggle="tab">
+                <i class="icon-exclamation-sign has-errors hide"></i>
+                Комментарий
+            </a>
+        </li>
+    </ul>
+    {{ form_start(form, {'attr': {'class': 'form-horizontal'} }) }}
+    {{ form_errors(form) }}
+    <div class="tab-content">
+        <div class="tab-pane  active">
+            <fieldset>
+                <h4>Вопрос от {{ entity.email }} {{ entity.date|date('d.m.Y') }}</h4>
+                <p>{{ entity.question }}</p>
+                {% if entity.active %}
+                    <h4>Комментарий от {{ entity.date|date('d.m.Y') }}:</h4>
+                    <p>{{ entity.content }}</p>
+                {% endif %}
+                <h4>Ответить</h4>
+                <div class="sonata-ba-collapsed-fields">
+                    <div class="control-group">
+                        {{ form_label(form.title,'', {'label_attr': {'class': 'control-label required'} }) }}
+                        <div class="controls sonata-ba-field sonata-ba-field-standard-natural">{{ form_widget(form.title, {'attr': {'class': 'span5'} }) }}</div>
+                    </div>
+                    <div class="control-group">
+                        {{ form_label(form.content, '', {'label_attr': {'class': 'control-label required'} }) }}
+                        <div class="controls sonata-ba-field sonata-ba-field-standard-natural">{{ form_widget(form.content, {'attr': {'class': 'span5', 'rows' : 15} }) }}</div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <div class="well form-actions">
+        <input class="btn btn-primary" type="submit" name="send" value="Оставить комментарий">
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

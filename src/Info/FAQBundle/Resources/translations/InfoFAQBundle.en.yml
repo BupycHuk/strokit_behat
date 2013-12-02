@@ -1,4 +1,32 @@
-faq:
+faq_sections:
     admin:
-        content: Sections
         label: Sections
+
+faq_answers_questions:
+      admin:
+        label: Answers-Questions
+
+faq_comments:
+        admin:
+          label: Comments
+
+list:
+    label_id: Id
+list:
+    label_email: email
+
+form:
+  label_name: Section name
+
+breadcrumb:
+    link_faq_sections_list: Sections list
+
+breadcrumb:
+    link_faq_questions_answers_list: Questions and answers list
+
+
+
+list:
+   label__action: Actions
+
+action_answer: Answer

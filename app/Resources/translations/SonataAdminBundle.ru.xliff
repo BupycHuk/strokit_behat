@@ -374,6 +374,10 @@
               <source>map.admin.content</source>
               <target>Карты</target>
             </trans-unit>
+            <trans-unit id="faq.admin.content">
+              <source>faq.admin.content</source>
+              <target>FAQ</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

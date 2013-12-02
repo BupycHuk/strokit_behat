@@ -8,7 +8,7 @@ services:
     sonata.sections.faq:
         class: Info\FAQBundle\Admin\FAQSectionsAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "faq.admin", label: "faq_sections.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+            - { name: sonata.admin, manager_type: orm, group: "faq.admin.content", label: "faq_sections.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
         arguments:
             - ~
             - Info\FAQBundle\Entity\FaqSections
@@ -18,7 +18,7 @@ services:
     sonata.questions_answers.faq:
             class: Info\FAQBundle\Admin\FAQQuestionsAnswersAdmin
             tags:
-                - { name: sonata.admin, manager_type: orm, group: "faq.admin", label: "faq_answers_questions.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+                - { name: sonata.admin, manager_type: orm, group: "faq.admin.content", label: "faq_answers_questions.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
             arguments:
                 - ~
                 - Info\FAQBundle\Entity\FaqQuestionsAnswers
@@ -28,7 +28,7 @@ services:
     sonata.comments.faq:
             class: Info\FAQBundle\Admin\FAQCommentsAdmin
             tags:
-                - { name: sonata.admin, manager_type: orm, group: "faq.admin", label: "faq_comments.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+                - { name: sonata.admin, manager_type: orm, group: "faq.admin.content", label: "faq_comments.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
             arguments:
                 - ~
                 - Info\FAQBundle\Entity\FaqComments
