@@ -1,0 +1,49 @@
+<?php
+
+namespace Info\FAQBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * FaqComments
+ *
+ * @ORM\Table(name="faq_comments")
+ * @ORM\Entity
+ */
+class FaqComments
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="com_contents", type="text", nullable=true)
+     */
+    private $comContents;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime", nullable=true)
+     */
+    private $date;
+
+    /**
+     * @var \FaqQuestionsAnswers
+     *
+     * @ORM\ManyToOne(targetEntity="FaqQuestionsAnswers")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="questions_id", referencedColumnName="id")
+     * })
+     */
+    private $questions;
+
+
+}
