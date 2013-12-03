@@ -22,13 +22,6 @@ class FaqQuestionsAnswers
     private $id;
 
     /**
-     * @var boolean $active
-     *
-     * @ORM\Column(name="active", type="boolean", nullable=true)
-     */
-    private $active;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="question", type="text", nullable=true)
@@ -48,6 +41,13 @@ class FaqQuestionsAnswers
      * @ORM\Column(name="date", type="datetime", nullable=true)
      */
     private $date;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="active", type="boolean", nullable=true)
+     */
+    private $active;
 
     /**
      * @var \FaqSections
@@ -92,11 +92,6 @@ class FaqQuestionsAnswers
     public function getQuestion()
     {
         return $this->question;
-    }
-
-    public function __toString()
-    {
-        return $this->getQuestion()?$this->getQuestion():"";
     }
 
     /**
@@ -146,6 +141,29 @@ class FaqQuestionsAnswers
     }
 
     /**
+     * Set active
+     *
+     * @param boolean $active
+     * @return FaqQuestionsAnswers
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
+    
+        return $this;
+    }
+
+    /**
+     * Get active
+     *
+     * @return boolean 
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
      * Set section
      *
      * @param \Info\FAQBundle\Entity\FaqSections $section
@@ -168,26 +186,8 @@ class FaqQuestionsAnswers
         return $this->section;
     }
 
-    /**
-     * Set active
-     *
-     * @param boolean $active
-     * @return FaqQuestionsAnswers
-     */
-    public function setActive($active)
+    public function __toString()
     {
-        $this->active = $active;
-    
-        return $this;
-    }
-
-    /**
-     * Get active
-     *
-     * @return boolean 
-     */
-    public function getActive()
-    {
-        return $this->active;
+        return $this->getQuestion()?$this->getQuestion():"";
     }
 }

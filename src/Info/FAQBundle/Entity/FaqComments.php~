@@ -22,7 +22,21 @@ class FaqComments
     private $id;
 
     /**
-     * @var boolean $active
+     * @var string
+     *
+     * @ORM\Column(name="answer", type="text", nullable=true)
+     */
+    private $answer;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime", nullable=true)
+     */
+    private $date;
+
+    /**
+     * @var boolean
      *
      * @ORM\Column(name="active", type="boolean", nullable=true)
      */
@@ -36,6 +50,13 @@ class FaqComments
     private $email;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="answered", type="boolean", nullable=false)
+     */
+    private $answered;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="content", type="text", nullable=true)
@@ -43,100 +64,14 @@ class FaqComments
     private $content;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="datetime", nullable=true)
-     */
-    private $date;
-
-    /**
      * @var \FaqQuestionsAnswers
      *
      * @ORM\ManyToOne(targetEntity="FaqQuestionsAnswers")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="questions_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="question_id", referencedColumnName="id")
      * })
      */
-    private $questions;
+    private $question;
 
 
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set content
-     *
-     * @param string $content
-     * @return FaqComments
-     */
-    public function setContent($content)
-    {
-        $this->content= $content;
-    
-        return $this;
-    }
-
-    /**
-     * Get comContents
-     *
-     * @return string 
-     */
-    public function getContents()
-    {
-        return $this->content;
-    }
-
-    /**
-     * Set date
-     *
-     * @param \DateTime $date
-     * @return FaqComments
-     */
-    public function setDate($date)
-    {
-        $this->date = $date;
-    
-        return $this;
-    }
-
-    /**
-     * Get date
-     *
-     * @return \DateTime 
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
-
-    /**
-     * Set questions
-     *
-     * @param \Info\FAQBundle\Entity\FaqQuestionsAnswers $questions
-     * @return FaqComments
-     */
-    public function setQuestions(\Info\FAQBundle\Entity\FaqQuestionsAnswers $questions = null)
-    {
-        $this->questions = $questions;
-    
-        return $this;
-    }
-
-    /**
-     * Get questions
-     *
-     * @return \Info\FAQBundle\Entity\FaqQuestionsAnswers 
-     */
-    public function getQuestions()
-    {
-        return $this->questions;
-    }
 }

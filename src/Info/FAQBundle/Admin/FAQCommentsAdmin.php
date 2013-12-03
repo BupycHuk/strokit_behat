@@ -34,11 +34,14 @@ class FAQCommentsAdmin extends Admin{
             ))
             ->add('question',null, array('label' => 'Вопрос'))
             ->add('content', null, array('label'=>"Комментарий"))
+            ->add('answer', null, array('label'=>"Ответ"))
+            ->add('answered', null, array('label'=>"Ответили"))
             ->add('active', 'boolean', array('editable' => true,'label' => 'Активен'))
             ->add('date',null, array('label' => "Дата создания"))
             ->add('_action', 'actions', array(
                 'actions' => array(
                     'answer' => array('template' => 'InfoFAQBundle:FaqAdmin:list__action_comment.html.twig'),
+                    'delete' => array()
                 )
             ))
         ;
@@ -48,6 +51,7 @@ class FAQCommentsAdmin extends Admin{
     {
         $datagridMapper
             ->add('active')
+            ->add('answered')
             ->add('email')
             ->add('question')
         ;

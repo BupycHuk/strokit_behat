@@ -36,10 +36,8 @@
             <fieldset>
                 <h4>Вопрос от {{ entity.email }} {{ entity.date|date('d.m.Y') }}</h4>
                 <p>{{ entity.question }}</p>
-                {% if entity.active %}
                     <h4>Комментарий от {{ entity.date|date('d.m.Y') }}:</h4>
                     <p>{{ entity.content }}</p>
-                {% endif %}
                 <h4>Ответить</h4>
                 <div class="sonata-ba-collapsed-fields">
                     <div class="control-group">

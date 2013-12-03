@@ -39,7 +39,6 @@ class FAQCommentsAdminController extends CRUDController{
                 )
             ;
             $entity->setAnswered(true);
-            $entity->setAnsweredDate(new \DateTime());
             $entity->setAnswer($data['content']);
             $em->flush();
             $this->get('mailer')->send($message);

@@ -12,21 +12,23 @@ faq_comments:
 
 list:
     label_id: Id
-list:
     label_email: email
+    label__action: Actions
 
 form:
   label_name: Section name
 
 breadcrumb:
     link_faq_sections_list: Sections list
-
-breadcrumb:
     link_faq_questions_answers_list: Questions and answers list
-
-
-
-list:
-   label__action: Actions
+    link_faq_comments_list: Comments list
+    link_faq_comments_delete: Deleting comment
 
 action_answer: Answer
+
+filter:
+    label_active: Active
+    label_answered: Answered
+    label_email: Email
+    label_question: Question-answer
+    label_section: Section

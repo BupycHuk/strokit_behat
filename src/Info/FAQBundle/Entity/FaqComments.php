@@ -22,7 +22,21 @@ class FaqComments
     private $id;
 
     /**
-     * @var boolean $active
+     * @var string
+     *
+     * @ORM\Column(name="answer", type="text", nullable=true)
+     */
+    private $answer;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="datetime", nullable=true)
+     */
+    private $date;
+
+    /**
+     * @var boolean
      *
      * @ORM\Column(name="active", type="boolean", nullable=true)
      */
@@ -36,23 +50,19 @@ class FaqComments
     private $email;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="answered", type="boolean", nullable=false)
+     */
+    private $answered;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="content", type="text", nullable=true)
      */
     private $content;
 
-    /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="datetime", nullable=true)
-     */
-    private $date;
-
-    public function __construct()
-    {
-        $this->date = new \DateTime();
-    }
     /**
      * @var \FaqQuestionsAnswers
      *
@@ -76,26 +86,26 @@ class FaqComments
     }
 
     /**
-     * Set content
+     * Set answer
      *
-     * @param string $content
+     * @param string $answer
      * @return FaqComments
      */
-    public function setContent($content)
+    public function setAnswer($answer)
     {
-        $this->content= $content;
+        $this->answer = $answer;
     
         return $this;
     }
 
     /**
-     * Get comContents
+     * Get answer
      *
      * @return string 
      */
-    public function getContents()
+    public function getAnswer()
     {
-        return $this->content;
+        return $this->answer;
     }
 
     /**
@@ -120,30 +130,6 @@ class FaqComments
     {
         return $this->date;
     }
-
-    /**
-     * Set question
-     *
-     * @param \Info\FAQBundle\Entity\FaqQuestionsAnswers $question
-     * @return FaqComments
-     */
-    public function setQuestions(\Info\FAQBundle\Entity\FaqQuestionsAnswers $question = null)
-    {
-        $this->question = $question;
-    
-        return $this;
-    }
-
-    /**
-     * Get question
-     *
-     * @return \Info\FAQBundle\Entity\FaqQuestionsAnswers 
-     */
-    public function getQuestion()
-    {
-        return $this->question;
-    }
-
 
     /**
      * Set active
@@ -192,6 +178,42 @@ class FaqComments
     }
 
     /**
+     * Set answered
+     *
+     * @param boolean $answered
+     * @return FaqComments
+     */
+    public function setAnswered($answered)
+    {
+        $this->answered = $answered;
+    
+        return $this;
+    }
+
+    /**
+     * Get answered
+     *
+     * @return boolean 
+     */
+    public function getAnswered()
+    {
+        return $this->answered;
+    }
+
+    /**
+     * Set content
+     *
+     * @param string $content
+     * @return FaqComments
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    
+        return $this;
+    }
+
+    /**
      * Get content
      *
      * @return string 
@@ -199,5 +221,28 @@ class FaqComments
     public function getContent()
     {
         return $this->content;
+    }
+
+    /**
+     * Set question
+     *
+     * @param \Info\FAQBundle\Entity\FaqQuestionsAnswers $question
+     * @return FaqComments
+     */
+    public function setQuestion(\Info\FAQBundle\Entity\FaqQuestionsAnswers $question = null)
+    {
+        $this->question = $question;
+    
+        return $this;
+    }
+
+    /**
+     * Get question
+     *
+     * @return \Info\FAQBundle\Entity\FaqQuestionsAnswers 
+     */
+    public function getQuestion()
+    {
+        return $this->question;
     }
 }
