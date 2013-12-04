@@ -50,7 +50,7 @@ class FaqQuestionsAnswers
     private $active;
 
     /**
-     * @var \FaqSections
+     * @var FaqSections
      *
      * @ORM\ManyToOne(targetEntity="FaqSections")
      * @ORM\JoinColumns({

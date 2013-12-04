@@ -64,7 +64,7 @@ class FaqComments
     private $content;
 
     /**
-     * @var \FaqQuestionsAnswers
+     * @var FaqQuestionsAnswers
      *
      * @ORM\ManyToOne(targetEntity="FaqQuestionsAnswers")
      * @ORM\JoinColumns({

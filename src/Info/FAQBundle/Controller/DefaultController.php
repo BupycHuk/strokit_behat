@@ -5,6 +5,7 @@ namespace Info\FAQBundle\Controller;
 use Info\FAQBundle\Entity\FaqComments;
 use Info\FeedbackBundle\Form\FaqCommentsType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {

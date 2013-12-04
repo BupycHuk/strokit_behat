@@ -23,7 +23,7 @@ class FAQQuestionsAnswersAdmin extends Admin{
             ->add('question', null, array('label' => "Вопросы"))
             ->add('answer', null, array('label' => 'Ответы'))
             ->add('active', null, array('label' => 'Активен'))
-            ->add('section', null, array('label' => 'Разделы'))
+            ->add('section', 'sonata_type_model_list', array('label' => 'Разделы'))
         ;
     }
 
