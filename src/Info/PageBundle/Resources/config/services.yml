@@ -1,0 +1,17 @@
+parameters:
+#    info_page.example.class: Info\PageBundle\Example
+
+services:
+#    info_page.example:
+#        class: %info_page.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    sonata.admin.page:
+        class: Info\PageBundle\Admin\PageAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Сайт", label: "Страница" }
+        arguments:
+            - ~
+            - Info\PageBundle\Entity\Pages
+            - ~
+        calls:
+            - [ setTranslationDomain, [InfoPageBundle]]
