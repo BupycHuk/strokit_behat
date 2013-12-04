@@ -1,26 +1,9 @@
-function getLocation(value) {
-    var loc;
-    var lat;
-    var lng;
-    if (value) {
-        var input = value;
-        input = input.replace('(', '');
-        var latlngStr = input.split(",", 2);
-        lat = parseFloat(latlngStr[0]);
-        lng = parseFloat(latlngStr[1]);
-    }
-    else {
-        lat = 42.87797684287408;
-        lng = 74.607253074646;
-    }
-    loc = new google.maps.LatLng(lat, lng);
-    return loc;
-}
+
 /**
  * Created by Admin on 25.11.13.
  */
 
-function initialize(id,value) {
+function initializeAdmin(id,value) {
     var loc = getLocation(value);
 
     var mapOptions = {

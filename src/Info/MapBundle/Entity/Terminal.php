@@ -24,6 +24,11 @@ class Terminal
      */
     private $address;
 
+    /**
+     * @var boolean
+     */
+    private $active;
+
 
     /**
      * Get id
@@ -135,5 +140,21 @@ class Terminal
     public function getImage()
     {
         return $this->image;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getActive()
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param boolean $active
+     */
+    public function setActive($active)
+    {
+        $this->active = $active;
     }
 }

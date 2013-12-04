@@ -1,0 +1,15 @@
+
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key={{ googleMapKey }}&sensor=true"></script>
+<script type="text/javascript" src="{{ asset("/bundles/infomap/js/googleMap.js") }}"></script>
+<script type="text/javascript">
+    google.maps.event.addDomListener(window, 'load', function ()
+    {
+        initialize();
+        {% for terminal in terminals %}
+        initializeFront("{{ terminal.location }}","{{ terminal.address }}","{% spaceless %}{% include "InfoMapBundle:Front:infoWindow.html.twig" with {'terminal':terminal} %} {% endspaceless %}");
+        {% endfor %}
+    });
+</script>
+<link href="{{ asset("/bundles/infomap/css/front.css") }}" rel="stylesheet"/>
+<div id="map-canvas-front" class="map"></div>
