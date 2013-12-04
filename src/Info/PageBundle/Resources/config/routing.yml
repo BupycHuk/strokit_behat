@@ -1,0 +1,3 @@
+info_page:
+    pattern:  /p/{url}/
+    defaults: { _controller: InfoPageBundle:Page:index }

@@ -62,6 +62,7 @@ class AppKernel extends Kernel
             //Info
             new Info\FeedbackBundle\InfoFeedbackBundle(),
             new Info\FAQBundle\InfoFAQBundle(),
+            new Info\PageBundle\InfoPageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
