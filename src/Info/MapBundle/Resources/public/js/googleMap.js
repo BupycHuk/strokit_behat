@@ -46,4 +46,5 @@ function initializeFront(value,address,content) {
         infowindow.setContent(content);
         infowindow.open(mapFront,marker);
     });
+    return marker;
 }
