@@ -16,6 +16,8 @@ Info\MapBundle\Entity\Merchant:
         description:
             type: string
             length: 160
+        active:
+            type: boolean
     oneToOne:
         image:
             targetEntity: Application\Sonata\MediaBundle\Entity\Media

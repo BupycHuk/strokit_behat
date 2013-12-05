@@ -11,6 +11,7 @@ list:
     label_address:  Адрес
     label_description:  Описание
     label__action: Действия
+    label_active: Активность
 
 filter:
     label_id: Id

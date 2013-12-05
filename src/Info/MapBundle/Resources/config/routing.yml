@@ -1,0 +1,3 @@
+infomap_terminal:
+    pattern:  /terminal/
+    defaults: { _controller: InfoMapBundle:Terminal:index }

@@ -20,6 +20,7 @@ class TerminalAdmin extends Admin
         $listMapper
             ->addIdentifier('id')
             ->addIdentifier('address')
+            ->add('active',null,array('editable' => true))
             ->add('description');
     }
 
@@ -32,7 +33,7 @@ class TerminalAdmin extends Admin
         $filter
             ->add('address')
             ->add('description')
-            ->add('id');
+            ->add('active');
     }
 
     /**
@@ -40,8 +41,10 @@ class TerminalAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $googleMapKey = $this->getConfigurationPool()->getContainer()->getParameter('google_map_key');
         $formMapper
-            ->add('location','map', array('googleMapKey' => "AIzaSyBzZmU7d-k1MOBBKGHrer-y4ssG4Dgvb7E"))
+            ->add('location','map', array('googleMapKey' => $googleMapKey))
+            ->add('active')
             ->add('address')
             ->add('description','textarea')
             ->add('image', 'sonata_type_model_list', array('required' => false), array(
