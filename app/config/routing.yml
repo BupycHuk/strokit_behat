@@ -48,6 +48,10 @@ media:
     resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
     prefix: /media
 
+media_list:
+    resource: '@ApplicationSonataMediaBundle/Resources/config/routing.yml'
+    prefix: /media/list
+
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
     prefix: /admin

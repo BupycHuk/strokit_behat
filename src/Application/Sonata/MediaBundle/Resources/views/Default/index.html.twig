@@ -1,0 +1,9 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <ul>
+    {% for media in entities %}
+        <li><a href="{{ path('sonata_media_download', {'id': media|sonata_urlsafeid }) }}">{{ media.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock body %}

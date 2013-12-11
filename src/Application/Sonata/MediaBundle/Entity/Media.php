@@ -21,7 +21,7 @@ use Sonata\MediaBundle\Entity\BaseMedia as BaseMedia;
  *
  * @author <yourname> <youremail>
  */
-class Media extends BaseMedia
+class   Media extends BaseMedia
 {
     /**
      * @var integer $id
