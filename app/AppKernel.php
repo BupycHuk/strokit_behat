@@ -56,6 +56,7 @@ class AppKernel extends Kernel
             new Application\Sonata\NewsBundle\ApplicationSonataNewsBundle(),
             new Application\Sonata\MediaBundle\ApplicationSonataMediaBundle(),
             new Application\Sonata\ClassificationBundle\ApplicationSonataClassificationBundle(),
+            new Application\Sonata\FormatterBundle\ApplicationSonataFormatterBundle(),
             //Strokit Core
             new Strokit\CoreBundle\StrokitCoreBundle(),
         );
