@@ -84,6 +84,8 @@ fos_user:
     group:
         group_class: Application\Sonata\UserBundle\Entity\Group
 
+
+
 sonata_intl:
     timezone:
         # default timezone used as fallback
@@ -96,6 +98,9 @@ sonata_intl:
 sonata_user:
     security_acl: true
     manager_type: orm
+    admin:
+        user:
+            class: Application\Sonata\UserBundle\Admin\UserAdmin
 
 sonata_block:
     default_contexts: [cms]
