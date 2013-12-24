@@ -28,3 +28,6 @@ form:
     label_address:  Адрес
     label_description:  Описание
     label_image: Изображение
+map:
+    admin:
+        content: Карты

@@ -32,3 +32,6 @@ filter:
     label_email: Email
     label_question: Вопрос-ответ
     label_section: Раздел
+faq:
+    admin:
+        content: FAQ
