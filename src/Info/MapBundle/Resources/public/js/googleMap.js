@@ -19,13 +19,46 @@ function getLocation(value) {
     loc = new google.maps.LatLng(lat, lng);
     return loc;
 }
+
+
+/**
+ *
+ * @returns {StyledMapType}
+ */
+function getStyledMap() {
+    var styles = [
+        {
+            "featureType": "poi",
+            "stylers": [
+                { "visibility": "off" }
+            ]
+        },
+        {
+            "featureType": "poi",
+            "elementType": "geometry.fill",
+            "stylers": [
+                { "visibility": "on" }
+            ]
+        }
+    ];
+
+    // Create a new StyledMapType object, passing it the array of styles,
+    // as well as the name to be displayed on the map type control.
+    var styledMap = new google.maps.StyledMapType(styles,
+        {name: "Styled Map"});
+    return styledMap;
+}
+
 var mapFront;
 var infowindow;
 function initialize()
 {
     var mapOptions = {
         center: getLocation(null),
-        zoom: 10
+        zoom: 10,
+        mapTypeControlOptions: {
+            mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
+        }
     };
     mapFront = new google.maps.Map(document.getElementById("map-canvas-front"), mapOptions);
 
@@ -33,6 +66,11 @@ function initialize()
     infowindow = new google.maps.InfoWindow({
         maxWidth: 200
     });
+
+    //Associate the styled map with the MapTypeId and set it to display.
+    var styledMap = getStyledMap();
+    mapFront.mapTypes.set('map_style', styledMap);
+    mapFront.setMapTypeId('map_style');
 }
 
 function initializeFront(value,address,content) {
