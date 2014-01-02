@@ -378,6 +378,10 @@
               <source>faq.admin.content</source>
               <target>FAQ</target>
             </trans-unit>
+            <trans-unit id="link">
+              <source>link</source>
+              <target>Ссылки</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

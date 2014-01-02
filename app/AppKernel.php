@@ -64,6 +64,7 @@ class AppKernel extends Kernel
             new Info\FeedbackBundle\InfoFeedbackBundle(),
             new Info\FAQBundle\InfoFAQBundle(),
             new Info\PageBundle\InfoPageBundle(),
+            new Strokit\LinkBundle\StrokitLinkBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

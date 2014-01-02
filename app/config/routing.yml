@@ -1,3 +1,7 @@
+strokit_link:
+    resource: "@StrokitLinkBundle/Resources/config/routing.yml"
+    prefix:   /
+
 info_page:
     resource: "@InfoPageBundle/Resources/config/routing.yml"
     prefix:   /

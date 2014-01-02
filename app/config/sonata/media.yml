@@ -38,6 +38,13 @@ sonata_media:
             formats:
                 small: { width: 190 , quality: 95}
                 big:   { width: 500 , quality: 90}
+
+        link:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                appstore: { width: 190 , quality: 95}
+                socialnetwork:   { width: 500 , quality: 90}
     cdn:
         server:
             path: /uploads/media # http://media.sonata-project.org/

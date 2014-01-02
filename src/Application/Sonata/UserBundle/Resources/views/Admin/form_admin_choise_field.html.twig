@@ -1,47 +1,11 @@
 
-{% block choice_translable_widget %}
-    {% spaceless %}
-        {% if compound %}
-            <ul {{ block('widget_container_attributes_choice_widget') }}>
-                {% for child in form %}
-                    <li>
-                        {% set form_widget_content %}
-                        {{ form_widget(child) }}
-                        {% endset %}
-                        {{ form_label(child, child.vars.label|trans({}, sonata_admin.field_description.translationDomain), { 'in_list_checkbox' : true, 'widget' : form_widget_content } ) }}
-                    </li>
-                {% endfor %}
-            </ul>
-        {% else %}
-            <select {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
-                {% if empty_value is not none %}
-                    <option value="">
-                        {% if not sonata_admin.admin %}
-                            {{- empty_value|trans({}, translation_domain) -}}
-                        {% else %}
-                            {{- empty_value|trans({}, sonata_admin.field_description.translationDomain) -}}
-                        {% endif%}
-                    </option>
-                {% endif %}
-                {% if preferred_choices|length > 0 %}
-                    {% set options = preferred_choices %}
-                    {{ block('choice_widget_options') }}
-                    {% if choices|length > 0 %}
-                        <option disabled="disabled">{{ separator }}</option>
-                    {% endif %}
-                {% endif %}
-                {% set options = choices %}
-                {{ block('choice_widget_options') }}
-            </select>
-        {% endif %}
-    {% endspaceless %}
-{% endblock choice_translable_widget %}
+{% extends 'StrokitCoreBundle::Admin/form_choice_field.html.twig' %}
 
 {% block sonata_security_roles_widget %}
     {% spaceless %}
         <div class="editable">
             <h4>{{ 'field.label_roles_editable'|trans({}, "SonataUserBundle") }}</h4>
-            {{ block('choice_translable_widget') }}
+            {{ block('choice_widget') }}
         </div>
         {% if read_only_choices|length > 0 %}
             <div class="readonly">

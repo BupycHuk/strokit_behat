@@ -60,6 +60,9 @@ doctrine:
         # path:     %database_path%
         types:
             json: Sonata\Doctrine\Types\JsonType
+            enumservicecategory: Strokit\LinkBundle\DBAL\ServiceCategoryType
+        mapping_types:
+            enum:       string
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
