@@ -1,4 +1,5 @@
-
+{% extends '::base.html.twig' %}
+{% block javascripts %}
 <script type="text/javascript"
         src="https://maps.googleapis.com/maps/api/js?key={{ googleMapKey }}&sensor=true"></script>
 <script type="text/javascript"
@@ -18,5 +19,12 @@
         var mc = new MarkerClusterer(mapFront, markers, mcOptions);
     });
 </script>
+{% endblock %}
+
+{% block stylesheets %}
 <link href="{{ asset("/bundles/infomap/css/front.css") }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
 <div id="map-canvas-front" class="map"></div>
+{% endblock %}

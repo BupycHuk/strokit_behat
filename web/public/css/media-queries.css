@@ -1,0 +1,39 @@
+/*.clear-fix{
+    clear: both;
+    height: 0!important;
+    line-height: 0!important;
+    font-size: 0!important;
+    display: inline-table;
+    overflow: hidden;
+}*/
+.clear-max{
+    clear: both;
+}
+@media (max-width: 1280px) {
+    .right-sub-coll {
+        width: 33%;
+    }
+    .blocks{
+        width: 65%;
+    }
+    .w80 {
+        width: 100%;
+    }
+    .w20{
+        width: 25%;
+    }
+    .clear-mini{
+        clear: both;
+    }
+    .clear-max{
+        clear: none;
+    }
+    .main-news {
+        padding: 0 0 0 10px;
+    }
+}
+@media (max-width: 1152px) {
+    .blocks .color-block h2 {
+        font-size: 230%;
+    }
+}

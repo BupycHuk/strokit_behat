@@ -1,3 +1,7 @@
+info_elsom:
+    resource: "@InfoElsomBundle/Resources/config/routing.yml"
+    prefix:   /
+
 strokit_link:
     resource: "@StrokitLinkBundle/Resources/config/routing.yml"
     prefix:   /
