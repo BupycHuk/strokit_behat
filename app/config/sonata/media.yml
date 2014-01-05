@@ -43,8 +43,8 @@ sonata_media:
             providers:
                 - sonata.media.provider.image
             formats:
-                appstore: { width: 190 , quality: 95}
-                socialnetwork:   { width: 500 , quality: 90}
+                appstore: { height: 47 , quality: 95}
+                socialnetwork:   { height: 25, quality: 90}
     cdn:
         server:
             path: /uploads/media # http://media.sonata-project.org/
@@ -55,7 +55,7 @@ sonata_media:
             create:     true
     providers:
         image:
-            resizer:    sonata.media.resizer.square # sonata.media.resizer.simple
+            resizer:    sonata.media.resizer.simple # sonata.media.resizer.simple
         file:
             service:    sonata.media.provider.file
             resizer:    false

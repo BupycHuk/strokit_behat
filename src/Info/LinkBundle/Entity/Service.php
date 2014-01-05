@@ -1,6 +1,6 @@
 <?php
 
-namespace Strokit\LinkBundle\Entity;
+namespace Info\LinkBundle\Entity;
 
 use Application\Sonata\MediaBundle\Entity\Media;
 use Doctrine\ORM\Mapping as ORM;

@@ -1,18 +1,18 @@
 parameters:
-#    strokit_link.example.class: Strokit\LinkBundle\Example
+#    strokit_link.example.class: Info\LinkBundle\Example
 
 services:
 #    strokit_link.example:
 #        class: %strokit_link.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
     strokit_link.admin.link:
-        class: Strokit\LinkBundle\Admin\LinkAdmin
-        arguments: [~, Strokit\LinkBundle\Entity\Link, ~]
+        class: Info\LinkBundle\Admin\LinkAdmin
+        arguments: [~, Info\LinkBundle\Entity\Link, ~]
         tags:
             - {name: sonata.admin, manager_type: orm, group: link, label: admin.link.links, label_translator_strategy: "sonata.admin.label.strategy.underscore" }
 
     strokit_link.admin.service:
-        class: Strokit\LinkBundle\Admin\ServiceAdmin
-        arguments: [~, Strokit\LinkBundle\Entity\Service, ~]
+        class: Info\LinkBundle\Admin\ServiceAdmin
+        arguments: [~, Info\LinkBundle\Entity\Service, ~]
         tags:
             - {name: sonata.admin, manager_type: orm, group: link, label: admin.link.services, label_translator_strategy: "sonata.admin.label.strategy.underscore" }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Strokit\LinkBundle\Entity;
+namespace Info\LinkBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -9,6 +9,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  * @ORM\Table(name="link")
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Info\LinkBundle\Entity\LinkRepository")
  */
 class Link
 {
@@ -29,7 +30,7 @@ class Link
     private $url;
 
     /**
-     * @var \Service
+     * @var Service
      *
      * @ORM\ManyToOne(targetEntity="Service")
      * @ORM\JoinColumns({
@@ -83,10 +84,10 @@ class Link
     /**
      * Set service
      *
-     * @param \Strokit\LinkBundle\Entity\Service $service
+     * @param \Info\LinkBundle\Entity\Service $service
      * @return Link
      */
-    public function setService(\Strokit\LinkBundle\Entity\Service $service = null)
+    public function setService(\Info\LinkBundle\Entity\Service $service = null)
     {
         $this->service = $service;
     
@@ -96,7 +97,7 @@ class Link
     /**
      * Get service
      *
-     * @return \Strokit\LinkBundle\Entity\Service
+     * @return \Info\LinkBundle\Entity\Service
      */
     public function getService()
     {

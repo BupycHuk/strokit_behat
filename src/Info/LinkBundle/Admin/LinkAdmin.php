@@ -1,6 +1,6 @@
 <?php
 
-namespace Strokit\LinkBundle\Admin;
+namespace Info\LinkBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;

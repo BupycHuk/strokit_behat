@@ -1,6 +1,6 @@
 <?php
 
-namespace Strokit\LinkBundle\Tests\Controller;
+namespace Info\LinkBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

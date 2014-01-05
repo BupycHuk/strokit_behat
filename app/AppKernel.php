@@ -59,12 +59,12 @@ class AppKernel extends Kernel
             new Application\Sonata\FormatterBundle\ApplicationSonataFormatterBundle(),
             //Strokit Core
             new Strokit\CoreBundle\StrokitCoreBundle(),
-            new Info\MapBundle\InfoMapBundle(),
             //Info
+            new Info\MapBundle\InfoMapBundle(),
             new Info\FeedbackBundle\InfoFeedbackBundle(),
             new Info\FAQBundle\InfoFAQBundle(),
             new Info\PageBundle\InfoPageBundle(),
-            new Strokit\LinkBundle\StrokitLinkBundle(),
+            new Info\LinkBundle\InfoLinkBundle(),
             new Info\ElsomBundle\InfoElsomBundle(),
         );
 

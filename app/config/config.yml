@@ -60,7 +60,7 @@ doctrine:
         # path:     %database_path%
         types:
             json: Sonata\Doctrine\Types\JsonType
-            enumservicecategory: Strokit\LinkBundle\DBAL\ServiceCategoryType
+            enumservicecategory: Info\LinkBundle\DBAL\ServiceCategoryType
         mapping_types:
             enum:       string
 

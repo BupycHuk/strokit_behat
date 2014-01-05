@@ -1,13 +1,13 @@
 <?php
 
-namespace Strokit\LinkBundle\Admin;
+namespace Info\LinkBundle\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Show\ShowMapper;
-use Strokit\LinkBundle\DBAL\ServiceCategoryType;
+use Info\LinkBundle\DBAL\ServiceCategoryType;
 
 class ServiceAdmin extends Admin
 {

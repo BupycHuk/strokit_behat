@@ -1,0 +1,12 @@
+<div class="mobile-apps-block">
+    <ul>
+        {% for link in links %}
+        <li>
+            <a href="{{ link.url }}">
+                <img src="{%  path link.service.image, link.service.category  %}{# asset('public/img/apple-app.png') #}" alt="{{ link.service.name }}">
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="clear"></div>
+</div>

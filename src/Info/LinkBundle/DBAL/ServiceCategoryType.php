@@ -6,7 +6,7 @@
  * Time: 10:51
  */
 
-namespace Strokit\LinkBundle\DBAL;
+namespace Info\LinkBundle\DBAL;
 
 
 use Strokit\CoreBundle\DBAL\EnumType;

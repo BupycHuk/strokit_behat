@@ -3,7 +3,7 @@ info_elsom:
     prefix:   /
 
 strokit_link:
-    resource: "@StrokitLinkBundle/Resources/config/routing.yml"
+    resource: "@InfoLinkBundle/Resources/config/routing.yml"
     prefix:   /
 
 info_page:
