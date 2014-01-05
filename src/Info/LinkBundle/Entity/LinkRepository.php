@@ -18,16 +18,14 @@ class LinkRepository extends EntityRepository {
         $query = $this->createQueryBuilder('l')
             ->innerJoin("InfoLinkBundle:Service", 's', 'WITH', 'l.service = s.id')
             ->where('s.category = :serviceCategory')
-            //->where('s.active = :serviceactive')
-            //->where('l.active = :linkactive')
+            ->andWhere('s.active = :serviceactive')
+            ->andWhere('l.active = :linkactive')
             ->setParameters(array('serviceCategory' => $serviceCategory
-            //, 'serviceactive' => true, 'linkactive' => true
+            , 'serviceactive' => true
+            , 'linkactive' => true
             ))
             ->orderBy('s.name', 'ASC')
             ->getQuery();
-        //echo $query->getSQL();
-        //var_dump($query->getParameters());
-        //die;
         return $query->getResult();
     }
 } 
