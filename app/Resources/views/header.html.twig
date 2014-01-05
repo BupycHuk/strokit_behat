@@ -3,8 +3,7 @@
         <a href="{{ path('info_elsom_homepage') }}"><img src="{{ asset('public/img/logo.png')}}" alt="Элком"></a>
     </div>
     <div class="intro">
-        это удобный и безопасный инструмент для хранения и распоряжения своими деньгами на счете посредством
-        мобильного телефона с доступностью в режиме 365/24/7
+        {{ 'intro.global'|trans({}, 'InfoElsomBundle') }}
     </div>
     {% render controller('InfoLinkBundle:Default:showLinksWithClass', {'serviceCategory':'socialnetwork'}) %}
     <!--<div class="login"><a href="#">Личный кабинет</a></div>-->
