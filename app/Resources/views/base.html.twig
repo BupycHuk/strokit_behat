@@ -14,7 +14,7 @@
     <div id="wrapper">
 
         {% include '::header.html.twig' %}
-        <a href="#" class="feedback-link">{{ 'feedback.global'|trans({}, 'InfoFeedbackBundle') }}</a>
+        <a href="{{ path('info_feedback') }}" class="feedback-link">{{ 'feedback.global'|trans({}, 'InfoFeedbackBundle') }}</a>
         <div class="content">
         {% block body %}{% endblock %}
             {% render controller('InfoLinkBundle:Default:showLinksWithImage', {'serviceCategory':'appstore'}) %}
