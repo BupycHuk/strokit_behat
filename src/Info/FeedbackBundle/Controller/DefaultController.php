@@ -19,6 +19,8 @@ class DefaultController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+
+            return $this->render('InfoFeedbackBundle:Default:sended.html.twig');
         }
 
         return $this->render('InfoFeedbackBundle:Default:index.html.twig', array(

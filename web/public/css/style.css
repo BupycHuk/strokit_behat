@@ -1,7 +1,7 @@
 *{
-	margin:0px; 
-	padding:0px; 
-	border:none; 
+	margin:0px;
+	padding:0px;
+	border:none;
 	list-style:none;
 	outline: none;
 }
@@ -97,7 +97,7 @@ h6{
 }
 h1, h2, h3, h4, h5, h6{
     font-family: 'GothamPro-Bold';
-    color: #fe0000;
+    color: #fff;
     text-transform: uppercase;
 }
 h2, h3{
@@ -240,7 +240,7 @@ dd{
     left: 225px;
 }
 .social{
-    
+
 }
 .social ul li{
     float: left;
@@ -279,7 +279,7 @@ dd{
     top: 24px;
 }
 .lang{
-    
+
 }
 .lang ul li{
     float: left;
@@ -395,7 +395,7 @@ dd{
     z-index: 5;
 }
 .blocks .block .inner-block:hover img{
-    filter: blur(2px); 
+    filter: blur(2px);
     -webkit-filter: blur(2px);
     -moz-filter: blur(2px);
     -o-filter: blur(2px);
@@ -496,6 +496,153 @@ dd{
     float: left;
     padding: 0 47px 0 0;
     background-image: none;
+}
+
+.feedback{
+    width: 82.11111%;
+}
+.item{
+    padding: 0 0 34px 0;
+}
+.item input[type=text],
+.item input[type=email]{
+    background-color: #FFF;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-family: 'GothamPro-Bold';
+    color: #95d09e;
+    height: 38px;
+    padding: 0 14px;
+    width: 45.1%;
+    margin: 0 4.5% 0 0;
+    float: left;
+}
+.margin-none{
+    margin: 0!important;
+}
+.item input.mini-input{
+
+}
+.item .textarea{
+    background-color: #FFF;
+    height: 325px;
+    padding: 14px;
+}
+.item .textarea textarea{
+    height: 100%;
+    width: 100%;
+    font-family: 'GothamPro-Bold';
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #95d09e;
+    resize: none;
+}
+.item .error{
+    background-color: #f24841!important;
+    color: #fff!important;
+    height: 36px!important;
+    width: 44.9%!important;
+    border: 1px solid #ff0000;
+}
+.item a.captcha-img{
+    display: inline-block;
+    margin: 0 4.5% 0 0;
+    border: none;
+    float: left;
+}
+.captcha-block input[type=text]{
+    width: 23.4%;
+}
+.captcha-block input[type=submit],
+.captcha-block button[type=submit]{
+    width: 47.6%;
+    font-family: 'GothamPro-Bold';
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #fff;
+    height: 38px;
+    text-align: center;
+    float: right;
+    background-color: #ff5a00;
+}
+
+.button{
+    font-family: 'GothamPro-Bold';
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #fff;
+    height: 38px;
+    padding: 0 15px;
+    line-height: 38px;
+    background-color: #ff5a00;
+    display: inline-block;
+    margin: 0 19px 0 0;
+    border: none;
+}
+.button:hover{
+    text-decoration: underline;
+}
+.orange-button{
+    background-color: #ff5a00;
+}
+.blue-button{
+    background-color: #0062ff;
+}
+
+
+
+.feedback-accept{
+    padding: 0 0 20px 0;
+}
+.feedback-accept .accept-text{
+    float: left;
+    width: 68%;
+    padding: 70px 0 0 0;
+}
+.feedback-accept h1{
+    font-size: 52px;
+    padding: 0 0 33px 0;
+}
+.feedback-accept p{
+    font-size: 17px;
+    padding: 0 0 69px 0;
+}
+.blocks.more-sub-block-menu{
+    float: right;
+    width: 28.8%;
+}
+
+.feedback-link{
+    position: fixed;
+    border: 1px solid #9bd098;
+    border-top: none;
+    left: -172px;
+    top: 50%;
+    height: 23px;
+    width: 366px;
+    line-height: 23px;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    /* Should be unset in IE9+ I think. */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    font-size: 11px;
+    color: #8ec890;
+    text-align: center;
+    font-family: 'GothamPro-Bold';
+    text-transform: uppercase;
+}
+.feedback-link:hover{
+    border-bottom: 1px solid #9bd098;
+    text-decoration: underline;
 }
 
 .footer,

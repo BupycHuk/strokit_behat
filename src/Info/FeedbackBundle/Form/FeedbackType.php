@@ -15,11 +15,20 @@ class FeedbackType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', 'email', array('attr'=>array('label'=>'Email')))
-            ->add('phone', 'text', array('required'=>false))
-            ->add('message', 'textarea')
-            ->add('save', 'submit', array())
+            ->add('email', 'email', array('attr'=>array('placeholder'=>'feedback.label.email')))
+            ->add('phone', 'text', array('required'=>false, 'attr'=>array('placeholder'=>'feedback.label.phone')))
+            ->add('message', 'textarea', array('required'=>true, 'attr'=>array('placeholder'=>'feedback.label.message')))
+            ->add('captcha', 'captcha', array('attr'=>array('placeholder'=>'feedback.label.captcha')))
+            ->add('save', 'submit', array('label'=>'feedback.label.save'))
         ;
+    }
+
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'translation_domain' => 'InfoFeedbackBundle'
+        ));
+
     }
 
     /**

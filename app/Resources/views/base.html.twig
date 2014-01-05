@@ -14,8 +14,16 @@
     <div id="wrapper">
 
         {% include '::header.html.twig' %}
+        <a href="#" class="feedback-link">{{ 'feedback.global'|trans({}, 'InfoFeedbackBundle') }}</a>
         <div class="content">
         {% block body %}{% endblock %}
+            <div class="mobile-apps-block">
+                <ul>
+                    <li><a href="#"><img src="{{ asset('public/img/apple-app.png') }}" alt="Apple"></a></li>
+                    <li><a href="#"><img src="{{ asset('public/img/google-app.png') }}" alt="Google"></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
         </div>
         <div class="temp"></div>
     </div>
