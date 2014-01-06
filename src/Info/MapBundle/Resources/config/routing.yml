@@ -2,16 +2,16 @@ infomap_list:
     pattern:  /{entity}/list
     defaults: { _controller: InfoMapBundle:Front:list }
     requirements:
-            entity:  Terminal|Merchant
+            entity:  terminal|merchant
 
 infomap_map:
     pattern:  /{entity}/map
     defaults: { _controller: InfoMapBundle:Front:map }
     requirements:
-            entity:  Terminal|Merchant
+            entity:  terminal|merchant
 
 infomap_show:
     pattern:  /{entity}/show/{id}
     defaults: { _controller: InfoMapBundle:Front:show }
     requirements:
-            entity:  Terminal|Merchant
+            entity:  terminal|merchant
