@@ -18,13 +18,14 @@ class FrontController extends Controller {
     {
         $items = $this->getDoctrine()->getRepository(sprintf("InfoMapBundle:%s",$entity))->findBy(array('active'=>true));
 
+        $itemsCount = $this->container->getParameter('infomap_items_in_list');
 
         $paginator = $this->get('knp_paginator');
 
         $pagination = $paginator
             ->paginate($items,
                 $this->get('request')->query->get('page',1),
-            1);
+                $itemsCount);
 
         $pagination->setUsedRoute('infomap_list');
 
