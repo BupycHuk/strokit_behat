@@ -10,14 +10,17 @@ list:
     label_id: Id
     label_name: Название
     label_address:  Адрес
+    label_number:  Телефон
     label_description:  Описание
     label__action: Действия
     label_active: Активность
 
+    link-to-map: смотреть на карте
 filter:
     label_id: Id
     label_name: Название
     label_address:  Адрес
+    label_number:  Телефон
     label_description:  Описание
     label_active: Активность
 
@@ -30,6 +33,7 @@ form:
     label_id: Id
     label_name: Название
     label_address:  Адрес
+    label_number:  Телефон
     label_description:  Описание
     label_image: Изображение
     label_active: Активность
@@ -39,6 +43,7 @@ show:
     label_id: Id
     label_name: Название
     label_address:  Адрес
+    label_number:  Телефон
     label_description:  Описание
     label_image: Изображение
     label_active: Активность

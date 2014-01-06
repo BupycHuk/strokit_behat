@@ -16,6 +16,10 @@ Info\MapBundle\Entity\Merchant:
         address:
             type: string
             length: 160
+        number:
+            type: string
+            length: 50
+            nullable: true
         description:
             type: string
             length: 160

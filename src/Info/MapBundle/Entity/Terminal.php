@@ -190,4 +190,32 @@ class Terminal
     {
         return $this->getName();
     }
+    /**
+     * @var string
+     */
+    private $number;
+
+
+    /**
+     * Set number
+     *
+     * @param string $number
+     * @return Terminal
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return string 
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
 }

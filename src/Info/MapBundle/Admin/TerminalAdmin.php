@@ -20,7 +20,8 @@ class TerminalAdmin extends Admin
         $listMapper
             ->addIdentifier('id')
             ->addIdentifier('name')
-            ->addIdentifier('address')
+            ->add('address')
+            ->add('number')
             ->add('active',null,array('editable' => true))
             ->add('description');
     }
@@ -34,6 +35,7 @@ class TerminalAdmin extends Admin
         $filter
             ->add('name')
             ->add('address')
+            ->add('number')
             ->add('description')
             ->add('active');
     }
@@ -49,6 +51,7 @@ class TerminalAdmin extends Admin
             ->add('active')
             ->add('name')
             ->add('address')
+            ->add('number')
             ->add('description','textarea',array('required'=>false))
             ->add('image', 'sonata_type_model_list', array('required' => false), array(
                 'link_parameters' => array('context'=>'map')
@@ -64,10 +67,12 @@ class TerminalAdmin extends Admin
         $googleMapKey = $this->getConfigurationPool()->getContainer()->getParameter('google_map_key');
         $showMapper
             ->add('id')
-            ->add('name')
             ->add('location','map', array('googleMapKey' => $googleMapKey))
+            ->add('name')
             ->add('address')
+            ->add('number')
             ->add('description')
+            ->add('image')
         ;
     }
 

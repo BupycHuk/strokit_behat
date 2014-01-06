@@ -190,4 +190,32 @@ class Merchant
     {
         return $this->getName();
     }
+    /**
+     * @var string
+     */
+    private $number;
+
+
+    /**
+     * Set number
+     *
+     * @param string $number
+     * @return Merchant
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    
+        return $this;
+    }
+
+    /**
+     * Get number
+     *
+     * @return string 
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
 }

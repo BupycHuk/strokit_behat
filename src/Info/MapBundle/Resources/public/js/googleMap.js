@@ -73,11 +73,12 @@ function initialize()
     mapFront.setMapTypeId('map_style');
 }
 
-function initializeFront(value,address,content) {
+function initializeFront(value,address,content,icon) {
     var marker = new google.maps.Marker({
         position: getLocation(value),
         map: mapFront,
-        title: address
+        title: address,
+        icon: icon
     });
 
     google.maps.event.addListener(marker, 'click', function() {
