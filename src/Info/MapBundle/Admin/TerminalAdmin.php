@@ -19,6 +19,7 @@ class TerminalAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('id')
+            ->addIdentifier('name')
             ->addIdentifier('address')
             ->add('active',null,array('editable' => true))
             ->add('description');
@@ -31,6 +32,7 @@ class TerminalAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $filter)
     {
         $filter
+            ->add('name')
             ->add('address')
             ->add('description')
             ->add('active');
@@ -45,8 +47,9 @@ class TerminalAdmin extends Admin
         $formMapper
             ->add('location','map', array('googleMapKey' => $googleMapKey))
             ->add('active')
+            ->add('name')
             ->add('address')
-            ->add('description','textarea')
+            ->add('description','textarea',array('required'=>false))
             ->add('image', 'sonata_type_model_list', array('required' => false), array(
                 'link_parameters' => array('context'=>'map')
             ))
@@ -58,9 +61,11 @@ class TerminalAdmin extends Admin
      */
     protected function configureShowFields(ShowMapper $showMapper)
     {
+        $googleMapKey = $this->getConfigurationPool()->getContainer()->getParameter('google_map_key');
         $showMapper
             ->add('id')
-            ->add('location','map')
+            ->add('name')
+            ->add('location','map', array('googleMapKey' => $googleMapKey))
             ->add('address')
             ->add('description')
         ;

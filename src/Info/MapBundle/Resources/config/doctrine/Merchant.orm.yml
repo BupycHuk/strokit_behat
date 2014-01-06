@@ -7,6 +7,9 @@ Info\MapBundle\Entity\Merchant:
             id: true
             generator:
                 strategy: AUTO
+        name:
+            type: string
+            length: 160
         location:
             type: string
             length: 100
@@ -16,6 +19,7 @@ Info\MapBundle\Entity\Merchant:
         description:
             type: string
             length: 160
+            nullable: true
         active:
             type: boolean
     oneToOne:

@@ -8,6 +8,7 @@ merchant:
 
 list:
     label_id: Id
+    label_name: Название
     label_address:  Адрес
     label_description:  Описание
     label__action: Действия
@@ -15,8 +16,10 @@ list:
 
 filter:
     label_id: Id
+    label_name: Название
     label_address:  Адрес
     label_description:  Описание
+    label_active: Активность
 
 breadcrumb:
     link_terminal_list: Список РТ/ЦОП
@@ -25,9 +28,21 @@ breadcrumb:
 form:
     label_location: Местоположение на карте
     label_id: Id
+    label_name: Название
     label_address:  Адрес
     label_description:  Описание
     label_image: Изображение
+    label_active: Активность
+
+show:
+    label_location: Местоположение на карте
+    label_id: Id
+    label_name: Название
+    label_address:  Адрес
+    label_description:  Описание
+    label_image: Изображение
+    label_active: Активность
+
 map:
     admin:
         content: Карты
