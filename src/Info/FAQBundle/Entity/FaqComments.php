@@ -35,6 +35,11 @@ class FaqComments
      */
     private $date;
 
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
+
     /**
      * @var boolean
      *
@@ -64,14 +69,14 @@ class FaqComments
     private $content;
 
     /**
-     * @var FaqQuestionsAnswers
+     * @var FaqSections
      *
-     * @ORM\ManyToOne(targetEntity="FaqQuestionsAnswers")
+     * @ORM\ManyToOne(targetEntity="FaqSections")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="question_id", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="section_id", referencedColumnName="id")
      * })
      */
-    private $question;
+    private $section;
 
 
 
@@ -224,25 +229,25 @@ class FaqComments
     }
 
     /**
-     * Set question
+     * Set section
      *
-     * @param \Info\FAQBundle\Entity\FaqQuestionsAnswers $question
+     * @param \Info\FAQBundle\Entity\FaqSections $section
      * @return FaqComments
      */
-    public function setQuestion(\Info\FAQBundle\Entity\FaqQuestionsAnswers $question = null)
+    public function setSection(\Info\FAQBundle\Entity\FaqSections $section = null)
     {
-        $this->question = $question;
-    
+        $this->section = $section;
+
         return $this;
     }
 
     /**
-     * Get question
+     * Get section
      *
-     * @return \Info\FAQBundle\Entity\FaqQuestionsAnswers 
+     * @return \Info\FAQBundle\Entity\FaqSections
      */
-    public function getQuestion()
+    public function getSection()
     {
-        return $this->question;
+        return $this->section;
     }
 }
