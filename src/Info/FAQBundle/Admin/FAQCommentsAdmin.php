@@ -32,10 +32,10 @@ class FAQCommentsAdmin extends Admin{
             ->addIdentifier('email', null, array(
                 'route' => array('name' => 'answer')
             ))
-            ->add('question',null, array('label' => 'Вопрос'))
+            ->add('section',null, array('label' => 'Раздел'))
             ->add('content', null, array('label'=>"Комментарий"))
             ->add('answer', null, array('label'=>"Ответ"))
-            ->add('answered', null, array('label'=>"Ответили"))
+            ->add('answered', 'boolean', array('editable' => true,'label'=>"Ответили"))
             ->add('active', 'boolean', array('editable' => true,'label' => 'Активен'))
             ->add('date',null, array('label' => "Дата создания"))
             ->add('_action', 'actions', array(
@@ -53,7 +53,7 @@ class FAQCommentsAdmin extends Admin{
             ->add('active')
             ->add('answered')
             ->add('email')
-            ->add('question')
+            ->add('section')
         ;
     }
 
