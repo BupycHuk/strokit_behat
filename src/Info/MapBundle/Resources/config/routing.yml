@@ -1,3 +1,17 @@
-infomap_terminal:
-    pattern:  /terminal/
-    defaults: { _controller: InfoMapBundle:Terminal:index }
+infomap_list:
+    pattern:  /{entity}/list
+    defaults: { _controller: InfoMapBundle:Front:list }
+    requirements:
+            entity:  terminal|merchant
+
+infomap_map:
+    pattern:  /{entity}/map
+    defaults: { _controller: InfoMapBundle:Front:map }
+    requirements:
+            entity:  terminal|merchant
+
+infomap_show:
+    pattern:  /{entity}/show/{id}
+    defaults: { _controller: InfoMapBundle:Front:show }
+    requirements:
+            entity:  terminal|merchant

@@ -108,6 +108,11 @@ h4, h5, h6{
 	padding-bottom: 10px;
 	padding-top: 10px;
 }
+.title{
+    font-size: 35px;
+    color: #fff;
+    padding: 0 0 22px 0;
+}
 p{
 	font-size: 14px;
 	padding: 9px 0;
@@ -224,7 +229,7 @@ textarea:-moz-placeholder {
     height: 125px;
     position: relative;
     font-family: 'GothamPro-Bold';
-    padding: 0 0 65px 0;
+    padding: 0 0 25px 0;
     display: block;
     text-transform: uppercase;
 }
@@ -357,7 +362,10 @@ textarea:-moz-placeholder {
 }
 
 .content{
-    padding: 0 0 20px 0;
+    padding: 40px 0 20px 0;
+}
+.inner{
+    padding-top: 0;
 }
 .blocks{
     text-align: left;
@@ -723,3 +731,62 @@ textarea:-moz-placeholder {
 .footer-menu .drop-menu ul li a{
     background-image: none!important;
 }
+
+.pagination{
+    text-align: center;
+    padding: 0 0 41px 0;
+}
+.pagination.green{
+    padding: 8px 0 11px 0;
+}
+.pagination ul li{
+    padding: 0 23px 0 0;
+    background-image: none;
+    display: inline-block;
+    font-size: 14px;
+    width: auto;
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+.pagination ul li a{
+    border: none;
+    color: #fff;
+}
+.pagination.green ul li a{
+    color: #25a236;
+}
+.pagination.green ul li.current{
+    color: #278138;
+}
+.pagination ul li a:hover{
+    text-decoration: underline;
+}
+
+
+.breadcrumb{
+    padding: 0 0 15px 0;
+}
+.breadcrumb ul li{
+    float: left;
+    padding: 0 11px 0 0;
+    background-image: none;
+    color: #46ac70;
+}
+.breadcrumb a{
+    font-size: 11px;
+    color: #fff;
+    border: none;
+    font-family: 'GothamPro-Bold';
+    text-transform: uppercase;
+    padding: 6px 11px 3px 0;
+    color: #46ac70;
+}
+.breadcrumb a:hover{
+    text-decoration: underline;
+}
+.breadcrumb ul :first-child a{
+    padding-left: 26px;
+    background-image: url(../img/bred-arrow.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+

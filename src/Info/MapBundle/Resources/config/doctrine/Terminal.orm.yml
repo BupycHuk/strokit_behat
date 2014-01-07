@@ -16,6 +16,10 @@ Info\MapBundle\Entity\Terminal:
         address:
             type: string
             length: 160
+        number:
+            type: string
+            length: 50
+            nullable: true
         description:
             type: string
             length: 160

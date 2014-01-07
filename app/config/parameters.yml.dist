@@ -13,3 +13,4 @@ parameters:
     secret: ghGYg&8987%4asd$4567asd6^&*dsa
     email_from: { no-replay@elsom.kg Elsom }
     google_map_key: 'AIzaSyBzZmU7d-k1MOBBKGHrer-y4ssG4Dgvb7E'
+    infomap_items_in_list:  16
