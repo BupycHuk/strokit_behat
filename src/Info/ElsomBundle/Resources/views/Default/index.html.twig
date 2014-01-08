@@ -2,32 +2,7 @@
 {% block body %}
 
     <div class="right-sub-coll">
-        <ul class="main-news">
-            <li>
-                <div class="date">20.10.2013</div>
-                <h2>
-                    <a href="#">
-                        оплата счетов за услуги ЖКХ, интернет, кабельное телевидение и другое
-                    </a>
-                </h2>
-            </li>
-            <li>
-                <div class="date">20.10.2013</div>
-                <h2>
-                    <a href="#">
-                        перевод электронных денег из одного электронного кошелька на
-                    </a>
-                </h2>
-            </li>
-            <li>
-                <div class="date">20.10.2013</div>
-                <h2>
-                    <a href="#">
-                        Пользователь ЭЛСОМ может получать денежные переводы на свой электронный кошелек из другой страны
-                    </a>
-                </h2>
-            </li>
-        </ul>
+        {%  render controller('ApplicationSonataNewsBundle:Post:main') %}
         <div class="feature">
             <h3>Пополнение средств в отделениях Банков-Партнеров</h3>
 
