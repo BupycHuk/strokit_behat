@@ -14,3 +14,4 @@ parameters:
     email_from: { no-replay@elsom.kg Elsom }
     google_map_key: 'AIzaSyBzZmU7d-k1MOBBKGHrer-y4ssG4Dgvb7E'
     infomap_items_in_list:  16
+    sonatanews_items_in_list:   9

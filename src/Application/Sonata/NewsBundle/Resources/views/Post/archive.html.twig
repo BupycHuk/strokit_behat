@@ -4,59 +4,49 @@
 {% endblock %}
 
 {% block stylesheets %}
-{{ parent() }}
+    {{ parent() }}
+    <link href="{{ asset('bundles/sonatanews/css/style.css') }}" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block body %}
+    <div class="news-list">
+        <h1 class="title">{{ 'title_news'|trans({}, 'SonataNewsBundle') }}</h1>
+        <ul>
+            {% for post in pager.getResults() %}
+                <li>
+                    <div class="date">{{ post.publicationDateStart | format_date }}</div>
+                    <h2>
+                        <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a>
+                    </h2>
+                </li>
 
-    <h1>{{ 'title_archive'|trans({}, 'SonataNewsBundle') }}</h1>
+            {% else %}
+                {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
+            {% endfor %}
+        </ul>
+        <div class="clear"></div>
+    </div>
 
-    <div class="sonata-blog-post-list">
-        {% for post in pager.getResults() %}
-            <div class="sonata-blog-post-container">
-                <div class="sonata-blog-post-date-container">
-                    {{ post.publicationDateStart | format_date }}
-                </div>
-                <h2 class="sonata-blog-post-title">
-                    <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}">{{ post.title }}</a>
-                    <span class="sonata-blog-post-author">{{ 'archive_author'|trans({'%author%': post.author }, 'SonataNewsBundle') }}</span>
-                </h2>
-                <div class="sonata-blog-post-information">
 
-                    <div class="sonata-blog-post-tag-container">
-                        <div class="sonata-blog-post-tag-title">
-                            {{ 'published_under'|transchoice(post.tags|length, {}, 'SonataNewsBundle') }}
-                        </div>
-                        <div class="sonata-blog-post-tag-list">
-                            {% for tag in post.tags%}
-                                <a href="{{ url('sonata_news_tag', {'tag': tag.slug} ) }}">{{ tag.name }}</a>
-                                {% if not loop.last%}, {%endif%}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sonata-blog-post-abtract">
-                    {{ post.abstract }}
-                </div>
-                <span class="sonata-blog-post-comments-count">{{ 'comments_count'|trans({'%comments_count%': post.commentsCount }, 'SonataNewsBundle') }}</span>
-            </div>
-
-        {% else %}
-            {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
-        {% endfor %}
-
-        <div class="sonata-blog-post-pagination">
+    <div class="sonata-blog-post-pagination">
+    </div>
+    <div class="pagination">
+        <ul>
             {% if pager.haveToPaginate() %}
+
                 {% if pager.page != pager.previouspage %}
-                    <a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}" title="{{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}">{{ 'link_previous_page'|trans({}, 'SonataNewsBundle') }}</a>
+                    <li><a href="{{ url(route, route_parameters|merge({'page': pager.previouspage})) }}">&larr;</a></li>
                 {% endif %}
+
+                {% for page in pager.links %}
+                    <li><a href="{{ url(route, route_parameters|merge({'page': page})) }}">{{ page }}</a></li>
+                {% endfor %}
 
                 {% if pager.page != pager.nextpage %}
-                    <a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}" title="{{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}">{{ 'link_next_page'|trans({}, 'SonataNewsBundle') }}</a>
+                    <li><a href="{{ url(route, route_parameters|merge({'page': pager.nextpage})) }}">&rarr;</a></li>
                 {% endif %}
             {% endif %}
-        </div>
+        </ul>
     </div>
 
 {% endblock %}

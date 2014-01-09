@@ -790,3 +790,19 @@ textarea:-moz-placeholder {
     background-repeat: no-repeat;
 }
 
+.news-list{
+}
+.news-list ul{
+    padding: 7px 0 0 4px;
+}
+.news-list ul li{
+    display: inline-block;
+    width: 30%;
+    padding: 0 3px 53px 0;
+    background-image: none;
+}
+.news-list li h2{
+    padding: 0 20% 0 0;
+    font-size: 14px;
+    line-height: 18px;
+}

@@ -20,7 +20,7 @@
             </trans-unit>
             <trans-unit id="no_post_found">
                 <source>no_post_found</source>
-                <target>Пост не найден.</target>
+                <target>Новостей нет.</target>
             </trans-unit>
             <trans-unit id="sidemenu.link_view_post">
                 <source>sidemenu.link_view_post</source>
@@ -329,6 +329,10 @@
             <trans-unit id="form.comment.message">
                 <source>form.comment.message</source>
                 <target>Сообщение</target>
+            </trans-unit>
+            <trans-unit id="title_news">
+                <source>title_news</source>
+                <target>Новости</target>
             </trans-unit>
         </body>
     </file>
