@@ -385,6 +385,12 @@ textarea:-moz-placeholder {
 .w20{
     width: 20%;
 }
+.w32{
+    width: 33.22222%;
+}
+.w16{
+    width: 16.66666%;
+}
 .w80 .w20{
     width: 25%;
 }
@@ -401,6 +407,9 @@ textarea:-moz-placeholder {
     vertical-align: top;
     font-family: 'GothamPro-Bold';
     overflow: hidden;
+}
+.blocks.faq{
+    width: 86.3%;
 }
 .blocks .block img{
     width: 100%;

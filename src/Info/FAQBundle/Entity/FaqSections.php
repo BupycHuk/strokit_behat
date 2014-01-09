@@ -29,6 +29,15 @@ class FaqSections
     private $name;
 
 
+    /**
+     * @var \Gallery
+     *
+     * @ORM\ManyToOne(targetEntity="\Application\Sonata\MediaBundle\Entity\Gallery" )
+     * @ORM\JoinColumns({
+     * @ORM\JoinColumn(name="image_id", referencedColumnName="id")
+     * })
+     */
+    private $image;
 
     /**
      * Get id
@@ -61,6 +70,29 @@ class FaqSections
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \Application\Sonata\MediaBundle\Entity\Gallery $image
+     * @return FaqSections
+     */
+    public function setImage(\Application\Sonata\MediaBundle\Entity\Gallery $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \Application\Sonata\MediaBundle\Entity\Gallery
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 
     public function __toString()

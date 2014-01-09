@@ -1,6 +1,6 @@
 <?php
 
-namespace Info\FeedbackBundle\Form;
+namespace Info\FAQBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

@@ -17,6 +17,9 @@ info_map:
 info_feedback:
     resource: "@InfoFeedbackBundle/Resources/config/routing.yml"
     prefix:   /
+info_faq:
+    resource: "@InfoFAQBundle/Resources/config/routing.yml"
+    prefix:   /
 
 strokit_core:
     resource: "@StrokitCoreBundle/Resources/config/routing.yml"

@@ -45,9 +45,18 @@ sonata_media:
             formats:
                 appstore: { height: 47 , quality: 95}
                 socialnetwork:   { height: 25, quality: 90}
+
+        faq:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                small: { width: 178, height: 178, quality: 100}
+                big:   { width: 178, height: 178, quality: 100}
+
     cdn:
         server:
-            path: /uploads/media # http://media.sonata-project.org/
+#        Здесь я изменил путь, для проверки
+            path: /elsom.kg/web/uploads/media # http://media.sonata-project.org/
 
     filesystem:
         local:

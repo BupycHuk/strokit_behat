@@ -3,7 +3,7 @@
 namespace Info\FAQBundle\Controller;
 
 use Info\FAQBundle\Entity\FaqComments;
-use Info\FeedbackBundle\Form\FaqCommentsType;
+use Info\FAQBundle\Form\FaqCommentsType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -11,18 +11,10 @@ class DefaultController extends Controller
 {
     public function indexAction(Request $request)
     {
-        $entity = new FaqComments();
-        $form = $this->createForm(new FaqCommentsType(), $entity);
+        $repository = $this->getDoctrine()
+            ->getRepository("InfoFAQBundle:FaqSections");
 
-        $form->handleRequest($request);
-        if ($form->isValid()){
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
-        }
-
-        return $this->render('InfoFAQBundle:Default:index.html.twig', array(
-            "form"  => $form->createView()
-        ));
+        $sections = $repository->findAll();
+        return $this->render('InfoFAQBundle:Default:index.html.twig', array('sections'=>$sections, 'title' => "FAQ"));
     }
 }
