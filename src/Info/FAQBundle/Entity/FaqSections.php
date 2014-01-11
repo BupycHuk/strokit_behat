@@ -5,10 +5,11 @@ namespace Info\FAQBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * FaqSections
+ * Info/FAQBundle/Entity/FaqSections
  *
  * @ORM\Table(name="faq_sections")
  * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Info\FAQBundle\Entity\FaqSectionsRepository")
  */
 class FaqSections
 {
@@ -28,11 +29,10 @@ class FaqSections
      */
     private $name;
 
-
     /**
-     * @var \Gallery
+     * @var \Media
      *
-     * @ORM\ManyToOne(targetEntity="\Application\Sonata\MediaBundle\Entity\Gallery" )
+     * @ORM\ManyToOne(targetEntity="\Application\Sonata\MediaBundle\Entity\Media" )
      * @ORM\JoinColumns({
      * @ORM\JoinColumn(name="image_id", referencedColumnName="id")
      * })
@@ -72,13 +72,14 @@ class FaqSections
         return $this->name;
     }
 
+
     /**
      * Set image
      *
-     * @param \Application\Sonata\MediaBundle\Entity\Gallery $image
+     * @param \Application\Sonata\MediaBundle\Entity\Media $image
      * @return FaqSections
      */
-    public function setImage(\Application\Sonata\MediaBundle\Entity\Gallery $image = null)
+    public function setImage(\Application\Sonata\MediaBundle\Entity\Media $image = null)
     {
         $this->image = $image;
 
@@ -88,12 +89,13 @@ class FaqSections
     /**
      * Get image
      *
-     * @return \Application\Sonata\MediaBundle\Entity\Gallery
+     * @return \Application\Sonata\MediaBundle\Entity\Media
      */
     public function getImage()
     {
         return $this->image;
     }
+
 
     public function __toString()
     {

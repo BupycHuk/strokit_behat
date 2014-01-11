@@ -55,8 +55,7 @@ sonata_media:
 
     cdn:
         server:
-#        Здесь я изменил путь, для проверки
-            path: /elsom.kg/web/uploads/media # http://media.sonata-project.org/
+            path: /uploads/media # http://media.sonata-project.org/
 
     filesystem:
         local:

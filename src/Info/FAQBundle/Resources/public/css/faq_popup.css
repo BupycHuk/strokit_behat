@@ -1,0 +1,32 @@
+.popup_main_block{
+    background-color: #ffffff ;
+    /*height: 200px;*/
+}
+.popup_content{
+    padding: 38px 65px 60px 38px;
+}
+.popup_content  h5{
+    color: #ff9600;
+    text-transform: uppercase;
+}
+.popup_content span{
+    font-family: 'GothamPro';
+    font-size: 16px;
+}
+.ui-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: 0;
+    border: none;
+}
+.ui-dialog .ui-dialog-titlebar-close {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    right: -60px;
+    top: 13px;
+    border: none;
+    background: #ffffff url('../img/faq_close_icon.png') no-repeat 15px 15px;
+    float: right;
+}
