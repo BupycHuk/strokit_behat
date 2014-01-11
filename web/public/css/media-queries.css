@@ -10,10 +10,11 @@
     clear: both;
 }
 @media (max-width: 1353px) {
+    .item input[type=email],
     .item input[type=text]{
         margin-right: 4.1%;
     }
-    .item a.captcha-img{
+    .item.captcha-block img{
         margin-right: 3.4%;
     }
 }
@@ -40,10 +41,10 @@
         padding: 0 0 0 10px;
     }
     .item input[type=text],
-    .item input[type=text]{
+    .item input[type=email]{
         margin-right: 2.6%;
     }
-    .item a.captcha-img{
+    .item.captcha-block img{
         margin-right: 2.6%;
     }
 }
@@ -51,11 +52,17 @@
     .blocks .color-block h2 {
         font-size: 230%;
     }
-    .item a.captcha-img{
+    .item.captcha-block img{
         margin-right: 1.7%;
     }
-    .captcha-block input[type=submit],
-    .captcha-block button[type=submit] {
+    .captcha-block button[type=submit],
+    .captcha-block input[type=submit] {
         width: 45.3%;
+    }
+    .num-block .n-b-text h2{
+        font-size: 11px;
+    }
+    .num-block .n-b-text p{
+        font-size: 11px;
     }
 }
