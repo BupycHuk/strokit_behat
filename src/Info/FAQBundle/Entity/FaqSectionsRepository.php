@@ -23,4 +23,4 @@ class FaqSectionsRepository extends EntityRepository{
             ->getResult();
     }
 
-} 
+}
