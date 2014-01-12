@@ -50,7 +50,6 @@ sonata_media:
             providers:
                 - sonata.media.provider.image
             formats:
-                small: { width: 178, height: 178, quality: 100}
                 big:   { width: 178, height: 178, quality: 100}
 
     cdn:
