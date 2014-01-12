@@ -1,0 +1,48 @@
+<div class="full-block">
+<div class="scroll-block">
+    <div class="popup-pad">
+        <div class="correct-padding-div">
+        {% for question_answer in questions_answers%}
+        <h2>{{ question_answer.question }}</h2>
+        <p>{{ question_answer.answer }}</p>
+        {% endfor %}
+        </div>
+        
+        <div class="comments">
+            <a class="blue-button button" href="#">написать комментарий</a>
+            <h2>Комментарии</h2>
+            <ul>
+                <li>
+                    <div class="grey-who">Анастисия / 21.01.2014</div>
+                    <div class="comment">
+                        <p>
+                            Это текст комментария,  может быть 2 или три строчки,  если комментарий супре большой..  например на строчек 20 то прелдалагаю не показывать его целиком,  а показать первые 2-3 строчки и ссылку
+                            <a href="#" class="show-full">смотреть полностью</a>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="grey-who">Анастисия / 21.01.2014</div>
+                    <div class="comment">
+                        <p>
+                            Это текст комментария,  может быть 2 или три строчки,  если комментарий супре большой..  например на строчек 20 то прелдалагаю не показывать его целиком,  а показать первые 2-3 строчки и ссылку
+                            <a href="#" class="show-full">смотреть полностью</a>
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="grey-who">Анастисия / 21.01.2014</div>
+                    <div class="comment">
+                        <p>
+                            Это текст комментария,  может быть 2 или три строчки,  если комментарий супре большой..  например на строчек 20 то прелдалагаю не показывать его целиком,  а показать первые 2-3 строчки и ссылку
+                            <a href="#" class="show-full">смотреть полностью</a>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+
+    </div>
+</div>
+</div>

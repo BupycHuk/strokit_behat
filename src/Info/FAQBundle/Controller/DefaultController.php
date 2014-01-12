@@ -24,7 +24,7 @@ class DefaultController extends Controller
                 ->getRepository("InfoFAQBundle:FaqSections");
 
             $questions_answers = $repository->getQuestionsAnswers($id);
-            return $this->render('InfoFAQBundle:Default:faq_popup.html.twig', array('questions_answers'=>$questions_answers));
+            return $this->render('InfoFAQBundle:Default:ajax-text.html.twig', array('questions_answers'=>$questions_answers));
          }
         return new Response();
     }
