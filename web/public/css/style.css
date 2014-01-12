@@ -385,12 +385,6 @@ textarea:-moz-placeholder {
 .w20{
     width: 20%;
 }
-.w32{
-    width: 33.22222%;
-}
-.w16{
-    width: 16.66666%;
-}
 .w80 .w20{
     width: 25%;
 }
@@ -407,9 +401,6 @@ textarea:-moz-placeholder {
     vertical-align: top;
     font-family: 'GothamPro-Bold';
     overflow: hidden;
-}
-.blocks.faq{
-    width: 86.3%;
 }
 .blocks .block img{
     width: 100%;
@@ -617,6 +608,41 @@ textarea:-moz-placeholder {
 }
 
 
+.comment-form{
+    padding: 27px 0 0 0;
+    margin: 17px 0 0 0;
+    border-top: 1px solid #e3e3e3;
+}
+.comment-form .item{
+    padding: 0 0 16px 0;
+}
+.comment-form .item input[type=text],
+.comment-form .item input[type=email]{
+    width: 227px;
+    float: none;
+    margin: 0 19px 0 0;
+}
+.comment-form .item .textarea{
+    height: 76px;
+}
+.comment-form .item input[type=submit],
+.comment-form .item button[type=submit]{
+    width: auto;
+    font-family: 'GothamPro-Bold';
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #fff;
+    height: 38px;
+    text-align: center;
+    background-color: #ff5a00;
+}
+.comment-form .captcha-block input[type=submit],
+.comment-form .captcha-block button[type=submit]{
+    float: none;
+}
+.comment-form .item.captcha-block img {
+    margin: 0 19px 0 0;
+}
 
 .feedback-accept{
     padding: 0 0 20px 0;
@@ -633,6 +659,7 @@ textarea:-moz-placeholder {
 .feedback-accept p{
     font-size: 17px;
     padding: 0 0 69px 0;
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
 }
 .blocks.more-sub-block-menu{
     float: right;
@@ -741,32 +768,37 @@ textarea:-moz-placeholder {
     background-image: none!important;
 }
 
-.pagination{
+
+.feedback-link{
+    position: fixed;
+    border: 1px solid #9bd098;
+    border-top: none;
+    left: -172px;
+    top: 50%;
+    height: 23px;
+    width: 366px;
+    line-height: 23px;
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    /* also accepts left, right, top, bottom coordinates; not required, but a good idea for styling */
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    /* Should be unset in IE9+ I think. */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+    font-size: 11px;
+    color: #8ec890;
     text-align: center;
-    padding: 0 0 41px 0;
+    font-family: 'GothamPro-Bold';
+    text-transform: uppercase;
 }
-.pagination.green{
-    padding: 8px 0 11px 0;
-}
-.pagination ul li{
-    padding: 0 23px 0 0;
-    background-image: none;
-    display: inline-block;
-    font-size: 14px;
-    width: auto;
-    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
-}
-.pagination ul li a{
-    border: none;
-    color: #fff;
-}
-.pagination.green ul li a{
-    color: #25a236;
-}
-.pagination.green ul li.current{
-    color: #278138;
-}
-.pagination ul li a:hover{
+.feedback-link:hover{
+    border-bottom: 1px solid #9bd098;
     text-decoration: underline;
 }
 
@@ -895,4 +927,287 @@ td,th{
     padding: 0 20% 0 0;
     font-size: 14px;
     line-height: 18px;
+}
+
+
+.pagination{
+    text-align: center;
+    padding: 0 0 41px 0;
+}
+.pagination.green{
+    padding: 8px 0 11px 0;
+}
+.pagination ul li{
+    padding: 0 23px 0 0;
+    background-image: none;
+    display: inline-block;
+    font-size: 14px;
+    width: auto;
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+.pagination ul li a{
+    border: none;
+    color: #fff;
+}
+.pagination.green ul li a{
+    color: #25a236;
+}
+.pagination ul li a:hover{
+    text-decoration: underline;
+}
+
+.main-map{
+    margin: 0 0 10px 0;
+}
+.map-text{
+    width: 165px;
+    padding: 18px 0 18px 11px;
+}
+.map-text h2{
+    padding: 0 0 5px 0;
+    font-size: 13px;
+    color: #ff5a00;
+}
+.map-text h2 a{
+    color: #0096ff;
+    font-family: 'GothamPro-Bold';
+    border-bottom: 1px solid #bfe5ff;
+}
+.map-text h2 a:hover{
+    border-bottom: none;
+}
+.map-text p{
+    color: #000;
+    font-size: 12px;
+    padding: 0 0 0 0;
+}
+.big-map{
+}
+.main-map{
+    position: relative;
+    overflow: hidden;
+    background-color: #e5e3df;
+}
+.main-map i{
+    position: absolute;
+    display: block;
+/*box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.75) ;*/
+}
+.map-top {
+    top: -15px;
+    left: 0;
+    right: 0;
+    height: 15px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75) ;
+}
+.map-right {
+    right: -15px;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    box-shadow: -5px 0px 15px 0px rgba(0, 0, 0, 0.75) ;
+}
+.map-bottom {
+    bottom: -15px;
+    left: 0;
+    right: 0;
+    height: 15px;
+    box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.75) ;
+}
+.map-left {
+    left: -15px;
+    top: 0;
+    bottom: 0;
+    width: 15px;
+    box-shadow: 5px 0px 15px 0px rgba(0, 0, 0, 0.75) ;
+}
+.map-list-link{
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 53px;
+    height: 34px;
+    background-image: url(../img/map-list.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    color: #ff5a00;
+    border: none;
+    display: block;
+    padding: 15px 11px 0 34px;
+    font-size: 10px;
+    line-height: 11px;
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+.map-list-link:hover{
+    text-decoration: underline;
+}
+
+
+.white-back-block{
+    position: relative;
+    background-color: #FFF;
+    margin: 0 0 10px 0;
+    padding: 41px 0 30px 125px;
+}
+.map-list li{
+    display: inline-block;
+    width: 24%;
+    padding: 0 0 14px 0;
+    background-image: none;
+}
+.num-block{
+    height: 75px;
+    overflow: hidden;
+    padding: 0 22% 0 0;
+}
+.num-block .num{
+    float: left;
+    width: 15px;
+    overflow: hidden;
+    color: #aaa;
+    font-size: 10px;
+    height: 100%;
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+.num-block .n-b-text h2{
+    padding: 0 0 6px 0;
+    font-size: 13px;
+    color: #ff5a00;
+}
+.num-block .n-b-text h2 a{
+    color: #0096ff;
+    border-bottom: 1px solid #bfe5ff;
+}
+.num-block .n-b-text h2 a:hover{
+    border-bottom: none;
+}
+.num-block .n-b-text p{
+    color: #000;
+    font-size: 12px;
+    padding: 0 0 0 0;
+    line-height: 14px;
+}
+.to-map-link{
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    width: 60px;
+    background-image: url(../img/map-list-link.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    color: #ff5a00;
+    border: none;
+    display: block;
+    padding: 4px 0 5px 27px;
+    font-size: 10px;
+    line-height: 11px;
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+}
+.to-map-link:hover{
+    text-decoration: underline;
+}
+
+.scroll-block{
+    overflow: hidden;
+    position: relative;
+}
+.full-block{
+    padding: 35px;
+    background-color: #FFF;
+    min-width: 800px;
+    max-width: 1100px;
+}
+.popup-pad{
+    padding: 0 20px 0 0;
+}
+.full-block p,
+.full-block ul li,
+.full-block ol li,
+td,th{
+    color: #000;
+}
+.full-block h1,
+.full-block h2,
+.full-block h3,
+.full-block h4,
+.full-block h5,
+.full-block h6{
+    color: #ff9600;
+}
+.full-block a{
+    color: #2ea607;
+}
+
+
+.comments{
+    padding: 20px 0 0 0;
+}
+.comments h2{
+    font-size: 22px;
+    color: #dadada;
+    padding: 42px 0 0 0;
+    border-bottom: 1px solid #dadada;
+    margin: 0 0 20px 0;
+}
+.comments ul li{
+    padding: 0 0 20px 0;
+    background-image: none;
+}
+.comments ul li .grey-who{
+    font-size: 11px;
+    color: #a5a5a5;
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+    font-style: italic;
+    padding: 0 0 5px 0;
+}
+.comments ul li .comment,
+.comments ul li .comment p{
+    font-size: 12px;
+    color: #000;
+    padding: 0 0 0 0;
+}
+.comments .show-full{
+    font-size: 10px;
+    color: #00a8ff;
+    border: none;
+    text-decoration: underline;
+}
+.comments .show-full:hover{
+    text-decoration: none;
+}
+.correct-padding-div h2{
+    padding: 0 0 3px 0;
+}
+.correct-padding-div p{
+    padding: 0 0 25px 0;
+}
+
+
+.news-full{
+
+}
+.news-full h1{
+    padding: 0 0 15px 0;
+    font-size: 22px;
+}
+.full-block .date{
+    font-style: italic;
+    font-size: 11px;
+    color: #a5a5a5;
+    padding: 0 0 0 0;
+}
+.news-full p{
+    padding: 0 0 18px 0;
+}
+
+.share{
+
+}
+.share ul li{
+    padding: 0 16px 10px 0;
+    background-image: none;
+    float: left;
+}
+.share ul li a{
+    border: none;
 }

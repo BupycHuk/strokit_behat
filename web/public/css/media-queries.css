@@ -9,6 +9,15 @@
 .clear-max{
     clear: both;
 }
+@media (max-width: 1353px) {
+    .item input[type=email],
+    .item input[type=text]{
+        margin-right: 4.1%;
+    }
+    .item.captcha-block img{
+        margin-right: 3.4%;
+    }
+}
 @media (max-width: 1280px) {
     .right-sub-coll {
         width: 33%;
@@ -31,9 +40,29 @@
     .main-news {
         padding: 0 0 0 10px;
     }
+    .item input[type=text],
+    .item input[type=email]{
+        margin-right: 2.6%;
+    }
+    .item.captcha-block img{
+        margin-right: 2.6%;
+    }
 }
 @media (max-width: 1152px) {
     .blocks .color-block h2 {
         font-size: 230%;
+    }
+    .item.captcha-block img{
+        margin-right: 1.7%;
+    }
+    .captcha-block button[type=submit],
+    .captcha-block input[type=submit] {
+        width: 45.3%;
+    }
+    .num-block .n-b-text h2{
+        font-size: 11px;
+    }
+    .num-block .n-b-text p{
+        font-size: 11px;
     }
 }
