@@ -28,5 +28,15 @@ class FaqSections
      */
     private $name;
 
+    /**
+     * @var \MediaMedia
+     *
+     * @ORM\ManyToOne(targetEntity="MediaMedia")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="image_id", referencedColumnName="id")
+     * })
+     */
+    private $image;
+
 
 }
