@@ -1,3 +1,9 @@
-info_faq_homepage:
+info_faq:
     pattern:  /faq/
     defaults: { _controller: InfoFAQBundle:Default:index }
+
+faq_ajax_get_popup:
+    pattern: /faq/popup/{id}/
+    defaults: { _controller: InfoFAQBundle:Default:showFaqPopup }
+    requirements:
+        id:  \d+

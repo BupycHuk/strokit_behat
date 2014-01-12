@@ -140,6 +140,11 @@ class FaqQuestionsAnswers
         return $this->date;
     }
 
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
+
     /**
      * Set active
      *

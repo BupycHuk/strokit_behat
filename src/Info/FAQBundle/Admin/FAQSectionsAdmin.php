@@ -22,6 +22,7 @@ class FAQSectionsAdmin extends Admin{
         $formMapper
 
             ->add('name')
+            ->add('image', 'sonata_type_model_list', array('required' => false, 'label' => 'Иконка'), array('link_parameters' => array('context' => 'faq')))
             ;
     }
     // Fields to be shown on lists

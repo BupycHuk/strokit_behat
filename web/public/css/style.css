@@ -385,6 +385,12 @@ textarea:-moz-placeholder {
 .w20{
     width: 20%;
 }
+.w32{
+    width: 33.22222%;
+}
+.w16{
+    width: 16.66666%;
+}
 .w80 .w20{
     width: 25%;
 }
@@ -401,6 +407,9 @@ textarea:-moz-placeholder {
     vertical-align: top;
     font-family: 'GothamPro-Bold';
     overflow: hidden;
+}
+.blocks.faq{
+    width: 86.3%;
 }
 .blocks .block img{
     width: 100%;
@@ -588,7 +597,7 @@ textarea:-moz-placeholder {
     font-family: 'GothamPro-Bold';
     font-size: 13px;
     text-transform: uppercase;
-    color: #fff;
+    color: #fff!important;
     height: 38px;
     padding: 0 15px;
     line-height: 38px;
@@ -788,6 +797,87 @@ textarea:-moz-placeholder {
     background-image: url(../img/bred-arrow.png);
     background-position: 0 0;
     background-repeat: no-repeat;
+}
+.scroll-block{
+    overflow: hidden;
+    position: relative;
+}
+.full-block{
+    padding: 35px;
+    background-color: #FFF;
+    min-width: 800px;
+    max-width: 1100px;
+}
+.popup-pad{
+    padding: 0 20px 0 0;
+}
+.full-block p,
+.full-block ul li,
+.full-block ol li,
+td,th{
+    color: #000;
+}
+.full-block h1,
+.full-block h2,
+.full-block h3,
+.full-block h4,
+.full-block h5,
+.full-block h6{
+    color: #ff9600;
+}
+.full-block a{
+    color: #2ea607;
+}
+
+
+.comments{
+    padding: 20px 0 0 0;
+}
+.comments h2{
+    font-size: 22px;
+    color: #dadada;
+    padding: 42px 0 0 0;
+    border-bottom: 1px solid #dadada;
+    margin: 0 0 20px 0;
+}
+.comments ul li{
+    padding: 0 0 20px 0;
+    background-image: none;
+}
+.comments ul li .grey-who{
+    font-size: 11px;
+    color: #a5a5a5;
+    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+    font-style: italic;
+    padding: 0 0 5px 0;
+}
+.comments ul li .comment,
+.comments ul li .comment p{
+    font-size: 12px;
+    color: #000;
+    padding: 0 0 0 0;
+}
+.comments .show-full{
+    font-size: 10px;
+    color: #00a8ff;
+    border: none;
+    text-decoration: underline;
+}
+.comments .show-full:hover{
+    text-decoration: none;
+}
+.correct-padding-div h2{
+    padding: 0 0 3px 0;
+}
+.correct-padding-div p{
+    padding: 0 0 25px 0;
+}
+
+.full-block .date{
+    font-style: italic;
+    font-size: 11px;
+    color: #a5a5a5;
+    padding: 0 0 0 0;
 }
 
 .news-list{

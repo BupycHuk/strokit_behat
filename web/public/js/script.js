@@ -40,5 +40,25 @@ $(document).ready(function(){
         }
     });
 
+    $("a[rel='facebox'], a[rel='colorbox']").colorbox({
+        title:" ",
+        previous:true,
+        next:true,
+        arrowKey:false,
+        rel: false,
+        current: false,
+        opacity:0.8,
+        maxWidth: '100%',
+        onComplete:function(){$(this).colorbox.resize();}
+    });
+
+    $(document).bind("cbox_complete", function(){
+        var height = $(window).height() - 100;
+        var blockHeight = $(".scroll-block").height();
+        if(height <  blockHeight){
+            $(".scroll-block").height(height).perfectScrollbar({wheelSpeed: 30, suppressScrollX: true});
+        }
+    });
+
 });
 
