@@ -373,6 +373,9 @@ textarea:-moz-placeholder {
     width: 71%;
     float: left;
 }
+.blocks.faq{
+    width: 86.3%;
+}
 .w80{
     width: 80%;
 }
@@ -390,6 +393,12 @@ textarea:-moz-placeholder {
 }
 .w40 .w20{
     width: 50%;
+}
+.w16{
+    width: 16.66666%;
+}
+.w32{
+    width: 33.22222%;
 }
 .blocks a{
     border: none;
