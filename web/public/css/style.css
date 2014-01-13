@@ -931,6 +931,7 @@ td,th{
     width: 30%;
     padding: 0 3px 53px 0;
     background-image: none;
+    vertical-align: top;
 }
 .news-list li h2{
     padding: 0 20% 0 0;
@@ -1220,3 +1221,55 @@ td,th{
 .share ul li a{
     border: none;
 }
+
+
+/* files */
+.files-list ul{
+    padding: 20px 0 0 4px;
+}
+.files-list ul li{
+    display: inline-block;
+    width: 30%;
+    padding: 0 3px 53px 0;
+    background-image: none;
+    vertical-align: top;
+}
+.files-list li h2{
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0 0 5px 0;
+}
+.files-list ul li .file-name{
+    margin: 0 0 0 61px;
+    padding: 6px 20% 0 0;
+}
+.files-list ul li .file-icon{
+    float: left;
+    width: 50px;
+    height: 65px;
+    background-image: url(../img/file-icon.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.files-list ul li .file-icon span{
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'GothamPro-Bold';
+    position: absolute;
+    top: 29px;
+    left: 0;
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
+.files-list ul li .file-icon a{
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+/*---------------------------------*/

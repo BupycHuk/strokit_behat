@@ -5,3 +5,7 @@ services:
 #    info_elsom.example:
 #        class: %info_elsom.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    elsom.twig.elsoom_fileName_extension:
+        class: Info\ElsomBundle\Twig\FileNameExtension
+        tags:
+            - { name: twig.extension }
