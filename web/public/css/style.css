@@ -526,7 +526,8 @@ textarea:-moz-placeholder {
 }
 
 .feedback{
-    width: 82.11111%;
+    max-width: 82.11111%;
+    min-width: 786px;
 }
 .item{
     padding: 0 0 34px 0;
