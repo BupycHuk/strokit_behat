@@ -11,8 +11,4 @@ use Sonata\AdminBundle\Show\ShowMapper;
 
 abstract class BaseAdmin extends Admin
 {
-
-    public function getFormTheme() {
-        return array_merge(parent::getFormTheme(),array('StrokitCoreBundle:Admin:form_fields.html.twig'));
-    }
 }
