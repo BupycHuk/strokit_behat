@@ -1,0 +1,8 @@
+{% extends admin.getTemplate('base_list_field') %}
+
+{% block field %}
+    <input type="hidden"
+           value="{{ url('sonata_admin_set_object_field_value', { 'context': 'list', 'field': field_description.name, 'objectId': admin.id(object),'code': admin.code(object) }) }}"/>
+    <span class="sonata-admin-list-value">{{ value }}</span>
+    <span class="sonata-ba-sortable-handler ui-icon ui-icon-grip-solid-horizontal"></span>
+{% endblock %}
