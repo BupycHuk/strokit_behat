@@ -1,3 +1,11 @@
 info_page:
     pattern:  /{url}.html
-    defaults: { _controller: InfoPageBundle:Page:index }
+    defaults: { _controller: InfoPageBundle:Page:show }
+
+info_service_show:
+    pattern:  /service/{url}.html
+    defaults: { _controller: InfoPageBundle:Service:show }
+
+info_service_index:
+    pattern:  /service/
+    defaults: { _controller: InfoPageBundle:Service:index }
