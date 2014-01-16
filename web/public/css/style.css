@@ -581,8 +581,12 @@ textarea:-moz-placeholder {
 .captcha-block input[type=text]{
     width: 23.4%;
 }
-.captcha-block input[type=submit],
-.captcha-block button[type=submit]{
+.captcha-block button[type=submit],
+.captcha-block input[type=submit]{
+    float: right;
+}
+.item input[type=submit],
+.item button[type=submit]{
     width: 47.6%;
     font-family: 'GothamPro-Bold';
     font-size: 11px;
@@ -590,8 +594,9 @@ textarea:-moz-placeholder {
     color: #fff;
     height: 38px;
     text-align: center;
-    float: right;
     background-color: #ff5a00;
+    cursor: pointer;
+    padding: 0 15px;
 }
 
 .button{
