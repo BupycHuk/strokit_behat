@@ -555,6 +555,9 @@ textarea:-moz-placeholder {
     height: 325px;
     padding: 14px;
 }
+.full-block .item .textarea{
+    border: 1px solid #dddddd;
+}
 .item .textarea textarea{
     height: 100%;
     width: 100%;
@@ -564,12 +567,17 @@ textarea:-moz-placeholder {
     color: #95d09e;
     resize: none;
 }
-.item .error{
-    background-color: #f24841!important;
-    color: #fff!important;
-    height: 36px!important;
-    width: 44.9%!important;
+.item input[type=text].error,
+.item input[type=email].error{
+    background-color: #f24841;
+    color: #fff;
+    height: 38px;
+    width: 44.9%;
     border: 1px solid #ff0000;
+}
+.full-block .item input[type=text],
+.full-block .item input[type=email]{
+    border: 1px solid #dddddd;
 }
 .item a.captcha-img{
     display: inline-block;
@@ -581,7 +589,7 @@ textarea:-moz-placeholder {
     width: 23.4%;
 }
 .captcha-block input[type=submit],
-.captcha-block button[type=submit]{
+.captcha-block button{
     width: 47.6%;
     font-family: 'GothamPro-Bold';
     font-size: 11px;
@@ -592,7 +600,19 @@ textarea:-moz-placeholder {
     float: right;
     background-color: #ff5a00;
 }
-
+.item [type=submit],
+.captcha-block button{
+    width: 47.6%;
+    font-family: 'GothamPro-Bold';
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #fff;
+    height: 38px;
+    text-align: center;
+    background-color: #ff5a00;
+    cursor: pointer;
+    padding: 0 15px;
+}
 .button{
     font-family: 'GothamPro-Bold';
     font-size: 13px;
@@ -618,9 +638,11 @@ textarea:-moz-placeholder {
 
 
 .comment-form{
-    padding: 27px 0 0 0;
+    /*padding: 27px 0 0 0;*/
     margin: 17px 0 0 0;
-    border-top: 1px solid #e3e3e3;
+    /*border-top: 1px solid #e3e3e3;*/
+    overflow: hidden;
+    height: 0;
 }
 .comment-form .item{
     padding: 0 0 16px 0;
@@ -634,8 +656,7 @@ textarea:-moz-placeholder {
 .comment-form .item .textarea{
     height: 76px;
 }
-.comment-form .item input[type=submit],
-.comment-form .item button[type=submit]{
+.comment-form .item button{
     width: auto;
     font-family: 'GothamPro-Bold';
     font-size: 11px;
@@ -645,14 +666,15 @@ textarea:-moz-placeholder {
     text-align: center;
     background-color: #ff5a00;
 }
-.comment-form .captcha-block input[type=submit],
-.comment-form .captcha-block button[type=submit]{
+.comment-form .captcha-block button{
     float: none;
 }
 .comment-form .item.captcha-block img {
     margin: 0 19px 0 0;
+    display: inline-block;
+    border: none;
+    float: left;
 }
-
 .feedback-accept{
     padding: 0 0 20px 0;
 }
@@ -904,6 +926,9 @@ td,th{
     border: none;
     text-decoration: underline;
 }
+#comment_sended h2{
+    border-bottom: none;
+}
 .comments .show-full:hover{
     text-decoration: none;
 }
@@ -1116,74 +1141,6 @@ td,th{
     text-decoration: underline;
 }
 
-.scroll-block{
-    overflow: hidden;
-    position: relative;
-}
-.full-block{
-    padding: 35px;
-    background-color: #FFF;
-    min-width: 800px;
-    max-width: 1100px;
-}
-.popup-pad{
-    padding: 0 20px 0 0;
-}
-.full-block p,
-.full-block ul li,
-.full-block ol li,
-td,th{
-    color: #000;
-}
-.full-block h1,
-.full-block h2,
-.full-block h3,
-.full-block h4,
-.full-block h5,
-.full-block h6{
-    color: #ff9600;
-}
-.full-block a{
-    color: #2ea607;
-}
-
-
-.comments{
-    padding: 20px 0 0 0;
-}
-.comments h2{
-    font-size: 22px;
-    color: #dadada;
-    padding: 42px 0 0 0;
-    border-bottom: 1px solid #dadada;
-    margin: 0 0 20px 0;
-}
-.comments ul li{
-    padding: 0 0 20px 0;
-    background-image: none;
-}
-.comments ul li .grey-who{
-    font-size: 11px;
-    color: #a5a5a5;
-    font-family: Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
-    font-style: italic;
-    padding: 0 0 5px 0;
-}
-.comments ul li .comment,
-.comments ul li .comment p{
-    font-size: 12px;
-    color: #000;
-    padding: 0 0 0 0;
-}
-.comments .show-full{
-    font-size: 10px;
-    color: #00a8ff;
-    border: none;
-    text-decoration: underline;
-}
-.comments .show-full:hover{
-    text-decoration: none;
-}
 .correct-padding-div h2{
     padding: 0 0 3px 0;
 }

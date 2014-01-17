@@ -7,3 +7,7 @@ faq_ajax_get_popup:
     defaults: { _controller: InfoFAQBundle:Default:showFaqPopup }
     requirements:
         id:  \d+
+
+faq_ajax_save_comment:
+    pattern: /faq/save/comment/
+    defaults: { _controller: InfoFAQBundle:Default:saveComment }
