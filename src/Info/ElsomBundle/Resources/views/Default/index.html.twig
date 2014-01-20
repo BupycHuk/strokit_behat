@@ -55,49 +55,14 @@
                 </div>
             </div>
             <div class="clear-max"></div>
-            <div class="block white-block w20">
-                <div class="inner-block">
-                    <div class="img">
-                        <img src="{{ asset('public/img/mob-icon.png') }}" alt="Mobile">
-                    </div>
-                    <h2>сотовая<br> связь</h2>
-                    <a class="mask" href="#"></a>
-                </div>
-            </div>
-            <div class="block white-block w20">
-                <div class="inner-block">
-                    <div class="img">
-                        <img src="{{ asset('public/img/mun-icon.png') }}" alt="Коммунальные услуги">
-                    </div>
-                    <h2>Коммунальные<br> услуги</h2>
-                    <a class="mask" href="#"></a>
-                </div>
-            </div>
-            <div class="block white-block w20">
-                <div class="inner-block">
-                    <div class="img">
-                        <img src="{{ asset('public/img/inet-icon.png') }}" alt="Интернет">
-                    </div>
-                    <h2>интернет</h2>
-                    <a class="mask" href="#"></a>
-                </div>
-            </div>
-            <div class="block white-block w20">
-                <div class="inner-block">
-                    <div class="img">
-                        <img src="{{ asset('public/img/buy-icon.png') }}" alt="Buy">
-                    </div>
-                    <h2>Покупка товаров<br> и услуг</h2>
-                    <a class="mask" href="#"></a>
-                </div>
-            </div>
+            {% render controller('InfoPageBundle:Service:main') %}
             <div class="block white-block w20">
                 <div class="inner-block">
                     <div class="img">
                         <img src="{{ asset('public/img/all-icon.png') }}" alt="All">
                     </div>
                     <h2>все<br> услуги</h2>
-                    <a class="mask" href="#"></a>
+                    <a class="mask" href="{{ path('info_service_index') }}"></a>
                 </div>
             </div>
             <div class="clear"></div>

@@ -15,3 +15,15 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [InfoPageBundle]]
+
+
+    sonata.admin.page_service:
+        class: Info\PageBundle\Admin\ServiceAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Сайт", label: "Услуги" }
+        arguments:
+            - ~
+            - Info\PageBundle\Entity\Service
+            - ~
+        calls:
+            - [ setTranslationDomain, [InfoPageBundle]]

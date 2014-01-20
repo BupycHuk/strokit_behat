@@ -46,7 +46,7 @@ sonata_media:
                 appstore: { height: 47 , quality: 95}
                 socialnetwork:   { height: 25, quality: 90}
 
-        faq:
+        block:
             providers:
                 - sonata.media.provider.image
             formats:

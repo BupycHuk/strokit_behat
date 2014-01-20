@@ -6,7 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class PageController extends Controller
 {
-    public function indexAction($url)
+    public function showAction($url)
     {
         $pages = $this->getDoctrine()
             ->getRepository('InfoPageBundle:Pages')
