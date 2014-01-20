@@ -37,15 +37,15 @@ $(document).ready(function(){
                  alert("error");
              }
         });
-//            var formUrl = $(form).attr("action");
-//            $.post(formUrl,$(form).serialize(), function(data){
-//                $('.comment-form').stop().animate({
-//                   height: 0,
-//                   'padding-top': 0
-//                }, 300).removeClass('opened');
-//                $('#comment_sended').html(data);
-//                $(".open-comment-form").css({backgroundColor: "#8DB1EC", textDecoration: "none", cursor: "default"}).prop("disabled", true);
-//            }, 'json')
         }
+    });
+
+    $(".comment").jTruncate({
+        length: 500,
+        moreText: "смотреть полностью",
+        lessText: "скрыть",
+        ellipsisText: "",
+        moreAni: 1000,
+        lessAni: 1000
     });
 });

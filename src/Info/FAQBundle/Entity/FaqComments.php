@@ -80,7 +80,7 @@ class FaqComments
     /**
      * @var FaqSections
      *
-     * @ORM\ManyToOne(targetEntity="FaqSections")
+     * @ORM\ManyToOne(targetEntity="FaqSections", inversedBy="comments")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="section_id", referencedColumnName="id")
      * })
@@ -240,10 +240,10 @@ class FaqComments
     /**
      * Set section
      *
-     * @param \Info\FAQBundle\Entity\FaqSections $section
+     * @param FaqSections $section
      * @return FaqComments
      */
-    public function setSection(\Info\FAQBundle\Entity\FaqSections $section = null)
+    public function setSection($section = null)
     {
         $this->section = $section;
 

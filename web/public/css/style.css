@@ -920,12 +920,24 @@ td,th{
     color: #000;
     padding: 0 0 0 0;
 }
-.comments .show-full{
+/* стили для jTruncate*/
+.comment .truncate_more_link{
     font-size: 10px;
     color: #00a8ff;
     border: none;
     text-decoration: underline;
 }
+.comment > p, .clearboth{
+    display: inline;
+}
+/* конец стилей для jTruncate*/
+
+/*.comments .show-full{*/
+    /*font-size: 10px;*/
+    /*color: #00a8ff;*/
+    /*border: none;*/
+    /*text-decoration: underline;*/
+/*}*/
 #comment_sended h2{
     border-bottom: none;
 }

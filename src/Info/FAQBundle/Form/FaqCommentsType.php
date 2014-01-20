@@ -27,7 +27,9 @@ class FaqCommentsType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'translation_domain' => 'InfoFeedbackBundle'
+            'translation_domain' => 'InfoFeedbackBundle',
+            'data_class'=>'Info\FAQBundle\Entity\FaqComments',
+
         ));
 
     }

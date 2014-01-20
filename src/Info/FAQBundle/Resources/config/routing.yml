@@ -9,5 +9,5 @@ faq_ajax_get_popup:
         id:  \d+
 
 faq_ajax_save_comment:
-    pattern: /faq/save/comment/
+    pattern: /faq/save/comment/{id}/
     defaults: { _controller: InfoFAQBundle:Default:saveComment }
