@@ -1,22 +1,56 @@
-{% extends "::base.html.twig" %}
-{% block title %}
-    {{ parent() }} : Новости - {{ post.title }}
-{% endblock %}
+<div class="full-block">
+    <div class="scroll-block">
+        <div class="popup-pad">
+            <div class="news-full">
+                <h1>{{ post.title }}</h1>
+                <div class="date">{{ post.publicationDateStart | format_date }}</div>
+                {{ post.content|raw }}
+            </div>
 
-{% block meta_description %}
-    {{ post.abstract|raw  }}
-{% endblock %}
+            <div class="share">
+                <ul>
+                    <li><a href="#"><img src="/img/facebook.png" alt="Facebook"></a></li>
+                    <li><a href="#"><img src="/img/gplus.png" alt="Google+"></a></li>
+                    <li><a href="#"><img src="/img/twitter.png" alt="twitter"></a></li>
+                    <li><a href="#"><img src="/img/vk.png" alt="ВКонтакте"></a></li>
+                    <li><a href="#"><img src="/img/mailru.png" alt="Mail ru"></a></li>
+                    <li class="last"><a href="#"><img src="/img/oneeye.png" alt="Одноглазники"></a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
 
-{% block facebook_image_url %}
-    {% path post.image, 'small' %}
-{% endblock %}
+            <div class="tags">
+                {% for tag in post.tags%}
+                    <a href="{{ url('sonata_news_tag', {'tag': tag.slug} ) }}">{{ tag.name }}</a>
+                    {% if not loop.last%}, {%endif%}
+                {% endfor %}
+            </div>
 
-{% block stylesheets %}
-{{ parent() }}
-{% endblock %}
+            <div class="comment-form">
+                <div class="item">
+                    <input type="text" placeholder="E-mail" value="">
+                    <input type="text" placeholder="Номер телефона" value="">
+                    <div class="clear"></div>
+                </div>
+                <div class="item">
+                    <div class="textarea">
+                        <textarea cols="30" rows="10" placeholder="текст сообщения"></textarea>
+                    </div>
+                </div>
+                <div class="item captcha-block">
+                    <a href="#" class="captcha-img"><img src="/img/capcha.png" alt="capcha"></a>
+                    <input type="text" placeholder="Введите цифры с картинки" value="" class="mini-input">
+                    <input type="submit" value="Отправить сообщение">
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </div>
 
-{% block body %}
-    <div class="sonata-blog-post-container">
+        </div>
+    </div>
+</div>
+
+<div class="sonata-blog-post-container">
         <div class="sonata-blog-post-date-container">
             {{ post.publicationDateStart | format_date }}
         </div>
@@ -58,4 +92,3 @@
             </div>
         {% endif %}
     </div>
-{% endblock body %}
