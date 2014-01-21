@@ -11,16 +11,33 @@
 
 #}
 
-<h3>{{'title_leave_comment'|trans({}, 'SonataNewsBundle') }}</h3>
-
 <form action="{{ url('sonata_news_add_comment', {'id': post_id}) }}" method="POST" >
+    <div class="comment-form">
+        <div class="item">
+            <input type="text" placeholder="E-mail" value="">
+            <input type="text" placeholder="Номер телефона" value="">
+            <div class="clear"></div>
+        </div>
+        <div class="item">
+            <div class="textarea">
+                <textarea cols="30" rows="10" placeholder="текст сообщения"></textarea>
+            </div>
+        </div>
+        <div class="item captcha-block">
+            <a href="#" class="captcha-img"><img src="/img/capcha.png" alt="capcha"></a>
+            <input type="text" placeholder="Введите цифры с картинки" value="" class="mini-input">
+            <input type="submit" value="Отправить сообщение">
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+    </div>
 
     <div class="clearfix">
         {{ form_row(form.name) }}
     </div>
 
     <div class="clearfix">
-        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
     </div>
 
     <div class="clearfix">
