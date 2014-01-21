@@ -16,6 +16,7 @@ list:
     label_active: Активность
 
     link-to-map: смотреть на карте
+    title:  Список точек
 filter:
     label_id: Id
     label_name: Название
@@ -51,3 +52,6 @@ show:
 map:
     admin:
         content: Карты
+    title:  Карта охвата
+
+phone:  Тел

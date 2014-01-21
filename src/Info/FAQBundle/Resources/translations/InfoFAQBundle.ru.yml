@@ -35,3 +35,4 @@ filter:
 faq:
     admin:
         content: FAQ
+    title:  FAQ

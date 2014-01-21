@@ -7,11 +7,10 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Link
  *
- * @ORM\Table(name="terminal")
+ * @ORM\Table(name="cashout")
  * @ORM\Entity
- * @ORM\Entity(repositoryClass="Info\MapBundle\Entity\TerminalRepository")
  */
-class Terminal extends MapBase
+class Cashout extends MapBase
 {
     /**
      * Get id
