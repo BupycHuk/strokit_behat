@@ -76,5 +76,20 @@ $(document).ready(function(){
         }
     });
 
+    $(document).on('click', '.open-comment-form', function(){
+        if($('.comment-form').hasClass('opened')){
+            $('.comment-form').stop().animate({
+                height: 0,
+                'padding-top': 0
+            }, 300).removeClass('opened');
+        }else{
+            $('.comment-form').stop().animate({
+                height: '265px',
+                'padding-top': '27px'
+            }, 300).addClass('opened');
+        }
+        return false;
+    });
+
 });
 
