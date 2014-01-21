@@ -35,10 +35,6 @@ class FaqComments
      */
     private $date;
 
-    public function __construct()
-    {
-        $this->date = new \DateTime();
-    }
 
     /**
      * @var boolean
@@ -55,11 +51,24 @@ class FaqComments
     private $email;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=250, nullable=true)
+     */
+    private $phone;
+
+    /**
      * @var boolean
      *
      * @ORM\Column(name="answered", type="boolean", nullable=false)
      */
     private $answered;
+
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+        $this->answered = false;
+    }
 
     /**
      * @var string
@@ -71,7 +80,7 @@ class FaqComments
     /**
      * @var FaqSections
      *
-     * @ORM\ManyToOne(targetEntity="FaqSections")
+     * @ORM\ManyToOne(targetEntity="FaqSections", inversedBy="comments")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="section_id", referencedColumnName="id")
      * })
@@ -231,10 +240,10 @@ class FaqComments
     /**
      * Set section
      *
-     * @param \Info\FAQBundle\Entity\FaqSections $section
+     * @param FaqSections $section
      * @return FaqComments
      */
-    public function setSection(\Info\FAQBundle\Entity\FaqSections $section = null)
+    public function setSection($section = null)
     {
         $this->section = $section;
 
@@ -249,5 +258,21 @@ class FaqComments
     public function getSection()
     {
         return $this->section;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
     }
 }

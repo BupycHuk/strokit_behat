@@ -52,7 +52,7 @@ class FaqQuestionsAnswers
     /**
      * @var FaqSections
      *
-     * @ORM\ManyToOne(targetEntity="FaqSections")
+     * @ORM\ManyToOne(targetEntity="FaqSections", inversedBy="questionsAnswers")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="section_id", referencedColumnName="id")
      * })
