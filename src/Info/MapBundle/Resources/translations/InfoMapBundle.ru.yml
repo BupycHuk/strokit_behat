@@ -1,10 +1,14 @@
 terminal:
     admin:
-        label: РТ/ЦОП
+        label: Терминалы пополнения
 
 merchant:
     admin:
         label: Мерчанты
+
+cashout:
+    admin:
+        label: Терминалы вывода
 
 list:
     label_id: Id
@@ -55,3 +59,7 @@ map:
     title:  Карта охвата
 
 phone:  Тел
+fax: Факс
+email: E-mail
+web: Web
+information: Информация

@@ -8,10 +8,10 @@
 <script type="text/javascript">
     google.maps.event.addDomListener(window, 'load', function ()
     {
-        initialize();
+        mapFront = initialize($("#map-canvas-front")[0]);
         var markers = [];
         {% for item in items %}
-        var marker =initializeFront("{{ item.location }}",
+        var marker =initializeFront(mapFront[0],mapFront[1],"{{ item.location }}",
                 "{{ item.address }}",
                 '{% spaceless %}{% include "InfoMapBundle:Front:infoWindow.html.twig" with {'item':item} %} {% endspaceless %}',
                 '{{ asset('bundles/infomap/img/' ~ item.entity ~ '_icon.png') }}');
@@ -19,7 +19,7 @@
         {% endfor %}
 
         var mcOptions = {gridSize: 20, maxZoom: 15};
-        var mc = new MarkerClusterer(mapFront, markers, mcOptions);
+        var mc = new MarkerClusterer(mapFront[0], markers, mcOptions);
     });
 </script>
 {% endblock %}

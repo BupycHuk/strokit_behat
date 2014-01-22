@@ -16,6 +16,7 @@ class FrontController extends Controller {
 
     public function  listAction($entity)
     {
+
         $entity = ucfirst($entity);
         $items = $this->getDoctrine()->getRepository(sprintf("InfoMapBundle:%s",$entity))->findBy(array('active'=>true));
 
@@ -50,9 +51,13 @@ class FrontController extends Controller {
 
     public function showAction($entity,$id)
     {
+
         $entity = ucfirst($entity);
         $item = $this->getDoctrine()->getRepository(sprintf("InfoMapBundle:%s",$entity))->find($id);
-        return $this->render('InfoMapBundle:Front:show.html.twig',array('item'=>$item));
+        return $this->render('InfoMapBundle:Front:show.html.twig',
+            array(
+                'item'=>$item
+            ));
     }
 
     /**
@@ -64,6 +69,7 @@ class FrontController extends Controller {
      */
     public function getListView($entity, $items, $route, $link)
     {
+        $googleMapKey = $this->container->getParameter('google_map_key');
         $itemsCount = $this->container->getParameter('infomap_items_in_list');
 
         $paginator = $this->get('knp_paginator');
@@ -78,7 +84,8 @@ class FrontController extends Controller {
         return $this->render('InfoMapBundle:Front:list.html.twig', array(
             "items" => $pagination,
             'translationDomain' => sprintf('InfoMap%sBundle', $entity),
-            'link' => $link
+            'link' => $link,
+            'googleMapKey' => $googleMapKey
         ));
     }
 
