@@ -5,11 +5,10 @@ namespace Info\FAQBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Info/FAQBundle/Entity/FaqSections
+ * FaqSections
  *
  * @ORM\Table(name="faq_sections")
  * @ORM\Entity
- * @ORM\Entity(repositoryClass="Info\FAQBundle\Entity\FaqSectionsRepository")
  */
 class FaqSections
 {
@@ -38,6 +37,20 @@ class FaqSections
      * })
      */
     private $image;
+
+    /**
+     * @var FaqQuestionsAnswers
+     *
+     * @ORM\OneToMany(targetEntity="Info\FAQBundle\Entity\FaqQuestionsAnswers", mappedBy="section")
+     */
+    private $questionsAnswers;
+
+    /**
+     * @var FaqComments
+     *
+     * @ORM\OneToMany(targetEntity="Info\FAQBundle\Entity\FaqComments", mappedBy="section")
+     */
+    private $comments;
 
     /**
      * Get id
@@ -100,5 +113,78 @@ class FaqSections
     public function __toString()
     {
         return $this->getName()?$this->getName():"";
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->questionsAnswers = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add questionsAnswers
+     *
+     * @param \Info\FAQBundle\Entity\FaqQuestionsAnswers $questionsAnswers
+     * @return FaqSections
+     */
+    public function addQuestionsAnswer(\Info\FAQBundle\Entity\FaqQuestionsAnswers $questionsAnswers)
+    {
+        $this->questionsAnswers[] = $questionsAnswers;
+    
+        return $this;
+    }
+
+    /**
+     * Remove questionsAnswers
+     *
+     * @param \Info\FAQBundle\Entity\FaqQuestionsAnswers $questionsAnswers
+     */
+    public function removeQuestionsAnswer(\Info\FAQBundle\Entity\FaqQuestionsAnswers $questionsAnswers)
+    {
+        $this->questionsAnswers->removeElement($questionsAnswers);
+    }
+
+    /**
+     * Get questionsAnswers
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getQuestionsAnswers()
+    {
+        return $this->questionsAnswers;
+    }
+
+    /**
+     * Add comments
+     *
+     * @param \Info\FAQBundle\Entity\FaqComments $comments
+     * @return FaqSections
+     */
+    public function addComment(\Info\FAQBundle\Entity\FaqComments $comments)
+    {
+        $this->comments[] = $comments;
+    
+        return $this;
+    }
+
+    /**
+     * Remove comments
+     *
+     * @param \Info\FAQBundle\Entity\FaqComments $comments
+     */
+    public function removeComment(\Info\FAQBundle\Entity\FaqComments $comments)
+    {
+        $this->comments->removeElement($comments);
+    }
+
+    /**
+     * Get comments
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 }

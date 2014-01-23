@@ -556,6 +556,9 @@ textarea:-moz-placeholder {
     height: 325px;
     padding: 14px;
 }
+.full-block .item .textarea{
+    border: 1px solid #dddddd;
+}
 .item .textarea textarea{
     height: 100%;
     width: 100%;
@@ -565,12 +568,17 @@ textarea:-moz-placeholder {
     color: #95d09e;
     resize: none;
 }
-.item .error{
-    background-color: #f24841!important;
-    color: #fff!important;
-    height: 36px!important;
-    width: 44.9%!important;
+.item input[type=text].error,
+.item input[type=email].error{
+    background-color: #f24841;
+    color: #fff;
+    height: 38px;
+    width: 44.9%;
     border: 1px solid #ff0000;
+}
+.full-block .item input[type=text],
+.full-block .item input[type=email]{
+    border: 1px solid #dddddd;
 }
 .item a.captcha-img{
     display: inline-block;
@@ -624,9 +632,11 @@ textarea:-moz-placeholder {
 
 
 .comment-form{
-    padding: 27px 0 0 0;
+    /*padding: 27px 0 0 0;*/
     margin: 17px 0 0 0;
-    border-top: 1px solid #e3e3e3;
+    /*border-top: 1px solid #e3e3e3;*/
+    overflow: hidden;
+    height: 0;
 }
 .comment-form .item{
     padding: 0 0 16px 0;
@@ -657,8 +667,10 @@ textarea:-moz-placeholder {
 }
 .comment-form .item.captcha-block img {
     margin: 0 19px 0 0;
+    display: inline-block;
+    border: none;
+    float: left;
 }
-
 .feedback-accept{
     padding: 0 0 20px 0;
 }
@@ -904,11 +916,26 @@ td,th{
     color: #000;
     padding: 0 0 0 0;
 }
-.comments .show-full{
+/* стили для jTruncate*/
+.comment .truncate_more_link{
     font-size: 10px;
     color: #00a8ff;
     border: none;
     text-decoration: underline;
+}
+.comment > p, .clearboth{
+    display: inline;
+}
+/* конец стилей для jTruncate*/
+
+/*.comments .show-full{*/
+    /*font-size: 10px;*/
+    /*color: #00a8ff;*/
+    /*border: none;*/
+    /*text-decoration: underline;*/
+/*}*/
+#comment_sended h2{
+    border-bottom: none;
 }
 .comments .show-full:hover{
     text-decoration: none;
