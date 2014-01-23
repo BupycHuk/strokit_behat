@@ -71,18 +71,13 @@ function initialize(element)
     mapFront.setMapTypeId('map_style');
     return Array(mapFront,infowindow);
 }
-
-function setMarker(value, mapFront, address, icon) {
+function initializeFront(mapFront,infowindow,value,address,content,icon) {
     var marker = new google.maps.Marker({
         position: getLocation(value),
         map: mapFront,
         title: address,
         icon: icon
     });
-    return marker;
-}
-function initializeFront(mapFront,infowindow,value,address,content,icon) {
-    var marker = setMarker(value, mapFront, address, icon);
 
     google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(content);

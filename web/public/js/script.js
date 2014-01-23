@@ -74,6 +74,9 @@ $(document).ready(function(){
         if(height <  blockHeight){
             $(".scroll-block").height(height).perfectScrollbar({wheelSpeed: 30, suppressScrollX: true});
         }
+        if(typeof(initialize) == "function"){
+            initialize();
+        }
     });
 
     $(document).on('click', '.open-comment-form', function(){
