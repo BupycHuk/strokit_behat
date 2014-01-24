@@ -20,7 +20,11 @@
 
 
         <div class="breadcrumb">
-            {{ knp_menu_render('breadcrumb',{'currentAsLink':false,template : '::main_menu.html.twig'}) }}
+            <ul>
+                <li><a href="{{ path('info_elsom_homepage') }}">Главная</a> / </li>
+                <li><a href="#">Новости</a></li>
+            </ul>
+            {# {{ knp_menu_render('breadcrumb',{'currentAsLink':false,template : '::main_menu.html.twig'}) }} #}
             <div class="clear"></div>
         </div>
 
