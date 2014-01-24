@@ -50,12 +50,13 @@ class BreadcrumbBuilder
 
         // - [@infofaq_breadcrumb, @infomap_breadcrumb, @infopage_breadcrumb, @sonata.news.breadcrumb, @infofeedback_breadcrumb]
 
-        if ($this->container->get('infofaq_breadcrumb')->createBreadcrumbMenu($request, $menu))
-            return $menu;
-        echo 'test2';
         if ($this->container->get('infopage_breadcrumb')->createBreadcrumbMenu($request, $menu))
             return $menu;
         echo 'test3';
+
+        if ($this->container->get('infofaq_breadcrumb')->createBreadcrumbMenu($request, $menu))
+            return $menu;
+        echo 'test2';
         if ($this->container->get('infomap_breadcrumb')->createBreadcrumbMenu($request, $menu))
             return $menu;
         echo 'test4';

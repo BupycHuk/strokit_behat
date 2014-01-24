@@ -38,4 +38,4 @@ services:
 
 
     infofaq_breadcrumb:
-        class: Info\FaqBundle\Menu\BreadcrumbBuilder
+        class: Info\FAQBundle\Menu\BreadcrumbBuilder
