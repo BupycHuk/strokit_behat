@@ -91,6 +91,7 @@ $(document).ready(function(){
                 'padding-top': '27px'
             }, 300).addClass('opened');
         }
+        window.setTimeout(function(){$("cbox_complete").colorbox.resize();},350);
         return false;
     });
 
