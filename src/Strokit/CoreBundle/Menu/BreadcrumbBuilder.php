@@ -49,8 +49,8 @@ class BreadcrumbBuilder
         echo 'test1';
 
         // - [@infofaq_breadcrumb, @infomap_breadcrumb, @infopage_breadcrumb, @sonata.news.breadcrumb, @infofeedback_breadcrumb]
-        $faqBreadcrumbBuilder = new \Info\FaqBundle\Menu\BreadcrumbBuilder();
-        if ($faqBreadcrumbBuilder->createBreadcrumbMenu($request, $menu))
+
+        if ($this->container->get('infofaq_breadcrumb')->createBreadcrumbMenu($request, $menu))
             return $menu;
         echo 'test2';
         if ($this->container->get('infopage_breadcrumb')->createBreadcrumbMenu($request, $menu))

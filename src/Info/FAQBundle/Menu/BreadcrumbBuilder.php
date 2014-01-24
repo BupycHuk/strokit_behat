@@ -6,7 +6,7 @@
  * Time: 0:10
  */
 
-namespace Info\FaqBundle\Menu;
+namespace Info\FAQBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
