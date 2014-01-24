@@ -46,16 +46,22 @@ class BreadcrumbBuilder
         $menu->addChild('home', array('route' => $this->homeRoute))
             ->setExtra('translation_domain', 'InfoElsomBundle');
 
+        echo 'test1';
+
         // - [@infofaq_breadcrumb, @infomap_breadcrumb, @infopage_breadcrumb, @sonata.news.breadcrumb, @infofeedback_breadcrumb]
 
         if ($this->container->get('infofaq_breadcrumb')->createBreadcrumbMenu($request, $menu))
             return $menu;
+        echo 'test2';
         if ($this->container->get('infopage_breadcrumb')->createBreadcrumbMenu($request, $menu))
             return $menu;
+        echo 'test3';
         if ($this->container->get('infomap_breadcrumb')->createBreadcrumbMenu($request, $menu))
             return $menu;
+        echo 'test4';
         if ($this->container->get('sonata.news.breadcrumb')->createBreadcrumbMenu($request, $menu))
             return $menu;
+        echo 'test5';
         if ($this->container->get('infofeedback_breadcrumb')->createBreadcrumbMenu($request, $menu))
             return $menu;
         return $menu;
