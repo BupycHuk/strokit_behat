@@ -14,6 +14,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 interface IBreadcrumbBuilder {
 
-    function createBreadcrumbMenu(Request $request,ItemInterface $menu);
+    public function createBreadcrumbMenu(Request $request,ItemInterface $menu);
 
 } 

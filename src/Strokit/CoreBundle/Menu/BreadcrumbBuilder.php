@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class BreadcrumbBuilder {
 
-    private $breadcrumbBuilders;
+    //private $breadcrumbBuilders;
     /**
      * @var \Knp\Menu\FactoryInterface
      */
@@ -23,10 +23,13 @@ class BreadcrumbBuilder {
      */
     private $homeRoute;
 
-    public function __construct($breadcrumbBuilders,FactoryInterface $factory,$homeRoute)
+    public function __construct(
+        //$breadcrumbBuilders,
+        FactoryInterface $factory,
+        $homeRoute)
     {
 
-        $this->breadcrumbBuilders = $breadcrumbBuilders;
+        //$this->breadcrumbBuilders = $breadcrumbBuilders;
         $this->factory = $factory;
         $this->homeRoute = $homeRoute;
     }
@@ -39,14 +42,14 @@ class BreadcrumbBuilder {
             ->setExtra('translation_domain', 'InfoElsomBundle');
 
 
-        foreach($this->breadcrumbBuilders as $breadcrumbBuilder)
-        {
-            if ($breadcrumbBuilder instanceof IBreadcrumbBuilder)
-            {
-                if ($breadcrumbBuilder->createBreadcrumbMenu($request,$menu))
-                    return $menu;
-            }
-        }
+//        foreach($this->breadcrumbBuilders as $breadcrumbBuilder)
+//        {
+//            if ($breadcrumbBuilder instanceof IBreadcrumbBuilder)
+//            {
+//                if ($breadcrumbBuilder->createBreadcrumbMenu($request,$menu))
+//                    return $menu;
+//            }
+//        }
         return $menu;
         //throw new \InvalidArgumentException('breadcrumb.route.not_found');
     }
