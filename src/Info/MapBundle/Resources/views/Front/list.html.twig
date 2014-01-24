@@ -8,7 +8,7 @@
     <h1 class="title">{{ 'list.title'|trans({}, translationDomain) }}</h1>
 
     <div class="white-back-block">
-        <a href="{{ path('infomap_map',{'entity':entity}) }}"
+        <a href="{{ link }}"
            class="to-map-link">{{ 'list.link-to-map'|trans({}, 'InfoMapBundle') }}</a>
         <ul class="map-list">
             {% for item in items %}
@@ -16,12 +16,12 @@
                     <div class="num-block">
                         <div class="num">{{ loop.index }}.</div>
                         <div class="n-b-text">
-                            <h2><a href="{{ path('infomap_show',{'id':item.id,'entity':entity}) }}">{{ item.name }}</a></h2>
+                            <h2><a href="{{ path('infomap_show',{'id':item.id,'entity':item.entity}) }}" rel="colorbox">{{ item.name }}</a></h2>
 
                             <p>
                                 <span class="address">{{ item.address }}</span>
                                 {% if item.number %}
-                                    Тел: {{ item.number }}
+                                    {{ 'phone'|trans({},'InfoMapBundle') }}: {{ item.number }}
                                 {% endif %}
                             </p>
                         </div>

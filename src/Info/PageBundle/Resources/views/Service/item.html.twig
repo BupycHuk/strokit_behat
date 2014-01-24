@@ -1,0 +1,9 @@
+<div class="block white-block {{ width }}">
+    <div class="inner-block">
+        <div class="img">
+            {% media service.image,'big' %}
+        </div>
+        <h2>{{ service.title }}</h2>
+        <a class="mask" href="{{ path('info_service_show',{'url':service.url}) }}" rel="colorbox"></a>
+    </div>
+</div>

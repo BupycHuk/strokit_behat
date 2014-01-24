@@ -1,22 +1,23 @@
 {% extends '::base_inner.html.twig' %}
 {% block javascripts %}
 <script type="text/javascript"
-        src="https://maps.googleapis.com/maps/api/js?key={{ googleMapKey }}&sensor=true"></script>
-<script type="text/javascript"
         src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
 <script type="text/javascript" src="{{ asset("bundles/infomap/js/googleMap.js") }}"></script>
 <script type="text/javascript">
     google.maps.event.addDomListener(window, 'load', function ()
     {
-        initialize();
+        mapFront = initialize($("#map-canvas-front")[0]);
         var markers = [];
         {% for item in items %}
-        var marker =initializeFront("{{ item.location }}","{{ item.address }}",'{% spaceless %}{% include "InfoMapBundle:Front:infoWindow.html.twig" with {'item':item} %} {% endspaceless %}','{{ asset('bundles/infomap/img/map_icon.png') }}');
+        var marker =initializeFront(mapFront[0],mapFront[1],"{{ item.location }}",
+                "{{ item.address }}",
+                '{% spaceless %}{% include "InfoMapBundle:Front:infoWindow.html.twig" with {'item':item} %} {% endspaceless %}',
+                '{{ asset('bundles/infomap/img/' ~ item.entity ~ '_icon.png') }}');
         markers.push(marker);
         {% endfor %}
 
         var mcOptions = {gridSize: 20, maxZoom: 15};
-        var mc = new MarkerClusterer(mapFront, markers, mcOptions);
+        var mc = new MarkerClusterer(mapFront[0], markers, mcOptions);
     });
 </script>
 {% endblock %}
@@ -27,7 +28,7 @@
 
 {% block body %}
 
-    <h1 class="title">{{ 'list.title'|trans({}, translationDomain) }}</h1>
+    <h1 class="title">{{ 'map.title'|trans({}, translationDomain) }}</h1>
     <div class="main-map">
         <div class="big-map" id="map-canvas-front" style="height: 487px"></div>
 
@@ -35,7 +36,7 @@
         <i class="map-right"></i>
         <i class="map-bottom"></i>
         <i class="map-left"></i>
-        <a href="{{ path('infomap_list',{'entity':entity}) }}" class="map-list-link">смотреть списком</a>
+        <a href="{{ link }}" class="map-list-link">смотреть списком</a>
         <div class="clear"></div>
     </div>
 {% endblock %}

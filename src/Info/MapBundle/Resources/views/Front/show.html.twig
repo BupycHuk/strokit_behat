@@ -1,1 +1,113 @@
-Здесь должна быть инфа о терминале или мерчанте
+<div class="full-block" onload="initialize()">
+    <div class="scroll-block">
+        <div class="popup-pad">
+            <div class="merchant-short">
+                <div class="img">
+                    <img src="{% if item.image %}{% media item.image, 'small' %}{% else %}{{ asset('public/img/empty-icon.png') }}{% endif %}"
+                         width="160px" alt="{{ item.name }}">
+                </div>
+                <div class="short-info">
+                    <h1>{{ item.name }}</h1>
+
+                    <p>{{ item.address }}</p>
+                    <table>
+                        {% if item.number %}
+                            <tr>
+                                <td>{{ 'phone'|trans({},'InfoMapBundle') }}:</td>
+                                <td>{{ item.number }}</td>
+                            </tr>
+                        {% endif %}
+                        {% if item.fax %}
+                            <tr>
+                                <td>{{ 'fax'|trans({},'InfoMapBundle') }}:</td>
+                                <td>{{ item.fax }}</td>
+                            </tr>
+                        {% endif %}
+                        {% if item.email %}
+                            <tr>
+                                <td>{{ 'email'|trans({},'InfoMapBundle') }}E-mail:</td>
+                                <td><a href="mailto:{{ item.email }}">{{ item.email }}</a></td>
+                            </tr>
+                        {% endif %}
+                        {% if item.url %}
+                            <tr>
+                                <td>{{ 'web'|trans({},'InfoMapBundle') }}Web:</td>
+                                <td><a href="http://{{ item.url }}" target="_blank">{{ item.url }}</a></td>
+                            </tr>
+                        {% endif %}
+                    </table>
+                </div>
+                <div class="clear"></div>
+            </div>
+
+            <div class="merchant-info">
+                <h2>{{ 'information'|trans({},'InfoMapBundle') }}</h2>
+                <p>
+                    {{ item.description }}
+                </p>
+                <div class="main-map">
+                    <script type="text/javascript">
+                        var map;
+                        //<![CDATA[
+                        var contentString = "<div class=\"map-text\">"
+                                +"<h2><a href=\"#\">название  Мерчанта</a></h2>"
+                                +"<p>Байтик -Баатыра, 248<br> Тел: 0 312 48 48 48 </p>"
+                                +"</div>";
+                        //]]>
+                        function initialize() {
+
+                            var value = "{{ item.location }}";
+                            var lat;
+                            var lng;
+                            if (value) {
+                                var input = value;
+                                input = input.replace('(', '');
+                                var latlngStr = input.split(",", 2);
+                                lat = parseFloat(latlngStr[0]);
+                                lng = parseFloat(latlngStr[1]);
+                            }
+                            else {
+                                lat = 42.87797684287408;
+                                lng = 74.607253074646;
+                            }
+                            var Latlng = new google.maps.LatLng(lat, lng);
+
+                            var mapOptions = {
+                                zoom: 17,
+                                center: Latlng,
+                                scrollwheel: false,
+                                mapTypeId: google.maps.MapTypeId.ROADMAP
+                            };
+                            map = new google.maps.Map(document.getElementById("map2"),
+                                    mapOptions);
+                            var marker = new google.maps.Marker({
+                                position: Latlng,
+                                map: map,
+                                icon: "{{ asset('bundles/infomap/img/' ~ item.entity ~ '_icon.png') }}"
+                            });
+                            var infowindow = new google.maps.InfoWindow({
+                                content: '{% spaceless %}{% include "InfoMapBundle:Front:infoWindow.html.twig" with {'item':item} %} {% endspaceless %}'
+                            });
+                            google.maps.event.addListener(marker, "mouseover", function() {
+                                infowindow.open(map,marker);
+                            });
+                        }
+                        google.maps.event.addDomListener(window, 'load', initialize);
+                        //window.onload = google.maps.event.addDomListener(window, "load", initialize);
+                        $(document).ready(function(){
+                            //google.maps.event.addDomListener(document, "click", initialize);
+                        });
+                    </script>
+                    <div class="big-map" id="map2" style="height: 250px"></div>
+
+                    <i class="map-top"></i>
+                    <i class="map-right"></i>
+                    <i class="map-bottom"></i>
+                    <i class="map-left"></i>
+                    <div class="clear"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

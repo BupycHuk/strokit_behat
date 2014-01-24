@@ -1,1 +1,11 @@
-{% extends '::base_inner.html.twig' %}
+{% extends "::base_inner.html.twig" %}
+{% block body %}
+    <h2>{{ 'service.title'|trans({},'InfoPageBundle') }}</h2>
+    <div class="blocks faq">
+    <div class="block-menu">
+        {% for service in services %}
+            {% include 'InfoPageBundle:Service:item.html.twig' with {'service':service,'width':'w16'} %}
+        {% endfor %}
+        <div class="clear"></div>
+    </div>
+{% endblock %}

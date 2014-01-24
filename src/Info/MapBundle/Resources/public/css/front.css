@@ -126,6 +126,8 @@
 .num-block .n-b-text h2 a{
     color: #0096ff;
     border-bottom: 1px solid #bfe5ff;
+    word-wrap: break-word;
+    white-space: pre;
 }
 .num-block .n-b-text h2 a:hover{
     border-bottom: none;

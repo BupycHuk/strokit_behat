@@ -30,7 +30,7 @@ $(document).ready(function(){
                      height: 0,
                      'padding-top': 0
                  }, 300).removeClass('opened');
-                 $("#comment_sended").html(data);
+                 $("#comment_sended").html("<h2>Сообщение отправлено</h2>");//TODO: Сделать мультиязычной
                  $(".open-comment-form").css({backgroundColor: "#8DB1EC", textDecoration: "none", cursor: "default"}).prop("disabled", true);
              },
              error: function () {
