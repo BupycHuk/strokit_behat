@@ -34,6 +34,9 @@ class BreadcrumbBuilder implements IBreadcrumbBuilder {
                     ->setCurrent(true)
                     ->setExtra('translation_domain', 'InfoFAQBundle')
                 ;
+                return true;
+            default:
+                return false;
         }
     }
 

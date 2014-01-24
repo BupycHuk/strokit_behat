@@ -12,7 +12,7 @@
     <li class="active">Форма ответа</li>
 {% endblock %}
 
-{% block title %}Обратная связь{% endblock %}
+{% block title %}{{ 'feedback.title'|trans({},'InfoFeedbackBundle') }}{% endblock %}
     
 {% block content %}
     {% for flash in app.session.flashbag.get('success') %}

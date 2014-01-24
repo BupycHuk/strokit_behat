@@ -34,28 +34,30 @@ class BreadcrumbBuilder implements IBreadcrumbBuilder {
                     ->setCurrent(true)
                     ->setExtra('translation_domain', 'SonataNewsBundle')
                 ;
-                break;
+                return true;
             case 'sonata_news_archive_yearly':
                 $menu
                     ->addChild('title_archive_yearly')
                     ->setCurrent(true)
                     ->setExtra('translation_domain', 'SonataNewsBundle')
                 ;
-                break;
+                return true;
             case 'sonata_news_archive':
                 $menu
                     ->addChild('title_news')
                     ->setCurrent(true)
                     ->setExtra('translation_domain', 'SonataNewsBundle')
                 ;
-                break;
+                return true;
             case 'sonata_news_home':
                 $menu
                     ->addChild('title_news')
                     ->setCurrent(true)
                     ->setExtra('translation_domain', 'SonataNewsBundle')
                 ;
-                break;
+                return true;
+            default:
+                return false;
         }
     }
 

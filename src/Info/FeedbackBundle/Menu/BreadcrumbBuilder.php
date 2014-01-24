@@ -6,7 +6,7 @@
  * Time: 0:10
  */
 
-namespace Info\MapBundle\Menu;
+namespace Info\FeedbackBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
@@ -28,18 +28,11 @@ class BreadcrumbBuilder implements IBreadcrumbBuilder {
     public function createBreadcrumbMenu(Request $request,ItemInterface $menu)
     {
         switch($request->get('_route')){
-            case 'infomap_all_list':
+            case 'info_feedback':
                 $menu
-                    ->addChild('list.title')
+                    ->addChild('feedback.title')
                     ->setCurrent(true)
-                    ->setExtra('translation_domain', 'InfoMapBundle')
-                ;
-                return true;
-            case 'infomap_all_map':
-                $menu
-                    ->addChild('map.title')
-                    ->setCurrent(true)
-                    ->setExtra('translation_domain', 'InfoMapBundle')
+                    ->setExtra('translation_domain', 'InfoFeedbackBundle')
                 ;
                 return true;
             default:
