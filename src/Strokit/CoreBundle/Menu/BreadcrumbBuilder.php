@@ -49,7 +49,7 @@ class BreadcrumbBuilder
         echo 'test1';
 
         // - [@infofaq_breadcrumb, @infomap_breadcrumb, @infopage_breadcrumb, @sonata.news.breadcrumb, @infofeedback_breadcrumb]
-
+    var_dump($this->container->get('infofaq_breadcrumb'));
         if ($this->container->get('infofaq_breadcrumb')->createBreadcrumbMenu($request, $menu))
             return $menu;
         echo 'test2';

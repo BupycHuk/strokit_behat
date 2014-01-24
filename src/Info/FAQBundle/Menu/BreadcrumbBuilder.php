@@ -27,8 +27,10 @@ class BreadcrumbBuilder implements IBreadcrumbBuilder {
 
     public function createBreadcrumbMenu(Request $request,ItemInterface $menu)
     {
+        echo 'faqBreadCrumb';
         switch($request->get('_route')){
             case 'info_faq':
+                echo 'faqBreadCrumb2';
                 $menu
                     ->addChild('faq.title')
                     ->setCurrent(true)
