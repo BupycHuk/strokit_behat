@@ -16,7 +16,7 @@ services:
     strokit_breadcrumb:
         class: Strokit\CoreBundle\Menu\BreadcrumbBuilder
         arguments:
-          #- [@infofaq_breadcrumb, @infomap_breadcrumb, @infopage_breadcrumb, @sonata.news.breadcrumb, @infofeedback_breadcrumb]
+          - [@infofaq_breadcrumb, @infomap_breadcrumb, @infopage_breadcrumb, @sonata.news.breadcrumb, @infofeedback_breadcrumb]
           - @knp_menu.factory
           - "info_elsom_homepage"
 
