@@ -3,7 +3,7 @@
         <div class="popup-pad">
             <div class="merchant-short">
                 <div class="img">
-                    <img src="{% if item.image %}{% media item.image, 'small' %}{% else %}{{ asset('public/img/empty-icon.png') }}{% endif %}"
+                    <img src="{% if item.image %}{% path item.image, 'small' %}{% else %}{{ asset('public/img/empty-icon.png') }}{% endif %}"
                          width="160px" alt="{{ item.name }}">
                 </div>
                 <div class="short-info">
