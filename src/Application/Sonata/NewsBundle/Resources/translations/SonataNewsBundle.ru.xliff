@@ -354,6 +354,14 @@
                 <source>form.label.save</source>
                 <target>Отправить сообщение</target>
             </trans-unit>
+            <trans-unit id="title_archive_monthly">
+                <source>title_archive_monthly</source>
+                <target>Архив за месяц</target>
+            </trans-unit>
+            <trans-unit id="title_archive_yearly">
+                <source>title_archive_yearly</source>
+                <target>Архив за год</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

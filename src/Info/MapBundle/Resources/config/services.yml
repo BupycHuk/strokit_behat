@@ -40,3 +40,7 @@ services:
         class: Info\MapBundle\Form\Type\MapType
         tags:
             - { name: form.type, alias: map }
+
+    infomap_breadcrumb:
+        class: Info\MapBundle\Menu\BreadcrumbBuilder
+        arguments: ["@knp_menu.factory"]

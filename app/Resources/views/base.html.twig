@@ -18,11 +18,9 @@
         {% include '::header.html.twig' %}
         <a href="{{ path('info_feedback') }}" class="feedback-link">{{ 'feedback.global'|trans({}, 'InfoFeedbackBundle') }}</a>
 
+
         <div class="breadcrumb">
-            <ul>
-                <li><a href="#">Главная</a> / </li>
-                <li><a href="#">Новости</a></li>
-            </ul>
+            {{ knp_menu_render('breadcrumb',{'currentAsLink':false,template : 'InfoElsomBundle::main_menu.html.twig'}) }}
             <div class="clear"></div>
         </div>
 

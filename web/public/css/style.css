@@ -839,7 +839,7 @@ textarea:-moz-placeholder {
     background-image: none;
     color: #46ac70;
 }
-.breadcrumb a{
+.breadcrumb a, .breadcrumb span{
     font-size: 11px;
     color: #fff;
     border: none;
