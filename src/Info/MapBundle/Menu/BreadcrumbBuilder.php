@@ -15,15 +15,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class BreadcrumbBuilder implements IBreadcrumbBuilder {
 
-    /**
-     * @var \Knp\Menu\FactoryInterface
-     */
-    private $factory;
-
-    public function __construct(FactoryInterface $factory)
-    {
-        $this->factory = $factory;
-    }
 
     public function createBreadcrumbMenu(Request $request,ItemInterface $menu)
     {

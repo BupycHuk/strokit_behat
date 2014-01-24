@@ -8,4 +8,3 @@ services:
 
     sonata.news.breadcrumb:
         class: Application\Sonata\NewsBundle\Menu\BreadcrumbBuilder
-        arguments: ["@knp_menu.factory"]

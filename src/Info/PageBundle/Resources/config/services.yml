@@ -30,4 +30,3 @@ services:
 
     infopage_breadcrumb:
         class: Info\PageBundle\Menu\BreadcrumbBuilder
-        arguments: ["@knp_menu.factory"]

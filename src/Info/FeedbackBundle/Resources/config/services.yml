@@ -18,4 +18,3 @@ services:
 
     infofeedback_breadcrumb:
         class: Info\FeedbackBundle\Menu\BreadcrumbBuilder
-        arguments: ["@knp_menu.factory"]

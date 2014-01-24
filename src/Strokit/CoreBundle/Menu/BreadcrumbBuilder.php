@@ -9,13 +9,11 @@
 namespace Strokit\CoreBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
-use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\Request;
 
-class BreadcrumbBuilder
-{
+class BreadcrumbBuilder {
 
-//    private $breadcrumbBuilders;
+    private $breadcrumbBuilders;
     /**
      * @var \Knp\Menu\FactoryInterface
      */
@@ -24,19 +22,16 @@ class BreadcrumbBuilder
      * @var
      */
     private $homeRoute;
-    private $container;
 
     public function __construct(
-        Container $container,
-//        $breadcrumbBuilders,
+        $breadcrumbBuilders,
         FactoryInterface $factory,
         $homeRoute)
     {
 
-//        $this->breadcrumbBuilders = $breadcrumbBuilders;
+        $this->breadcrumbBuilders = $breadcrumbBuilders;
         $this->factory = $factory;
         $this->homeRoute = $homeRoute;
-        $this->container = $container;
     }
 
     public function createBreadcrumbMenu(Request $request)
@@ -46,25 +41,15 @@ class BreadcrumbBuilder
         $menu->addChild('home', array('route' => $this->homeRoute))
             ->setExtra('translation_domain', 'InfoElsomBundle');
 
-        echo 'test1';
 
-        // - [@infofaq_breadcrumb, @infomap_breadcrumb, @infopage_breadcrumb, @sonata.news.breadcrumb, @infofeedback_breadcrumb]
-
-        if ($this->container->get('infopage_breadcrumb')->createBreadcrumbMenu($request, $menu))
-            return $menu;
-        echo 'test3';
-
-        if ($this->container->get('infofaq_breadcrumb')->createBreadcrumbMenu($request, $menu))
-            return $menu;
-        echo 'test2';
-        if ($this->container->get('infomap_breadcrumb')->createBreadcrumbMenu($request, $menu))
-            return $menu;
-        echo 'test4';
-        if ($this->container->get('sonata.news.breadcrumb')->createBreadcrumbMenu($request, $menu))
-            return $menu;
-        echo 'test5';
-        if ($this->container->get('infofeedback_breadcrumb')->createBreadcrumbMenu($request, $menu))
-            return $menu;
+        foreach($this->breadcrumbBuilders as $breadcrumbBuilder)
+        {
+            if ($breadcrumbBuilder instanceof IBreadcrumbBuilder)
+            {
+                if ($breadcrumbBuilder->createBreadcrumbMenu($request,$menu))
+                    return $menu;
+            }
+        }
         return $menu;
         //throw new \InvalidArgumentException('breadcrumb.route.not_found');
     }
