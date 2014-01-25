@@ -1,2 +1,11 @@
 service:
   title:  Услуги
+
+contacts:
+  title: Контакты
+
+agreement:
+  title: Пользовательское соглашение
+
+about:
+  title: О нас
