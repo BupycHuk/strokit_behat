@@ -8,7 +8,7 @@
     <h1 class="title">{{ 'list.title'|trans({}, translationDomain) }}</h1>
 
     <div class="white-back-block">
-        <a href="{{ link }}"
+        <a href="{{ path('infomap_all_map',{'entity':'all'}) }}"
            class="to-map-link">{{ 'list.link-to-map'|trans({}, 'InfoMapBundle') }}</a>
         <ul class="map-list">
             {% for item in items %}

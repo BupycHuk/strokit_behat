@@ -13,40 +13,22 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class FrontController extends Controller {
 
-
-    public function  listAction($entity)
-    {
-
-        $entity = ucfirst($entity);
-        $items = $this->getDoctrine()->getRepository(sprintf("InfoMapBundle:%s",$entity))->findBy(array('active'=>true));
-
-        $link = $this->generateUrl('infomap_map',array('entity'=>strtolower($entity)));
-        return $this->getListView($entity, $items, 'infomap_list', $link);
-    }
-
-    public function  mapAction($entity)
-    {
-        $entity = ucfirst($entity);
-        $items = $this->getDoctrine()->getRepository(sprintf("InfoMapBundle:%s",strtolower($entity)))->findBy(array('active'=>true));
-
-        $link = $this->generateUrl('infomap_list',array('entity'=>strtolower($entity)));
-        return $this->getMapView($entity, $items, $link);
-    }
-
     public function  listallAction()
     {
-        $items = $this->getAllItems();
+        $items = array_merge($this->getDoctrine()->getRepository("InfoMapBundle:Terminal")->findBy(array('active' => true)),
+            $this->getDoctrine()->getRepository("InfoMapBundle:Merchant")->findBy(array('active' => true)),
+            $this->getDoctrine()->getRepository("InfoMapBundle:Cashout")->findBy(array('active' => true)));;
 
-        $link = $this->generateUrl('infomap_all_map');
-        return $this->getListView(null, $items, 'infomap_all_list', $link);
+        return $this->getListView(null, $items, 'infomap_all_list');
     }
 
-    public function  mapallAction()
+    public function  mapallAction($entity)
     {
-        $items = $this->getAllItems();
+        $items = array('terminal'=>$this->getDoctrine()->getRepository("InfoMapBundle:Terminal")->findBy(array('active' => true)),
+            'merchant'=>$this->getDoctrine()->getRepository("InfoMapBundle:Merchant")->findBy(array('active' => true)),
+            'cashout'=>$this->getDoctrine()->getRepository("InfoMapBundle:Cashout")->findBy(array('active' => true)));
 
-        $link = $this->generateUrl('infomap_all_list');
-        return $this->getMapView(null, $items, $link);
+        return $this->getMapView($entity, $items);
     }
 
     public function showAction($entity,$id)
@@ -67,7 +49,7 @@ class FrontController extends Controller {
      * @param $link
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getListView($entity, $items, $route, $link)
+    public function getListView($entity, $items, $route)
     {
         $googleMapKey = $this->container->getParameter('google_map_key');
         $itemsCount = $this->container->getParameter('infomap_items_in_list');
@@ -84,7 +66,6 @@ class FrontController extends Controller {
         return $this->render('InfoMapBundle:Front:list.html.twig', array(
             "items" => $pagination,
             'translationDomain' => sprintf('InfoMap%sBundle', $entity),
-            'link' => $link,
             'googleMapKey' => $googleMapKey
         ));
     }
@@ -94,7 +75,7 @@ class FrontController extends Controller {
      * @param $items
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function getMapView($entity, $items, $link)
+    public function getMapView($entity, $items)
     {
         $googleMapKey = $this->container->getParameter('google_map_key');
 
@@ -102,20 +83,7 @@ class FrontController extends Controller {
         return $this->render('InfoMapBundle:Front:map.html.twig', array(
             "items" => $items,
             'googleMapKey' => $googleMapKey,
-            'translationDomain' => sprintf('InfoMap%sBundle', $entity),
-            'link' => $link
+            'entity' => $entity
         ));
     }
-
-    /**
-     * @return array
-     */
-    private function getAllItems()
-    {
-        $items = array_merge($this->getDoctrine()->getRepository("InfoMapBundle:Terminal")->findBy(array('active' => true)),
-            $this->getDoctrine()->getRepository("InfoMapBundle:Merchant")->findBy(array('active' => true)),
-            $this->getDoctrine()->getRepository("InfoMapBundle:Cashout")->findBy(array('active' => true)));
-        return $items;
-    }
-
-} 
+}

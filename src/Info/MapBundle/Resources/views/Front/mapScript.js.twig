@@ -1,0 +1,67 @@
+<script type="text/javascript"
+        src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+<script type="text/javascript" src="{{ asset("bundles/infomap/js/googleMap.js") }}"></script>
+<script type="text/javascript">
+
+    var markers;
+    var map;
+    var infowindow;
+    var mc;
+    {% for entitytype, itemlist in items %}
+    function set{{ entitytype }}Markers()
+    {
+        var markerlist = [];
+        {% for item in itemlist %}
+        markerlist.push(initializeFront(map,infowindow,"{{ item.location }}",
+                "{{ item.address }}",
+                '{% spaceless %}{% include "InfoMapBundle:Front:infoWindow.html.twig" with {'item':item} %} {% endspaceless %}',
+                '{{ asset('bundles/infomap/img/' ~ item.entity ~ '_icon.png') }}'));
+        {% endfor %}
+        return markerlist;
+    }
+
+    {% endfor %}
+    google.maps.event.addDomListener(window, 'load', function ()
+    {
+        mapFront = initialize($("#map-canvas-front")[0]);
+        map = mapFront[0];
+        infowindow = mapFront[1];
+        markers = [];
+        {% if entity == 'all' %}
+        {% for entitytype, itemlist in items %}
+        var {{ entitytype }}Markers = set{{ entitytype }}Markers();
+        for (i = 0; i<{{ entitytype }}Markers.length; i++)
+            markers.push({{ entitytype }}Markers[i]);
+        {% endfor %}
+        {% else %}
+        markers = set{{ entity }}Markers();
+        {% endif %}
+
+        var mcOptions = {gridSize: 20, maxZoom: 15};
+        mc = new MarkerClusterer(map, markers, mcOptions);
+    });
+
+
+    function clearMarkers() {
+        for (var i = 0; i < markers.length; i++) {
+            markers[i].setMap(null);
+        }
+    }
+
+    $(document).ready(function(){
+        $(".map_filter").change(function(){
+            clearMarkers();
+            markers = [];
+            {% for entitytype, itemlist in items %}
+            if ($(".map_filter[name='{{ entitytype }}']").prop('checked'))
+            {
+                var {{ entitytype }}Markers = set{{ entitytype }}Markers();
+                for (i = 0; i<{{ entitytype }}Markers.length; i++)
+                    markers.push({{ entitytype }}Markers[i]);
+            }
+            {% endfor %}
+            mc.clearMarkers();
+            mc.addMarkers(markers);
+        });
+    });
+</script>

@@ -63,3 +63,8 @@ fax: Факс
 email: E-mail
 web: Web
 information: Информация
+
+checkbox:
+  terminal: Терминалы пополнения
+  cashout: Терминалы вывода
+  merchant: Пункты использования
