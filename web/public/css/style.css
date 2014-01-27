@@ -1351,3 +1351,7 @@ td,th{
 .merchant-info p{
     padding: 0 0 22px 0;
 }
+
+h5.faq_title{
+    font-size: 12px;
+}

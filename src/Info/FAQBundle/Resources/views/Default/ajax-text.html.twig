@@ -3,7 +3,7 @@
     <div class="popup-pad">
         <div class="correct-padding-div">
         {% for question_answer in section.questionsAnswers %}
-        <h5>{{ question_answer.question }}</h5>
+        <h5 class="faq_title">{{ question_answer.question }}</h5>
         <p>{{ question_answer.answer }}</p>
         {% endfor %}
         </div>
