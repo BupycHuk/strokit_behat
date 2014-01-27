@@ -27,3 +27,6 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [InfoPageBundle]]
+
+    infopage_breadcrumb:
+        class: Info\PageBundle\Menu\BreadcrumbBuilder

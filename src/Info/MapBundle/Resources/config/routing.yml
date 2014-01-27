@@ -1,17 +1,21 @@
-infomap_list:
-    pattern:  /{entity}/list
-    defaults: { _controller: InfoMapBundle:Front:list }
-    requirements:
-            entity:  terminal|merchant
-
-infomap_map:
-    pattern:  /{entity}/map
-    defaults: { _controller: InfoMapBundle:Front:map }
-    requirements:
-            entity:  terminal|merchant
-
 infomap_show:
     pattern:  /{entity}/show/{id}
     defaults: { _controller: InfoMapBundle:Front:show }
     requirements:
-            entity:  terminal|merchant
+            entity:  terminal|merchant|cashout
+
+infomap_all_list:
+    pattern:  /list
+    defaults: { _controller: InfoMapBundle:Front:listall }
+
+infomap_all_map:
+    pattern:  /map/{entity}
+    defaults: { _controller: InfoMapBundle:Front:mapall, entity: all }
+    requirements:
+            entity:  terminal|merchant|cashout|all
+
+infomap_all_mapjs:
+    pattern:  /js/map/{entity}.js
+    defaults: { _controller: InfoMapBundle:Front:mapjs, entity: all }
+    requirements:
+            entity:  terminal|merchant|cashout|all

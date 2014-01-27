@@ -334,6 +334,34 @@
                 <source>title_news</source>
                 <target>Новости</target>
             </trans-unit>
+            <trans-unit id="form.placeholder.name">
+                <source>form.placeholder.name</source>
+                <target>Имя</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder.email">
+                <source>form.placeholder.email</source>
+                <target>E-mail</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder.message">
+                <source>form.placeholder.message</source>
+                <target>текст сообщения</target>
+            </trans-unit>
+            <trans-unit id="form.placeholder.captcha">
+                <source>form.placeholder.captcha</source>
+                <target>Введите цифры с картинки</target>
+            </trans-unit>
+            <trans-unit id="form.label.save">
+                <source>form.label.save</source>
+                <target>Отправить сообщение</target>
+            </trans-unit>
+            <trans-unit id="title_archive_monthly">
+                <source>title_archive_monthly</source>
+                <target>Архив за месяц</target>
+            </trans-unit>
+            <trans-unit id="title_archive_yearly">
+                <source>title_archive_yearly</source>
+                <target>Архив за год</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

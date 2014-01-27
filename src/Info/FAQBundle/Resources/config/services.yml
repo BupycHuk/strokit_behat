@@ -35,3 +35,7 @@ services:
                 - InfoFAQBundle:FAQCommentsAdmin
             calls:
                 - [ setTranslationDomain, [InfoFAQBundle]]
+
+
+    infofaq_breadcrumb:
+        class: Info\FAQBundle\Menu\BreadcrumbBuilder

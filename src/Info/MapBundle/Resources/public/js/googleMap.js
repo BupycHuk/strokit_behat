@@ -49,18 +49,16 @@ function getStyledMap() {
     return styledMap;
 }
 
-var mapFront;
-var infowindow;
-function initialize()
+function initialize(element)
 {
     var mapOptions = {
         center: getLocation(null),
-        zoom: 10,
+        zoom: 12,
         mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
         }
     };
-    mapFront = new google.maps.Map(document.getElementById("map-canvas-front"), mapOptions);
+    mapFront = new google.maps.Map(element, mapOptions);
 
 
     infowindow = new google.maps.InfoWindow({
@@ -71,9 +69,9 @@ function initialize()
     var styledMap = getStyledMap();
     mapFront.mapTypes.set('map_style', styledMap);
     mapFront.setMapTypeId('map_style');
+    return Array(mapFront,infowindow);
 }
-
-function initializeFront(value,address,content,icon) {
+function initializeFront(mapFront,infowindow,value,address,content,icon) {
     var marker = new google.maps.Marker({
         position: getLocation(value),
         map: mapFront,

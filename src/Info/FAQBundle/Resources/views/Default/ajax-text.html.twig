@@ -3,7 +3,7 @@
     <div class="popup-pad">
         <div class="correct-padding-div">
         {% for question_answer in section.questionsAnswers %}
-        <h2>{{ question_answer.question }}</h2>
+        <h5 class="faq_title">{{ question_answer.question }}</h5>
         <p>{{ question_answer.answer }}</p>
         {% endfor %}
         </div>
@@ -57,6 +57,4 @@
     </div>
 </div>
 </div>
-{% block javascripts %}
-    <script src="{{ asset('bundles/infofaq/js/faq_validate_comment.js') }}" type="text/javascript"></script>
-{% endblock %}
+    <script src="{{ asset('public/js/validate_comment.js') }}" type="text/javascript"></script>

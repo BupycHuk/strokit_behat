@@ -839,7 +839,7 @@ textarea:-moz-placeholder {
     background-image: none;
     color: #46ac70;
 }
-.breadcrumb a{
+.breadcrumb a, .breadcrumb span{
     font-size: 11px;
     color: #fff;
     border: none;
@@ -1306,3 +1306,52 @@ td,th{
     left: 0;
 }
 /*---------------------------------*/
+
+
+
+
+.merchant-short{
+    padding: 0 0 37px 0;
+}
+.merchant-short .img{
+    float: left;
+    width: 160px;
+    overflow: hidden;
+    margin: 5px 0 0 0;
+}
+.merchant-short .short-info{
+    margin: 0 0 0 191px;
+}
+.merchant-short .short-info h1{
+    font-size: 22px;
+    padding: 0 0 9px 0;
+}
+.merchant-short .short-info p{
+    padding: 0 0 19px 0;
+}
+.merchant-short .short-info table{
+    border: none;
+    border-collapse: collapse;
+}
+.merchant-short .short-info table td{
+    padding: 0 16px 3px 0;
+    border: none;
+}
+
+.merchant-info{
+
+}
+.merchant-info h2{
+    font-size: 22px;
+    color: #dadada;
+    border-bottom: 1px solid #dadada;
+    padding: 0 0 2px 0;
+    margin: 0 0 12px 0;
+}
+.merchant-info p{
+    padding: 0 0 22px 0;
+}
+
+h5.faq_title{
+    font-size: 12px;
+}

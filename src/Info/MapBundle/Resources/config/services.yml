@@ -25,7 +25,21 @@ services:
         calls:
             - [ setTranslationDomain, [InfoMapBundle]]
 
+    info_map.admin.cashout:
+        class: Info\MapBundle\Admin\TerminalAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "map.admin.content", label: "cashout.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Info\MapBundle\Entity\Cashout
+            - ~
+        calls:
+            - [ setTranslationDomain, [InfoMapBundle]]
+
     info_map.type.map:
         class: Info\MapBundle\Form\Type\MapType
         tags:
             - { name: form.type, alias: map }
+
+    infomap_breadcrumb:
+        class: Info\MapBundle\Menu\BreadcrumbBuilder

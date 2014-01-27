@@ -8,6 +8,7 @@ feedback:
         message: Текст сообщения
         save: Отправить сообщение
         captcha: Введите цифры с картинки
+    title: Обратная связь
 breadcrumb.link_feedback_list: Список вопросов
 filter:
     label_email: email
