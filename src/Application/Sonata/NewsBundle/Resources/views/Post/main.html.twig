@@ -3,7 +3,7 @@
     <li>
         <div class="date">{{ post.publicationDateStart | format_date }}</div>
         <h2>
-            <a href="{{ url('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" rel="colorbox">
+            <a href="{{ path('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" rel="colorbox">
                 {{ post.title }}
             </a>
         </h2>

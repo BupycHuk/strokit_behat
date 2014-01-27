@@ -43,19 +43,28 @@ $(document).ready(function(){
     });
     $("body").on("click", "a[rel='facebox'], a[rel='colorbox']",function (event) {
         event.preventDefault();
-    $.colorbox({
-        href:$(this).attr('href'),
-        title:" ",
-        previous:true,
-        next:true,
-        arrowKey:false,
-        rel: false,
-        current: false,
-        opacity:0.8,
-        maxWidth: '100%',
-        onComplete:function(){$(this).colorbox.resize();},
-        open:true});
-    return false;
+        var url = $(this).attr('href'),
+            popupUrl = '?show='+url;
+        $.colorbox({
+            href:url,
+            title:" ",
+            previous:true,
+            next:true,
+            arrowKey:false,
+            rel: false,
+            current: false,
+            opacity:0.8,
+            maxWidth: '100%',
+            onComplete:function(){
+                $(this).colorbox.resize();
+                history.pushState(null, null, popupUrl);
+            },
+            onClosed: function(){
+                history.pushState(null, null, showPopup.config.currentUrl);
+            },
+            open:true
+        });
+        return false;
     });
 /*
     $("a[rel='facebox'], a[rel='colorbox']").colorbox({
@@ -98,4 +107,40 @@ $(document).ready(function(){
     });
 
 });
+
+var showPopup = {
+    config : {
+        currentUrl : Routing.generate('info_elsom_homepage', {}, true),
+        homePage : Routing.generate('info_elsom_homepage', {}, true)
+    },
+
+    init : function(config){
+        $.extend(showPopup.config, config);
+    },
+
+    show : function(showUrl){
+        if (showUrl.charAt(0) == '/'){
+            showUrl = showUrl.substr(1);
+        }
+        var url = showPopup.config.homePage+showUrl;
+        $.colorbox({
+            href:url,
+            title:" ",
+            previous:true,
+            next:true,
+            arrowKey:false,
+            rel: false,
+            current: false,
+            opacity:0.8,
+            maxWidth: '100%',
+            onComplete:function(){
+                $(this).colorbox.resize();
+            },
+            onClosed: function(){
+                history.pushState(null, null, showPopup.config.currentUrl);
+            },
+            open:true
+        });
+    }
+};
 

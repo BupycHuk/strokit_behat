@@ -51,6 +51,17 @@
 <script type="text/javascript">
     $.backstretch(["{{ asset('public/img/bg.png') }}"]);
 </script>
+<script type="text/javascript">
+    $(function(){
+        showPopup.init({currentUrl : Routing.generate('{{ app.request.attributes.get('_route') }}', {}, true)});
+    });
+</script>
+{% set show = app.request.query.get('show', 0) %}
+{% if show %}
+    <script type="text/javascript">
+        showPopup.show('{{ show }}');
+    </script>
+{% endif %}
 {% block javascripts %}
 {% endblock %}
 </body>

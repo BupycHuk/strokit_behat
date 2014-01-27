@@ -1,6 +1,8 @@
 info_faq:
     pattern:  /faq/
     defaults: { _controller: InfoFAQBundle:Default:index }
+    options:
+        expose: true
 
 faq_ajax_get_popup:
     pattern: /faq/popup/{id}/
