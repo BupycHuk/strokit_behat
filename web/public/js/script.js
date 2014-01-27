@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+    $('input[type="checkbox"]').ezMark();
+
 	$('.has-child').hover(function(){
         if($(this).hasClass('hovered')){
             $(this).removeClass('hovered').children('.drop-menu').stop().slideToggle(300);
