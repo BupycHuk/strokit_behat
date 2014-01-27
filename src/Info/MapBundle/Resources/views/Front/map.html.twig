@@ -12,7 +12,7 @@
     <h1 class="title">{{ 'map.title'|trans({}, 'InfoMapBundle') }}</h1>
 
     {% for entitytype, itemlist in items %}
-        <input class="map_filter" type="checkbox" name="{{ entitytype }}">{{ ('checkbox.'~entitytype) |trans({}, 'InfoMapBundle') }}<br>
+        <input class="map_filter" type="checkbox" name="{{ entitytype }}" {% if (entity =='all' or entity == entitytype) %}checked="checked"{% endif %}>{{ ('checkbox.'~entitytype) |trans({}, 'InfoMapBundle') }}<br>
     {% endfor %}
     <div class="main-map">
         <div class="big-map" id="map-canvas-front" style="height: 487px"></div>
