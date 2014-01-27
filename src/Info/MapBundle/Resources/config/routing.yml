@@ -10,6 +10,6 @@ infomap_all_list:
 
 infomap_all_map:
     pattern:  /map/{entity}
-    defaults: { _controller: InfoMapBundle:Front:mapall }
+    defaults: { _controller: InfoMapBundle:Front:mapall, entity: all }
     requirements:
             entity:  terminal|merchant|cashout|all
