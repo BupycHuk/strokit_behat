@@ -53,7 +53,7 @@ function initialize(element)
 {
     var mapOptions = {
         center: getLocation(null),
-        zoom: 10,
+        zoom: 12,
         mapTypeControlOptions: {
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
         }

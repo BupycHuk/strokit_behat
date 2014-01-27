@@ -13,3 +13,9 @@ infomap_all_map:
     defaults: { _controller: InfoMapBundle:Front:mapall, entity: all }
     requirements:
             entity:  terminal|merchant|cashout|all
+
+infomap_all_mapjs:
+    pattern:  /map/js/{entity}.js
+    defaults: { _controller: InfoMapBundle:Front:mapjs, entity: all }
+    requirements:
+            entity:  terminal|merchant|cashout|all

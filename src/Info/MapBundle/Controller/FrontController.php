@@ -17,41 +17,9 @@ class FrontController extends Controller {
     {
         $items = array_merge($this->getDoctrine()->getRepository("InfoMapBundle:Terminal")->findBy(array('active' => true)),
             $this->getDoctrine()->getRepository("InfoMapBundle:Merchant")->findBy(array('active' => true)),
-            $this->getDoctrine()->getRepository("InfoMapBundle:Cashout")->findBy(array('active' => true)));;
+            $this->getDoctrine()->getRepository("InfoMapBundle:Cashout")->findBy(array('active' => true)));
 
-        return $this->getListView(null, $items, 'infomap_all_list');
-    }
 
-    public function  mapallAction($entity)
-    {
-        $items = array('terminal'=>$this->getDoctrine()->getRepository("InfoMapBundle:Terminal")->findBy(array('active' => true)),
-            'merchant'=>$this->getDoctrine()->getRepository("InfoMapBundle:Merchant")->findBy(array('active' => true)),
-            'cashout'=>$this->getDoctrine()->getRepository("InfoMapBundle:Cashout")->findBy(array('active' => true)));
-
-        return $this->getMapView($entity, $items);
-    }
-
-    public function showAction($entity,$id)
-    {
-
-        $entity = ucfirst($entity);
-        $item = $this->getDoctrine()->getRepository(sprintf("InfoMapBundle:%s",$entity))->find($id);
-        return $this->render('InfoMapBundle:Front:show.html.twig',
-            array(
-                'item'=>$item
-            ));
-    }
-
-    /**
-     * @param $entity
-     * @param $items
-     * @param $route
-     * @param $link
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function getListView($entity, $items, $route)
-    {
-        $googleMapKey = $this->container->getParameter('google_map_key');
         $itemsCount = $this->container->getParameter('infomap_items_in_list');
 
         $paginator = $this->get('knp_paginator');
@@ -66,24 +34,39 @@ class FrontController extends Controller {
         return $this->render('InfoMapBundle:Front:list.html.twig', array(
             "items" => $pagination,
             'translationDomain' => sprintf('InfoMap%sBundle', $entity),
-            'googleMapKey' => $googleMapKey
         ));
     }
 
-    /**
-     * @param $entity
-     * @param $items
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function getMapView($entity, $items)
+    public function  mapallAction($entity)
     {
-        $googleMapKey = $this->container->getParameter('google_map_key');
-
+        $items = array('terminal','cashout','merchant');
 
         return $this->render('InfoMapBundle:Front:map.html.twig', array(
-            "items" => $items,
-            'googleMapKey' => $googleMapKey,
+            "entitytypes" => $items,
             'entity' => $entity
         ));
+    }
+
+    public function  mapjsAction($entity)
+    {
+        $items = array('terminal'=>$this->getDoctrine()->getRepository("InfoMapBundle:Terminal")->findBy(array('active' => true)),
+            'cashout'=>$this->getDoctrine()->getRepository("InfoMapBundle:Cashout")->findBy(array('active' => true)),
+            'merchant'=>$this->getDoctrine()->getRepository("InfoMapBundle:Merchant")->findBy(array('active' => true)));
+
+        return $this->render('InfoMapBundle:Front:mapScript.js.twig', array(
+            "items" => $items,
+            'entity' => $entity
+        ));
+    }
+
+    public function showAction($entity,$id)
+    {
+
+        $entity = ucfirst($entity);
+        $item = $this->getDoctrine()->getRepository(sprintf("InfoMapBundle:%s",$entity))->find($id);
+        return $this->render('InfoMapBundle:Front:show.html.twig',
+            array(
+                'item'=>$item
+            ));
     }
 }

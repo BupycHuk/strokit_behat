@@ -65,6 +65,7 @@ web: Web
 information: Информация
 
 checkbox:
-  terminal: Терминалы пополнения
-  cashout: Терминалы вывода
-  merchant: Пункты использования
+  terminal: Пополнения
+  cashout: Вывода
+  merchant: Использования
+  title: Показать пункты:

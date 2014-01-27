@@ -161,3 +161,30 @@
 .address {
     display: block;
 }
+
+
+.filters{
+    position: relative;
+}
+.filters .sub-filter{
+    position: absolute;
+    right: 0;
+    top: -35px;
+}
+.filters ul li{
+    background-image: none;
+    padding: 0 30px 0 0;
+    float: left;
+    font-size: 12px;
+    color: #fff;
+}
+.filters ul li .ez-checkbox{
+    margin-right: 2px;
+}
+.filters ul li label{
+    display: inline-block;
+    font-size: 12px;
+    padding: 0 0 0 0;
+    vertical-align: top;
+    cursor: pointer;
+}

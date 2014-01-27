@@ -1,6 +1,10 @@
 {% extends '::base_inner.html.twig' %}
 {% block javascripts %}
-{{ include ('InfoMapBundle:Front:mapScript.js.twig', {'items':items,'entity':entity}) }}
+    <script type="text/javascript"
+            src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+    <script type="text/javascript" src="{{ asset("bundles/infomap/js/googleMap.js") }}"></script>
+    <script type="text/javascript" src="{{ path("infomap_all_mapjs",{'entity':entity}) }}"></script>
+
 {% endblock %}
 
 {% block stylesheets %}
@@ -10,10 +14,26 @@
 {% block body %}
 
     <h1 class="title">{{ 'map.title'|trans({}, 'InfoMapBundle') }}</h1>
+    <div class="filters">
+        <div class="sub-filter">
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $('input[type="checkbox"]').ezMark();
+                });
+            </script>
+            <ul>
+                <li>{{ 'checkbox.title'|trans({},'InfoMapBundle') }}</li>
 
-    {% for entitytype, itemlist in items %}
-        <input class="map_filter" type="checkbox" name="{{ entitytype }}" {% if (entity =='all' or entity == entitytype) %}checked="checked"{% endif %}>{{ ('checkbox.'~entitytype) |trans({}, 'InfoMapBundle') }}<br>
-    {% endfor %}
+                {% for entitytype in entitytypes %}
+                <li {% if loop.last %} class="last" {% endif %}>
+                    <input class="map_filter" type="checkbox" id="checkbox{{ entitytype }}" name="{{ entitytype }}" {% if (entity =='all' or entity == entitytype) %}checked="checked"{% endif %}>
+                    <label for="checkbox{{ entitytype }}">{{ ('checkbox.'~entitytype) |trans({}, 'InfoMapBundle') }}</label>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
     <div class="main-map">
         <div class="big-map" id="map-canvas-front" style="height: 487px"></div>
 
