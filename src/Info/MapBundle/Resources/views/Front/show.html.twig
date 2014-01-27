@@ -25,13 +25,13 @@
                         {% endif %}
                         {% if item.email %}
                             <tr>
-                                <td>{{ 'email'|trans({},'InfoMapBundle') }}E-mail:</td>
+                                <td>{{ 'email'|trans({},'InfoMapBundle') }}:</td>
                                 <td><a href="mailto:{{ item.email }}">{{ item.email }}</a></td>
                             </tr>
                         {% endif %}
                         {% if item.url %}
                             <tr>
-                                <td>{{ 'web'|trans({},'InfoMapBundle') }}Web:</td>
+                                <td>{{ 'web'|trans({},'InfoMapBundle') }}:</td>
                                 <td><a href="http://{{ item.url }}" target="_blank">{{ item.url }}</a></td>
                             </tr>
                         {% endif %}
@@ -48,12 +48,6 @@
                 <div class="main-map">
                     <script type="text/javascript">
                         var map;
-                        //<![CDATA[
-                        var contentString = "<div class=\"map-text\">"
-                                +"<h2><a href=\"#\">название  Мерчанта</a></h2>"
-                                +"<p>Байтик -Баатыра, 248<br> Тел: 0 312 48 48 48 </p>"
-                                +"</div>";
-                        //]]>
                         function initialize() {
 
                             var value = "{{ item.location }}";
