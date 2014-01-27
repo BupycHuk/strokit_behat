@@ -28,6 +28,9 @@ filter:
     label_number:  Телефон
     label_description:  Описание
     label_active: Активность
+    label_fax:  Факс
+    label_email:  E-mail
+    label_url: Web-адрес
 
 breadcrumb:
     link_terminal_list: Список РТ/ЦОП
@@ -42,6 +45,10 @@ form:
     label_description:  Описание
     label_image: Изображение
     label_active: Активность
+    label_fax:  Факс
+    label_email:  E-mail
+    label_url: Web-адрес
+
 
 show:
     label_location: Местоположение на карте
@@ -52,6 +59,10 @@ show:
     label_description:  Описание
     label_image: Изображение
     label_active: Активность
+    label_fax:  Факс
+    label_email:  E-mail
+    label_url: Web-адрес
+
 
 map:
     admin:
