@@ -66,6 +66,7 @@ class AppKernel extends Kernel
             new Info\ElsomBundle\InfoElsomBundle(),
             //Strokit Core
             new Strokit\CoreBundle\StrokitCoreBundle(),
+            new Strokit\SearchBundle\StrokitSearchBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

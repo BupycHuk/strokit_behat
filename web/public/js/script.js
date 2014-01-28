@@ -1,5 +1,26 @@
 $(document).ready(function(){
 
+    $( "#searchForm" ).submit(function() {
+        var url = $(this).attr('action') + '?' + $('#searchForm').serialize();
+
+        $.colorbox({
+            href:url,
+            title:" ",
+            previous:true,
+            next:true,
+            arrowKey:false,
+            rel: false,
+            current: false,
+            opacity:0.8,
+            maxWidth: '100%',
+            onComplete:function(){
+                $(this).colorbox.resize();
+            },
+            open:true
+        });
+        return false;
+    });
+
     $('input[type="checkbox"]').ezMark();
 
 	$('.has-child').hover(function(){
@@ -105,6 +126,7 @@ $(document).ready(function(){
         window.setTimeout(function(){$("cbox_complete").colorbox.resize();},350);
         return false;
     });
+
 
 });
 

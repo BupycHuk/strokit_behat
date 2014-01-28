@@ -30,3 +30,11 @@ services:
 
     infopage_breadcrumb:
         class: Info\PageBundle\Menu\BreadcrumbBuilder
+
+    infopage_searcher:
+        class: Info\PageBundle\Searcher\PageSearcher
+        arguments: [@doctrine.orm.entity_manager,@router]
+
+    infoservice_searcher:
+        class: Info\PageBundle\Searcher\ServiceSearcher
+        arguments: [@doctrine.orm.entity_manager,@router]

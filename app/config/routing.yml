@@ -1,3 +1,7 @@
+strokit_search:
+    resource: "@StrokitSearchBundle/Resources/config/routing.yml"
+    prefix:   /
+
 info_elsom:
     resource: "@InfoElsomBundle/Resources/config/routing.yml"
     prefix:   /

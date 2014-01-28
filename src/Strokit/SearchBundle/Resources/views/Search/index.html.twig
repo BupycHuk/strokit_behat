@@ -1,0 +1,16 @@
+<div class="full-block">
+    <div class="scroll-block">
+        <div class="popup-pad">
+            <div class="correct-padding-div">
+                {% for key,items in results %}
+                    <h2>{{ key|trans({},'StrokitSearchBundle') }}</h2>
+                    {% for item in items %}
+                        <h5><a href="{{ item.url }}" {% if item.isPopup %}rel="colorbox"{% endif %}>{{ item.title }}</a></h5>
+                        <p>{{ item.content|striptags|slice(0,160) }}</p>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+
+        </div>
+    </div>
+</div>
