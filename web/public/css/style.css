@@ -421,6 +421,7 @@ textarea:-moz-placeholder {
     position: relative;
     z-index: 5;
 }
+/* Размытие у блоков
 .blocks .block .inner-block:hover img{
     filter: blur(2px);
     -webkit-filter: blur(2px);
@@ -429,7 +430,7 @@ textarea:-moz-placeholder {
     -ms-filter: blur(2px);
     filter: url(blur.svg#blur);
     filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='2');
-}
+}*/
 .blocks .has-child{
     margin-bottom: 0;
     margin-right: 0;
