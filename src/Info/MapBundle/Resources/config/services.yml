@@ -43,3 +43,15 @@ services:
 
     infomap_breadcrumb:
         class: Info\MapBundle\Menu\BreadcrumbBuilder
+
+    infomap.searcher_cashout:
+        class: Info\MapBundle\Searcher\MapSearcher
+        arguments: [@doctrine.orm.entity_manager,@router,"Cashout","search.infomap.cashout"]
+
+    infomap.searcher_merchant:
+        class: Info\MapBundle\Searcher\MapSearcher
+        arguments: [@doctrine.orm.entity_manager,@router,"Merchant","search.infomap.merchant"]
+
+    infomap.searcher_terminal:
+        class: Info\MapBundle\Searcher\MapSearcher
+        arguments: [@doctrine.orm.entity_manager,@router,"Terminal","search.infomap.terminal"]

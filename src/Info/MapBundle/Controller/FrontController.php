@@ -10,6 +10,8 @@ namespace Info\MapBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Config\Definition\Exception\Exception;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class FrontController extends Controller {
 
@@ -64,6 +66,10 @@ class FrontController extends Controller {
 
         $entity = ucfirst($entity);
         $item = $this->getDoctrine()->getRepository(sprintf("InfoMapBundle:%s",$entity))->find($id);
+
+        if (!$item)
+            $this->createNotFoundException();
+
         return $this->render('InfoMapBundle:Front:show.html.twig',
             array(
                 'item'=>$item

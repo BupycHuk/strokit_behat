@@ -9,4 +9,4 @@ services:
     strokit.searcher:
         class: Strokit\SearchBundle\Searcher\Searcher
         arguments:
-          - [@infoservice_searcher,@infopage_searcher]
+          - [@infoservice_searcher,@infopage_searcher,@infomap.searcher_cashout,@infomap.searcher_merchant,@infomap.searcher_terminal]

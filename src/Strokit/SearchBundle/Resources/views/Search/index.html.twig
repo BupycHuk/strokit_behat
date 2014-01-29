@@ -2,12 +2,15 @@
     <div class="scroll-block">
         <div class="popup-pad">
             <div class="correct-padding-div">
+                <h2>{{ 'result.title'|trans({},'StrokitSearchBundle') }}:{{ searchText }}</h2>
                 {% for key,items in results %}
-                    <h2>{{ key|trans({},'StrokitSearchBundle') }}</h2>
+                    <h4>{{ key|trans({},'StrokitSearchBundle') }}</h4>
                     {% for item in items %}
-                        <h5><a href="{{ item.url }}" {% if item.isPopup %}rel="colorbox"{% endif %}>{{ item.title }}</a></h5>
-                        <p>{{ item.content|striptags|slice(0,160) }}</p>
+                        <a href="{{ item.url }}" {% if item.isPopup %}rel="colorbox"{% endif %}><h5 class="search_title">{{ item.title }}</h5></a>
+                        <p class="search-result-text">{{ item.content|striptags|slice(0,160) }}</p>
                     {% endfor %}
+                {% else %}
+                    <p>{{ 'result.not_found'|trans({},'StrokitSearchBundle') }}</p>
                 {% endfor %}
             </div>
 

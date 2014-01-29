@@ -6,16 +6,16 @@
  * Time: 22:44
  */
 
-namespace Info\PageBundle\Searcher;
+namespace Info\FAQBundle\Searcher;
 
 
 use Doctrine\ORM\EntityManager;
-use Info\PageBundle\Entity\Service;
+use Info\FAQBundle\Entity\FaqQuestionsAnswers;
 use Strokit\SearchBundle\Dto\SearchResult;
 use Strokit\SearchBundle\Searcher\ISearcher;
 use Symfony\Bundle\FrameworkBundle\Routing\Router;
 
-class ServiceSearcher implements ISearcher{
+class FAQSearcher implements ISearcher{
 
 
     private $em;
@@ -33,23 +33,25 @@ class ServiceSearcher implements ISearcher{
     public function find($searchText)
     {
         $results = array();
-        $items = $this->em->getRepository('InfoPageBundle:Service')
+        $items = $this->em->getRepository('InfoFAQBundle:FAQQuestionsAnswers')
             ->createQueryBuilder('p')
-            ->orWhere("p.title like :search")
-            ->orWhere('p.content like :search')
+            ->orWhere("p.question like :search")
+            ->orWhere('p.answer like :search')
+            ->andWhere('p.active = :active')
+            ->setParameter('active', true)
             ->setParameter('search', '%' . $searchText . '%')
             ->getQuery()->getResult();
 
         foreach ($items as $item)
         {
-            /** @var $item Service */
-            $results[] = new SearchResult($item->getTitle(),$item->getContent(),$this->router->generate('info_service_show', array('url' => $item->getUrl())),true);
+            /** @var $item FAQQuestionsAnswers */
+            $results[] = new SearchResult($item->getQuestion(),$item->getAnswer(),$this->router->generate('faq_ajax_get_popup', array('id' => $item->getSection()->getId())),true);
         }
         return $results;
     }
 
     function getName()
     {
-        return 'search.info_service';
+        return 'search.info_faq';
     }
 }

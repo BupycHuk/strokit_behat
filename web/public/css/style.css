@@ -1357,3 +1357,12 @@ td,th{
 h5.faq_title{
     font-size: 12px;
 }
+
+h5.search_title{
+    color: #0062ff;
+    font-size: 12px;
+}
+
+p.search-result-text {
+    padding: 0 0 5px 0;
+}

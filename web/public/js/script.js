@@ -3,6 +3,7 @@ $(document).ready(function(){
     $( "#searchForm" ).submit(function() {
         var url = $(this).attr('action') + '?' + $('#searchForm').serialize();
 
+        var popupUrl = '?show='+url;
         $.colorbox({
             href:url,
             title:" ",
@@ -15,6 +16,10 @@ $(document).ready(function(){
             maxWidth: '100%',
             onComplete:function(){
                 $(this).colorbox.resize();
+                history.pushState(null, null, popupUrl);
+            },
+            onClosed: function(){
+                history.pushState(null, null, showPopup.config.currentUrl);
             },
             open:true
         });
@@ -129,6 +134,34 @@ $(document).ready(function(){
 
 
 });
+
+function get(name){
+    if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+        return decodeURIComponent(name[1]);
+}
+window.addEventListener('popstate', function(e){
+    var showUrl = get('show');
+    if (showUrl)
+    {
+        $.colorbox({
+            href:showUrl,
+            title:" ",
+            previous:true,
+            next:true,
+            arrowKey:false,
+            rel: false,
+            current: false,
+            opacity:0.8,
+            maxWidth: '100%',
+            onComplete:function(){
+                $(this).colorbox.resize();
+            },
+            open:true
+        });
+    }
+    else
+        $.colorbox.close();
+}, false);
 
 var showPopup = {
     config : {

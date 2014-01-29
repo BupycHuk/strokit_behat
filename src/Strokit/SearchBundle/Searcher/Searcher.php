@@ -28,7 +28,9 @@ class Searcher implements ISearcher{
         foreach($this->searchers as $searcher)
         {
             /** @var $searcher ISearcher */
-            $result[$searcher->getName()] = $searcher->find($searchText);
+            $results = $searcher->find($searchText);
+            if (count($results)>0)
+                $result[$searcher->getName()] = $results;
         }
         return $result;
     }
