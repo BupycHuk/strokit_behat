@@ -1,0 +1,3 @@
+app_media_list:
+    pattern:  /
+    defaults: { _controller: ApplicationSonataMediaBundle:Default:index }

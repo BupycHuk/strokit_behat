@@ -370,6 +370,18 @@
               <source>short_object_description_placeholder</source>
               <target>short_object_description_placeholder</target>
             </trans-unit>
+            <trans-unit id="map.admin.content">
+              <source>map.admin.content</source>
+              <target>Карты</target>
+            </trans-unit>
+            <trans-unit id="faq.admin.content">
+              <source>faq.admin.content</source>
+              <target>FAQ</target>
+            </trans-unit>
+            <trans-unit id="link">
+              <source>link</source>
+              <target>Ссылки</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

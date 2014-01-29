@@ -1,0 +1,3 @@
+info_feedback:
+    pattern:  /feedback/
+    defaults: { _controller: InfoFeedbackBundle:Default:index }

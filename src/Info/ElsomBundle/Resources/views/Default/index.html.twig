@@ -1,0 +1,74 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+    <div class="right-sub-coll">
+        {%  render controller('ApplicationSonataNewsBundle:Post:main') %}
+        <div class="feature">
+            <h3>Пополнение средств в отделениях Банков-Партнеров</h3>
+
+            <p>услуга будет доступна<br> с января 2014 года</p>
+        </div>
+    </div>
+
+    <div class="blocks">
+        <div class="block-menu">
+            <div class="block has-child w80">
+                <div class="block w40">
+                    <div class="inner-block">
+                        <a href="#"><img src="{{ asset('public/img/img1.png') }}" alt="Как стать клиентом"></a>
+                    </div>
+                </div>
+                <div class="block w40">
+                    <div class="inner-block color-block orange-back">
+                        <img src="{{ asset('public/img/how-add.png') }}" alt="test2">
+
+                        <h2>Как <br>пополнить?</h2>
+                        <a class="mask" href="#"></a>
+                    </div>
+                </div>
+                <div class="block w40">
+                    <div class="inner-block color-block blue-back">
+                        <img src="{{ asset('public/img/how-out.png') }}" alt="test2">
+
+                        <h2>Как <br>вывести?</h2>
+                        <a class="mask" href="#"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="clear-mini"></div>
+            <div class="block white-block w20">
+                <div class="inner-block">
+                    <div class="img">
+                        <img src="{{ asset('public/img/faq-icon.png') }}" alt="Faq">
+                    </div>
+                    <h2>faq<br> помощь</h2>
+                    <a class="mask" href="{{ path('info_faq') }}"></a>
+                </div>
+            </div>
+            <div class="block white-block w20">
+                <div class="inner-block">
+                    <div class="img">
+                        <img src="{{ asset('public/img/map-icon.png') }}" alt="Map">
+                    </div>
+                    <h2>карта<br> охвата</h2>
+                    <a class="mask" href="{{ path('infomap_all_map',{'entity':'all'}) }}"></a>
+                </div>
+            </div>
+            <div class="clear-max"></div>
+            {% render controller('InfoPageBundle:Service:main') %}
+            <div class="block white-block w20">
+                <div class="inner-block">
+                    <div class="img">
+                        <img src="{{ asset('public/img/all-icon.png') }}" alt="All">
+                    </div>
+                    <h2>все<br> услуги</h2>
+                    <a class="mask" href="{{ path('info_service_index') }}"></a>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+
+{% endblock %}

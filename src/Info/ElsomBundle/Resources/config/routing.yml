@@ -1,0 +1,5 @@
+info_elsom_homepage:
+    pattern:  /
+    defaults: { _controller: InfoElsomBundle:Default:index }
+    options:
+        expose: true

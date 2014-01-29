@@ -1,0 +1,42 @@
+{% extends '::base_inner.html.twig' %}
+{% block javascripts %}
+    <script type="text/javascript"
+            src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markerclusterer/src/markerclusterer.js"></script>
+    <script type="text/javascript" src="{{ asset("bundles/infomap/js/googleMap.js") }}"></script>
+    <script type="text/javascript" src="{{ path("infomap_all_mapjs",{'entity':entity}) }}"></script>
+
+{% endblock %}
+
+{% block stylesheets %}
+<link href="{{ asset("bundles/infomap/css/front.css") }}" rel="stylesheet"/>
+{% endblock %}
+
+{% block body %}
+
+    <h1 class="title">{{ 'map.title'|trans({}, 'InfoMapBundle') }}</h1>
+    <div class="filters">
+        <div class="sub-filter">
+            <ul>
+                <li>{{ 'checkbox.title'|trans({},'InfoMapBundle') }}</li>
+
+                {% for entitytype in entitytypes %}
+                <li {% if loop.last %} class="last" {% endif %}>
+                    <input class="map_filter" type="checkbox" id="checkbox{{ entitytype }}" name="{{ entitytype }}" {% if (entity =='all' or entity == entitytype) %}checked="checked"{% endif %}>
+                    <label for="checkbox{{ entitytype }}">{{ ('checkbox.'~entitytype) |trans({}, 'InfoMapBundle') }}</label>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="main-map">
+        <div class="big-map" id="map-canvas-front" style="height: 487px"></div>
+
+        <i class="map-top"></i>
+        <i class="map-right"></i>
+        <i class="map-bottom"></i>
+        <i class="map-left"></i>
+        <a href="{{ path('infomap_all_list') }}" class="map-list-link">смотреть списком</a>
+        <div class="clear"></div>
+    </div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% block map_widget %}
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key={{ form.vars['googleMapKey'] }}&sensor=true"></script>
+    <script type="text/javascript" src="{{ asset("bundles/infomap/js/googleMapAdmin.js") }}"></script>
+    <script type="text/javascript" src="{{ asset("bundles/infomap/js/googleMap.js") }}"></script>
+    <script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', function () {
+            initializeAdmin("{{ form.vars['id'] }}",
+                    {% if form.vars['value'] %} "{{ form.vars['value'] }}"
+            {% else %}
+            null
+            {% endif %} )
+            ;
+        });
+    </script>
+    <link href="{{ asset("bundles/infomap/css/admin.css") }}" rel="stylesheet"/>
+    <div id="map-canvas-{{ form.vars['id'] }}" class="span5 height250"></div>
+    <input type="hidden" value="{{ form.vars['value'] }}" {{ block('widget_attributes') }}/>
+{% endblock %}

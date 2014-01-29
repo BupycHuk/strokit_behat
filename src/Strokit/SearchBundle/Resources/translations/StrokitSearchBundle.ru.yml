@@ -1,0 +1,11 @@
+search:
+    info_page:  Страницы
+    info_service: Услуги
+    info_faq: FAQ
+    infomap:
+        merchant: Точки использования
+        cashout:  Точки вывода
+        terminal: Точки пополнения
+result:
+    not_found: Ничего не найдено
+    title: Результаты по запросу

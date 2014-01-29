@@ -1,0 +1,57 @@
+parameters:
+#    info_map.example.class: Info\MapBundle\Example
+
+services:
+    info_map.admin.terminal:
+        class: Info\MapBundle\Admin\TerminalAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "map.admin.content", label: "terminal.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Info\MapBundle\Entity\Terminal
+            - ~
+        calls:
+            - [ setTranslationDomain, [InfoMapBundle]]
+
+
+    info_map.admin.merchant:
+        class: Info\MapBundle\Admin\TerminalAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "map.admin.content", label: "merchant.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Info\MapBundle\Entity\Merchant
+            - ~
+        calls:
+            - [ setTranslationDomain, [InfoMapBundle]]
+
+    info_map.admin.cashout:
+        class: Info\MapBundle\Admin\TerminalAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "map.admin.content", label: "cashout.admin.label", label_translator_strategy: "sonata.admin.label.strategy.underscore" }
+        arguments:
+            - ~
+            - Info\MapBundle\Entity\Cashout
+            - ~
+        calls:
+            - [ setTranslationDomain, [InfoMapBundle]]
+
+    info_map.type.map:
+        class: Info\MapBundle\Form\Type\MapType
+        tags:
+            - { name: form.type, alias: map }
+
+    infomap_breadcrumb:
+        class: Info\MapBundle\Menu\BreadcrumbBuilder
+
+    infomap.searcher_cashout:
+        class: Info\MapBundle\Searcher\MapSearcher
+        arguments: [@doctrine.orm.entity_manager,@router,"Cashout","search.infomap.cashout"]
+
+    infomap.searcher_merchant:
+        class: Info\MapBundle\Searcher\MapSearcher
+        arguments: [@doctrine.orm.entity_manager,@router,"Merchant","search.infomap.merchant"]
+
+    infomap.searcher_terminal:
+        class: Info\MapBundle\Searcher\MapSearcher
+        arguments: [@doctrine.orm.entity_manager,@router,"Terminal","search.infomap.terminal"]

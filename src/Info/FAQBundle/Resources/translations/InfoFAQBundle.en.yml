@@ -1,0 +1,34 @@
+faq_sections:
+    admin:
+        label: Sections
+
+faq_answers_questions:
+      admin:
+        label: Answers-Questions
+
+faq_comments:
+        admin:
+          label: Comments
+
+list:
+    label_id: Id
+    label_email: email
+    label__action: Actions
+
+form:
+  label_name: Section name
+
+breadcrumb:
+    link_faq_sections_list: Sections list
+    link_faq_questions_answers_list: Questions and answers list
+    link_faq_comments_list: Comments list
+    link_faq_comments_delete: Deleting comment
+
+action_answer: Answer
+
+filter:
+    label_active: Active
+    label_answered: Answered
+    label_email: Email
+    label_question: Question-answer
+    label_section: Section

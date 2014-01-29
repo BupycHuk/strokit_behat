@@ -1,0 +1,10 @@
+parameters:
+#    info_faq.example.class: Info\FAQBundle\Example
+
+services:
+#    info_faq.example:
+#        class: %info_faq.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    sonata.news.breadcrumb:
+        class: Application\Sonata\NewsBundle\Menu\BreadcrumbBuilder

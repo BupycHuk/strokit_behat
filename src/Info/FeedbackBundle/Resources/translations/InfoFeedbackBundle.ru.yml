@@ -1,0 +1,22 @@
+feedback:
+    global: Форма обратной связи
+    admin:
+        label: Обратная связь
+    label:
+        email: Email
+        phone: Номер телефона
+        message: Текст сообщения
+        save: Отправить сообщение
+        captcha: Введите цифры с картинки
+    title: Обратная связь
+breadcrumb.link_feedback_list: Список вопросов
+filter:
+    label_email: email
+    label_phone: Номер
+    label_created_at: Дата создания
+list:
+    label__action:  Действия
+
+action_answer:  Ответить
+
+message_send: Ваше сообщение успешно отправленно

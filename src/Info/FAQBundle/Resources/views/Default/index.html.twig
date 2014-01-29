@@ -1,0 +1,31 @@
+{% extends "::base_inner.html.twig" %}
+{% block body %}
+    <h2>{{ title }}</h2>
+        <div class="blocks faq">
+            <div class="block-menu">
+                <div class="block w32">
+                    <div class="inner-block">
+                        <div class="img">
+                            <img src="{{ asset('bundles/infofaq/img/faq-img.png') }}" alt="USSD меню">
+                        </div>
+                        <a class="mask" href="#"></a>
+                    </div>
+                </div>
+                {% for section in sections %}
+                <div class="block white-block w16">
+                    <div class="inner-block">
+                        <div class="img">
+                            {% if  section.image %}
+                            {% media section.image, 'big' %}
+                            {% else %}
+                                <img src="{{ asset('bundles/infofaq/img/empty-icon.png') }}" alt="All">
+                            {% endif %}
+                        </div>
+                        <h2>{{ section.name }}</h2>
+                        <a class="mask faq_show_popup" href="{{ path('faq_ajax_get_popup', {'id':section.id}) }}" rel="colorbox"></a>
+                    </div>
+                </div>
+                    {% endfor %}
+                <div class="clear"></div>
+    </div>
+{% endblock %}

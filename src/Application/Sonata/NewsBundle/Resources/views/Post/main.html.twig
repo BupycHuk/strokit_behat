@@ -1,0 +1,16 @@
+<ul class="main-news">
+    {% for post in pager.getResults() %}
+    <li>
+        <div class="date">{{ post.publicationDateStart | format_date }}</div>
+        <h2>
+            <a href="{{ path('sonata_news_view', { 'permalink': sonata_news_permalink(post) }) }}" rel="colorbox">
+                {{ post.title }}
+            </a>
+        </h2>
+    </li>
+    {% else %}
+    <h2>
+        {{ 'no_post_found'|trans({}, 'SonataNewsBundle') }}
+    </h2>
+    {% endfor %}
+</ul>

@@ -1,0 +1,8 @@
+<div class="social">
+    <ul>
+        {% for social in links %}
+            <li><a href="{{ social.url }}" class="icon {{ social.service.name  }}{# TODO: нужно ли показывать неактивные? #}"></a></li>
+        {% endfor %}
+    </ul>
+    <div class="clear"></div>
+</div>

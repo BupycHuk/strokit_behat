@@ -12,6 +12,17 @@ sonata_media:
             formats:
                 small: { width: 150 , quality: 95}
                 big:   { width: 500 , quality: 90}
+        file:
+            download:
+                strategy: sonata.media.security.public_strategy
+                mode: http
+            providers:
+                - sonata.media.provider.file
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 150 , quality: 95}
+                big:   { width: 500 , quality: 90}
         news:
             providers:
                 - sonata.media.provider.image
@@ -19,9 +30,31 @@ sonata_media:
             formats:
                 small: { width: 190 , quality: 95}
                 big:   { width: 500 , quality: 90}
+
+        map:
+            providers:
+                - sonata.media.provider.image
+
+            formats:
+                small: { width: 160 , quality: 95}
+                big:   { width: 500 , quality: 90}
+
+        link:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                appstore: { height: 47 , quality: 95}
+                socialnetwork:   { height: 25, quality: 90}
+
+        block:
+            providers:
+                - sonata.media.provider.image
+            formats:
+                big:   { width: 178, height: 178, quality: 100}
+
     cdn:
         server:
-            path: /cms/web/uploads/media # http://media.sonata-project.org/
+            path: /uploads/media # http://media.sonata-project.org/
 
     filesystem:
         local:
@@ -29,4 +62,13 @@ sonata_media:
             create:     true
     providers:
         image:
-            resizer:    sonata.media.resizer.square # sonata.media.resizer.simple
+            resizer:    sonata.media.resizer.simple # sonata.media.resizer.simple
+        file:
+            service:    sonata.media.provider.file
+            resizer:    false
+            filesystem: sonata.media.filesystem.local
+            cdn:        sonata.media.cdn.server
+            generator:  sonata.media.generator.default
+            thumbnail:  sonata.media.thumbnail.format
+            allowed_extensions: ['pdf', 'txt', 'rtf', 'doc', 'docx', 'xls', 'xlsx', 'ppt', 'pttx', 'odt', 'odg', 'odp', 'ods', 'odc', 'odf', 'odb', 'csv', 'xml', 'zip', 'rar']
+            allowed_mime_types: ['application/pdf', 'application/x-pdf', 'application/rtf', 'text/html', 'text/rtf', 'text/plain', 'application/x-rar', 'application/zip', 'application/octet-stream']

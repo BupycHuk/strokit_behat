@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+    <div class="feedback">
+        {{ form_start(form) }}
+        <div class="item">
+            {% set error = '' %}
+            {% set error_message = '' %}
+            {% if form.email.vars.errors|length %}
+                {% set error = 'error' %}
+                {% set error_message = form_errors(form.email)|striptags %}
+            {% endif %}
+            {{ form_widget(form.email, {'attr':{'class':error, 'title':error_message} }) }}
+            {{ form_widget(form.phone, {'attr':{'class':'margin-none'} }) }}
+            <div class="clear"></div>
+        </div>
+        <div class="item">
+            <div class="textarea">
+                {{ form_widget(form.message, {'attr':{'cols':30, 'rows':10} }) }}
+            </div>
+        </div>
+        <div class="item captcha-block">
+            {{ form_widget(form.captcha) }}
+            {{ form_widget(form.save) }}
+            <div class="clear"></div>
+        </div>
+        {{ form_end(form) }}
+    </div>
+{% endblock body %}

@@ -1,0 +1,1 @@
+<div class="map-text"><h2><a href="{{ path('infomap_show',{'id':item.id,'entity':item.entity}) }}" rel="colorbox">{{ item.name }}</a></h2><p>{{ item.address }}<br> {% if item.number %}{{ 'phone'|trans({},'InfoMapBundle') }}: {{ item.number }}{% endif %} </p></div>

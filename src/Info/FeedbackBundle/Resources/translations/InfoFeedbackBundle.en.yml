@@ -1,0 +1,8 @@
+feedback:
+    admin:
+        label: Feedback
+breadcrumb.link_feedback_list: FAQ list
+filter:
+    label_email: email
+    label_phone: Phone
+    label_created_at: Date created

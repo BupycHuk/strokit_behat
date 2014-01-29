@@ -1,0 +1,82 @@
+terminal:
+    admin:
+        label: Терминалы пополнения
+
+merchant:
+    admin:
+        label: Мерчанты
+
+cashout:
+    admin:
+        label: Терминалы вывода
+
+list:
+    label_id: Id
+    label_name: Название
+    label_address:  Адрес
+    label_number:  Телефон
+    label_description:  Описание
+    label__action: Действия
+    label_active: Активность
+
+    link-to-map: смотреть на карте
+    title:  Список точек
+filter:
+    label_id: Id
+    label_name: Название
+    label_address:  Адрес
+    label_number:  Телефон
+    label_description:  Описание
+    label_active: Активность
+    label_fax:  Факс
+    label_email:  E-mail
+    label_url: Web-адрес
+
+breadcrumb:
+    link_terminal_list: Список РТ/ЦОП
+    link_merchant_list: Список мерчантов
+
+form:
+    label_location: Местоположение на карте
+    label_id: Id
+    label_name: Название
+    label_address:  Адрес
+    label_number:  Телефон
+    label_description:  Описание
+    label_image: Изображение
+    label_active: Активность
+    label_fax:  Факс
+    label_email:  E-mail
+    label_url: Web-адрес
+
+
+show:
+    label_location: Местоположение на карте
+    label_id: Id
+    label_name: Название
+    label_address:  Адрес
+    label_number:  Телефон
+    label_description:  Описание
+    label_image: Изображение
+    label_active: Активность
+    label_fax:  Факс
+    label_email:  E-mail
+    label_url: Web-адрес
+
+
+map:
+    admin:
+        content: Карты
+    title:  Карта охвата
+
+phone:  Тел
+fax: Факс
+email: E-mail
+web: Web
+information: Информация
+
+checkbox:
+  terminal: Пополнения
+  cashout: Вывода
+  merchant: Использования
+  title: Показать пункты:

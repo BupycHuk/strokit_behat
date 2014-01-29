@@ -1,0 +1,27 @@
+infomap_show:
+    pattern:  /{entity}/show/{id}
+    defaults: { _controller: InfoMapBundle:Front:show }
+    requirements:
+        entity:  terminal|merchant|cashout
+    options:
+        expose: true
+
+infomap_all_list:
+    pattern:  /list
+    defaults: { _controller: InfoMapBundle:Front:listall }
+    options:
+        expose: true
+
+infomap_all_map:
+    pattern:  /map/{entity}
+    defaults: { _controller: InfoMapBundle:Front:mapall, entity: all }
+    requirements:
+        entity:  terminal|merchant|cashout|all
+    options:
+        expose: true
+
+infomap_all_mapjs:
+    pattern:  /js/map/{entity}.js
+    defaults: { _controller: InfoMapBundle:Front:mapjs, entity: all }
+    requirements:
+        entity:  terminal|merchant|cashout|all

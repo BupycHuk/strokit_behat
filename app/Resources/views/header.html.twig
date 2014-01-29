@@ -1,0 +1,22 @@
+<div class="header">
+    <div class="logo">
+        <a href="{{ path('info_elsom_homepage') }}"><img src="{{ asset('public/img/logo.png')}}" alt="Элком"></a>
+    </div>
+    <div class="intro">
+        {{ 'intro.global'|trans({}, 'InfoElsomBundle') }}
+    </div>
+    {% render controller('InfoLinkBundle:Default:showLinksWithClass', {'serviceCategory':'socialnetwork'}) %}
+    <!--<div class="login"><a href="#">Личный кабинет</a></div>-->
+    <div class="lang">
+        <ul>
+            <li><a href="#">Eng</a></li>
+            <li class="active"><a href="#">Рус</a></li>
+            <li><a href="#">Кырг</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div class="search">
+    {% render controller('StrokitSearchBundle:Search:ShowForm') %}
+    </div>
+    <div class="clear"></div>
+</div>

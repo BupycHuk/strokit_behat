@@ -1,0 +1,29 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Файлы{% endblock %}
+
+{% block contentclass %}content inner{% endblock %}
+{% block body %}
+    <div class="files-list">
+        <h1 class="title">Файлы для скачивания</h1>
+        <ul>
+        {% for media in entities %}
+            <li>
+                <div class="file-icon">
+                    <span>{{ media.name|fileToExt }}</span>
+                    <a href="{{ path('sonata_media_download', {'id': media|sonata_urlsafeid }) }}" target="_blank"></a>
+                </div>
+                <div class="file-name">
+                    <h2>
+                        <a href="{{ path('sonata_media_download', {'id': media|sonata_urlsafeid }) }}" target="_blank">
+                            {{ media.name|fileToTitle }}
+                        </a>
+                    </h2>
+                    <div class="date">{{ (media.size/1024)|number_format(2) }} kb</div>
+                </div>
+                <div class="clear"></div>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock body %}
