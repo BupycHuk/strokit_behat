@@ -10,15 +10,25 @@
  */
 
 #}
-<ul>
-    {% for comment in pager.results %}
-        <li>
-            <div class="grey-who">{{ comment.name }} / {{ comment.createdAt | format_date }}</div>
-            <div class="comment">
-                <p>
+
+<div class="sonata-blog-comment-container">
+    <h3>{{ 'title_comments'|trans({}, 'SonataNewsBundle') }}</h3>
+
+    <div class="sonata-blog-comment-list">
+        {% for comment in pager.results %}
+            <div class="sonata-blog-comment">
+                <div class="sonata-blog-comment-name">
+                    <a href="{{ comment.url }}" target="new" rel="nofollow">{{ comment.name }}</a>
+                </div>
+                <div class="sonata-blog-comment-date">
+                    {{ comment.createdAt | format_date }}
+                </div>
+                <div class="sonata-blog-comment-message">
                     {{ comment.message }}
-                </p>
+                </div>
             </div>
-        </li>
-    {% endfor %}
-</ul>
+        {% else %}
+            {{ 'no_comments_available'|trans({}, 'SonataNewsBundle') }}
+        {% endfor %}
+    </div>
+</div>

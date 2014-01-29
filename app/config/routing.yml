@@ -1,30 +1,3 @@
-strokit_search:
-    resource: "@StrokitSearchBundle/Resources/config/routing.yml"
-    prefix:   /
-
-info_elsom:
-    resource: "@InfoElsomBundle/Resources/config/routing.yml"
-    prefix:   /
-
-strokit_link:
-    resource: "@InfoLinkBundle/Resources/config/routing.yml"
-    prefix:   /
-
-info_page:
-    resource: "@InfoPageBundle/Resources/config/routing.yml"
-    prefix:   /
-
-info_map:
-    resource: "@InfoMapBundle/Resources/config/routing.yml"
-    prefix:   /
-
-info_feedback:
-    resource: "@InfoFeedbackBundle/Resources/config/routing.yml"
-    prefix:   /
-info_faq:
-    resource: "@InfoFAQBundle/Resources/config/routing.yml"
-    prefix:   /
-
 strokit_core:
     resource: "@StrokitCoreBundle/Resources/config/routing.yml"
     prefix:   /
@@ -32,24 +5,24 @@ strokit_core:
 fos_js_routing:
     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
 
-#fos_user_security:
-#    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
-#
-#fos_user_profile:
-#    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-#    prefix: /profile
-#
-#fos_user_register:
-#    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-#    prefix: /register
-#
-#fos_user_resetting:
-#    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-#    prefix: /resetting
-#
-#fos_user_change_password:
-#    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-#    prefix: /profile
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
 
 sonata_user:
     resource: '@SonataUserBundle/Resources/config/routing/admin_security.xml'
@@ -62,10 +35,6 @@ gallery:
 media:
     resource: '@SonataMediaBundle/Resources/config/routing/media.xml'
     prefix: /media
-
-media_list:
-    resource: '@ApplicationSonataMediaBundle/Resources/config/routing.yml'
-    prefix: /media/list
 
 admin:
     resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'

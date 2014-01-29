@@ -1,4 +1,5 @@
 parameters:
+#    strokit_core.example.class: Strokit\CoreBundle\Example
 
 services:
 #    strokit_core.example:
@@ -11,20 +12,3 @@ services:
     strokit_mailer:
         class: Strokit\CoreBundle\Mailer\Mailer
         arguments: [@mailer, @twig]
-
-
-    strokit_breadcrumb:
-        class: Strokit\CoreBundle\Menu\BreadcrumbBuilder
-        arguments:
-          - [@infofaq_breadcrumb, @infomap_breadcrumb, @infopage_breadcrumb, @sonata.news.breadcrumb, @infofeedback_breadcrumb]
-          - @knp_menu.factory
-          - "info_elsom_homepage"
-
-    strokit.menu.breadcrumb:
-            class: Knp\Menu\MenuItem
-            factory_service: strokit_breadcrumb # the menu builder service above
-            factory_method: createBreadcrumbMenu # the method name to generate the menu
-            arguments: ["@request"]
-            scope: request
-            tags:
-                - { name: knp_menu.menu, alias: breadcrumb } # The alias is used in the template

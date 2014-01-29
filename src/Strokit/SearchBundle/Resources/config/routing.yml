@@ -1,3 +1,0 @@
-strokit_search:
-    pattern:  /search/
-    defaults: { _controller: StrokitSearchBundle:Search:index }

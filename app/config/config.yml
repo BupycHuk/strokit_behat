@@ -60,9 +60,8 @@ doctrine:
         # path:     %database_path%
         types:
             json: Sonata\Doctrine\Types\JsonType
-            enumservicecategory: Info\LinkBundle\DBAL\ServiceCategoryType
         mapping_types:
-            enum:       string
+            enum: string
 
     orm:
         auto_generate_proxy_classes: %kernel.debug%
@@ -70,7 +69,6 @@ doctrine:
         mappings:
             ApplicationSonataUserBundle: ~
             SonataUserBundle: ~
-            SonataMediaBundle: ~
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -87,8 +85,6 @@ fos_user:
     group:
         group_class: Application\Sonata\UserBundle\Entity\Group
 
-
-
 sonata_intl:
     timezone:
         # default timezone used as fallback
@@ -101,9 +97,6 @@ sonata_intl:
 sonata_user:
     security_acl: true
     manager_type: orm
-    admin:
-        user:
-            class: Application\Sonata\UserBundle\Admin\UserAdmin
 
 sonata_block:
     default_contexts: [cms]
@@ -141,7 +134,7 @@ ivory_ck_editor:
                 context: default-context # Optional, to upload in a custom context
 
 knp_paginator:
-    page_range: 10                      # default page range used in pagination control
+    page_range: 5                      # default page range used in pagination control
     default_options:
         page_name: page                # page query parameter name
         sort_field_name: sort          # sort field query parameter name
@@ -158,17 +151,13 @@ mobile_detect:
     switch_device_view: ~
 
 gregwar_captcha:
-    width: 184
-    height: 38
     quality: 20
     distortion: false
 
 sonata_admin:
     security:
         handler: sonata.admin.security.handler.acl
-        information:
-            ADMIN:    [MASTER]
-    title: Elsom
+    title: StrOkIT
     templates:
         layout:  StrokitCoreBundle::admin_layout.html.twig
 
