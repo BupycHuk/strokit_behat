@@ -29,4 +29,4 @@ sonata_media:
             create:     true
     providers:
         image:
-            resizer:    sonata.media.resizer.square # sonata.media.resizer.simple
+            resizer:    sonata.media.resizer.custom # sonata.media.resizer.simple

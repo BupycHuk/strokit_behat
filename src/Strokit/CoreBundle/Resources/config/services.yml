@@ -12,3 +12,7 @@ services:
     strokit_mailer:
         class: Strokit\CoreBundle\Mailer\Mailer
         arguments: [@mailer, @twig]
+
+    sonata.media.resizer.custom:
+        class: Strokit\CoreBundle\Image\CustomResizer
+        arguments: [@sonata.media.adapter.image.gd, 'outbound', @sonata.media.metadata.proxy]
