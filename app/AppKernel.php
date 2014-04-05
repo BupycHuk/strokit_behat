@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
             //sonata bundles
+            new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\IntlBundle\SonataIntlBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
@@ -59,6 +60,7 @@ class AppKernel extends Kernel
             new Application\Sonata\FormatterBundle\ApplicationSonataFormatterBundle(),
             //Strokit Core
             new Strokit\CoreBundle\StrokitCoreBundle(),
+            new Acme\BehatBundle\AcmeBehatBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

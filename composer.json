@@ -21,6 +21,7 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "friendsofsymfony/jsrouting-bundle": "~1.1",
         "friendsofsymfony/user-bundle": "*",
+        "sonata-project/core-bundle": "~2.2@dev",
         "sonata-project/doctrine-orm-admin-bundle": "dev-master",
         "sonata-project/intl-bundle": "dev-master",
         "sonata-project/user-bundle": "dev-master",
@@ -28,9 +29,17 @@
         "egeloen/ckeditor-bundle": "2.*",
         "tilleuls/ckeditor-sonata-media-bundle": "dev-master",
         "knplabs/knp-paginator-bundle": "dev-master",
-        "mobiledetect/mobiledetectlib": "dev-master",
+        "mobiledetect/mobiledetectlib": "2.7.*",
         "suncat/mobile-detect-bundle": "dev-master",
-        "gregwar/captcha-bundle": "dev-master"
+        "gregwar/captcha-bundle": "dev-master",
+
+        "behat/behat": "2.*@stable",
+        "behat/mink": "1.*@stable",
+        "behat/mink-extension": "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-selenium2-driver": "*",
+        "behat/symfony2-extension": "*",
+        "imagine/imagine": "*"
     },
     "scripts": {
         "post-install-cmd": [

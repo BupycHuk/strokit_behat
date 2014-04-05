@@ -1,0 +1,7 @@
+acme_behat_homepage:
+    pattern:  /post/
+    defaults: { _controller: AcmeBehatBundle:Post:index }
+
+acme_behat_post_create:
+    pattern:  /post/create/
+    defaults: { _controller: AcmeBehatBundle:Post:create }

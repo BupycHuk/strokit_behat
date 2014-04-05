@@ -1,0 +1,10 @@
+<table>
+    {% for post in posts %}
+        <tr>
+            <td>{{ post.title }}</td>
+            <td>{{ post.content }}</td>
+        </tr>
+    {% else %}
+        Нет постов
+    {% endfor %}
+</table>

@@ -1,0 +1,7 @@
+parameters:
+#    acme_behat.example.class: Acme\BehatBundle\Example
+
+services:
+#    acme_behat.example:
+#        class: %acme_behat.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
